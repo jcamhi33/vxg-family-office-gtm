@@ -1,1155 +1,1768 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8"/>
-<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-<title>Vx Group — GROWTH IS GOOD™ | The Growth Operating System for B2B</title>
-<meta name="description" content="Vx Group installs MiMOS™ — the Measured in Millions® Operating System — inside relationship-driven B2B companies. Quick Start™ starts at $9,500."/>
-<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800;900&family=Open+Sans:ital,wght@0,300;0,400;0,600;1,400&display=swap" rel="stylesheet"/>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>MiM™ Family Office & PE — GTM Hub | Vx Group</title>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Open+Sans:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet" />
 <style>
 /* ─── RESET ─── */
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
-html{scroll-behavior:smooth}
 
 /* ─── BRAND TOKENS ─── */
-:root{
-  --navy:#162A49;
-  --navy-deep:#0e1e35;
-  --navy-mid:#1e3a62;
-  --orange:#C95234;
+:root {
+  --navy:        #162A49;
+  --navy-deep:   #0e1e35;
+  --navy-mid:    #1e3a62;
+  --orange:      #C95234;
   --orange-light:#f5e8e4;
-  --steel:#6290C9;
-  --steel-light:#e8f0f8;
-  --teal:#3A837B;
-  --teal-light:#e0f0ee;
-  --medblu:#33557C;
-  --gold:#C39C43;
-  --gold-light:#f7f0e0;
-  --ltblue:#C1D3E9;
-  --white:#FFFFFF;
-  --bg:#F4F5F7;
-  --border:#DDE1E8;
-  --text:#162A49;
-  --text-2:#4A5568;
-  --text-3:#8A96A8;
-  --font-head:'Montserrat',sans-serif;
-  --font-body:'Open Sans',sans-serif;
-  --radius:8px;
-  --radius-lg:12px;
-  --shadow:0 1px 3px rgba(22,42,73,.08),0 1px 2px rgba(22,42,73,.06);
-  --shadow-md:0 4px 12px rgba(22,42,73,.12);
-  --shadow-lg:0 12px 40px rgba(22,42,73,.16);
+  --orange-mid:  #e8d0c8;
+  --steel:       #6290C9;
+  --steel-light: #e8f0f8;
+  --teal:        #3A837B;
+  --teal-light:  #e0f0ee;
+  --medblu:      #33557C;
+  --gold:        #C39C43;
+  --gold-light:  #f7f0e0;
+  --ltblue:      #C1D3E9;
+  --ltblue-bg:   #f0f5fb;
+  --white:       #FFFFFF;
+  --bg:          #F4F5F7;
+  --surface:     #FFFFFF;
+  --surface2:    #F0F2F5;
+  --border:      #DDE1E8;
+  --border-str:  #BEC5D0;
+  --text:        #162A49;
+  --text-2:      #4A5568;
+  --text-3:      #8A96A8;
+  --font-head:   'Montserrat', sans-serif;
+  --font-body:   'Open Sans', sans-serif;
+  --radius:      8px;
+  --radius-lg:   12px;
+  --shadow:      0 1px 3px rgba(22,42,73,.08), 0 1px 2px rgba(22,42,73,.06);
+  --shadow-md:   0 4px 12px rgba(22,42,73,.10);
 }
 
-body{
-  font-family:var(--font-body);
-  color:var(--text);
-  background:var(--white);
-  font-size:16px;
-  line-height:1.7;
-  overflow-x:hidden;
+/* ─── BASE ─── */
+body {
+  font-family: var(--font-body);
+  background: var(--bg);
+  color: var(--text);
+  font-size: 14px;
+  line-height: 1.7;
+  min-height: 100vh;
 }
 
-/* ─── UTILITY ─── */
-.container{max-width:1200px;margin:0 auto;padding:0 2rem}
-.container-narrow{max-width:900px;margin:0 auto;padding:0 2rem}
-.eyebrow{
-  font-family:var(--font-head);
-  font-size:11px;font-weight:700;
-  letter-spacing:.12em;text-transform:uppercase;
-  color:var(--orange);margin-bottom:.6rem;
+/* ─── HEADER ─── */
+.site-header {
+  background: var(--navy);
+  padding: 0 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 64px;
+  position: sticky;
+  top: 0;
+  z-index: 200;
+  box-shadow: 0 2px 8px rgba(0,0,0,.25);
 }
-.eyebrow-white{color:rgba(255,255,255,.6)}
-.badge{
-  display:inline-block;
-  font-family:var(--font-head);font-size:10px;font-weight:700;
-  letter-spacing:.06em;text-transform:uppercase;
-  padding:4px 10px;border-radius:20px;
+.header-left { display: flex; align-items: center; gap: 20px; }
+.header-divider { width: 1px; height: 28px; background: rgba(255,255,255,.2); }
+.header-title {
+  font-family: var(--font-head);
+  font-size: 13px;
+  font-weight: 600;
+  color: rgba(255,255,255,.75);
+  letter-spacing: .04em;
+  text-transform: uppercase;
 }
-.badge-orange{background:var(--orange-light);color:var(--orange)}
-.badge-steel{background:var(--steel-light);color:var(--medblu)}
-.badge-teal{background:var(--teal-light);color:var(--teal)}
-.badge-navy{background:#e8eef5;color:var(--navy)}
-
-/* ─── BUTTONS ─── */
-.btn{
-  display:inline-flex;align-items:center;gap:8px;
-  font-family:var(--font-head);font-size:13px;font-weight:700;
-  letter-spacing:.04em;padding:13px 24px;border-radius:var(--radius);
-  text-decoration:none;cursor:pointer;transition:all .18s;border:2px solid transparent;
-  white-space:nowrap;
-}
-.btn-primary{background:var(--orange);color:white;border-color:var(--orange)}
-.btn-primary:hover{background:#b5472d;border-color:#b5472d;transform:translateY(-1px);box-shadow:0 4px 16px rgba(201,82,52,.35)}
-.btn-ghost-navy{background:transparent;color:var(--navy);border-color:var(--navy)}
-.btn-ghost-navy:hover{background:var(--navy);color:white;transform:translateY(-1px)}
-.btn-ghost-white{background:transparent;color:white;border-color:rgba(255,255,255,.5)}
-.btn-ghost-white:hover{background:rgba(255,255,255,.12);border-color:white}
-.btn-white{background:white;color:var(--navy);border-color:white}
-.btn-white:hover{background:var(--bg);transform:translateY(-1px)}
-.btn-lg{padding:16px 32px;font-size:14px}
-.btn-sm{padding:9px 18px;font-size:12px}
-.btn svg{width:16px;height:16px;flex-shrink:0}
-
-/* ─── NAV ─── */
-.site-header{
-  position:sticky;top:0;z-index:500;
-  background:white;
-  border-bottom:1px solid var(--border);
-  box-shadow:0 2px 8px rgba(22,42,73,.06);
-  transition:box-shadow .2s;
-}
-.site-header.scrolled{box-shadow:0 4px 20px rgba(22,42,73,.12)}
-.nav-inner{
-  max-width:1280px;margin:0 auto;padding:0 2rem;
-  height:68px;display:flex;align-items:center;justify-content:space-between;gap:2rem;
-}
-.nav-logo{display:flex;align-items:center;flex-shrink:0}
-.nav-links{display:flex;align-items:center;gap:.25rem;flex:1;justify-content:center}
-.nav-link{
-  font-family:var(--font-head);font-size:13px;font-weight:600;
-  color:var(--text-2);text-decoration:none;padding:6px 14px;
-  border-radius:var(--radius);transition:all .14s;
-  display:flex;align-items:center;gap:4px;
-}
-.nav-link:hover,.nav-link.active{background:var(--bg);color:var(--navy)}
-.nav-link svg{width:12px;height:12px;opacity:.5}
-.nav-cta{flex-shrink:0}
-.nav-mobile-toggle{display:none;background:none;border:none;cursor:pointer;padding:8px}
-
-/* ─── HERO ─── */
-.hero{
-  background:var(--navy);
-  overflow:hidden;
-  position:relative;
-  padding:100px 0 80px;
-}
-.hero::before{
-  content:'';
-  position:absolute;inset:0;
-  background:
-    radial-gradient(ellipse 60% 60% at 80% 40%, rgba(98,144,201,.18) 0%, transparent 70%),
-    radial-gradient(ellipse 40% 40% at 10% 80%, rgba(201,82,52,.1) 0%, transparent 60%);
-}
-.hero-grid{
-  max-width:1280px;margin:0 auto;padding:0 2rem;
-  display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:center;
-  position:relative;z-index:1;
-}
-.hero-eyebrow{
-  font-family:var(--font-head);font-size:11px;font-weight:700;
-  letter-spacing:.14em;text-transform:uppercase;
-  color:var(--orange);margin-bottom:1rem;
-}
-.hero h1{
-  font-family:var(--font-head);font-size:clamp(38px,5vw,60px);
-  font-weight:900;color:white;line-height:1.1;letter-spacing:-.02em;
-  margin-bottom:1.25rem;
-}
-.hero h1 em{font-style:normal;color:var(--orange)}
-.hero-sub{
-  font-size:18px;color:rgba(255,255,255,.72);line-height:1.65;
-  max-width:500px;margin-bottom:2rem;
-}
-.hero-ctas{display:flex;gap:.75rem;flex-wrap:wrap;margin-bottom:2rem}
-.hero-trust{display:flex;align-items:center;gap:.75rem;flex-wrap:wrap}
-.hero-trust-label{
-  font-family:var(--font-head);font-size:10px;font-weight:700;
-  letter-spacing:.08em;text-transform:uppercase;
-  color:rgba(255,255,255,.35);flex-shrink:0;
-}
-.hero-trust-logos{display:flex;align-items:center;gap:1.5rem;flex-wrap:wrap}
-.trust-logo{
-  font-family:var(--font-head);font-size:11px;font-weight:700;
-  color:rgba(255,255,255,.3);letter-spacing:.04em;
-  padding:4px 10px;border:1px solid rgba(255,255,255,.12);border-radius:4px;
-  white-space:nowrap;
+.header-badge {
+  background: var(--orange);
+  color: white;
+  font-family: var(--font-head);
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: .06em;
+  text-transform: uppercase;
+  padding: 3px 10px;
+  border-radius: 20px;
 }
 
-/* Hero visual */
-.hero-visual{position:relative}
-.hero-diagram{
-  background:rgba(255,255,255,.04);
-  border:1px solid rgba(255,255,255,.1);
-  border-radius:var(--radius-lg);
-  padding:2rem;
-  position:relative;
-  overflow:hidden;
-}
-.hero-diagram::before{
-  content:'';position:absolute;inset:0;
-  background:radial-gradient(ellipse 80% 80% at 50% 50%,rgba(98,144,201,.06) 0%,transparent 70%);
-}
-.diagram-label{
-  font-family:var(--font-head);font-size:9px;font-weight:700;
-  letter-spacing:.1em;text-transform:uppercase;
-  color:rgba(255,255,255,.4);text-align:center;margin-bottom:1.5rem;
-}
-.diagram-rings{position:relative;height:260px;display:flex;align-items:center;justify-content:center}
-.ring{
-  position:absolute;border-radius:50%;border:1px solid;
-  display:flex;align-items:center;justify-content:center;
-}
-.ring-1{width:260px;height:260px;border-color:rgba(98,144,201,.2);animation:spin1 30s linear infinite}
-.ring-2{width:180px;height:180px;border-color:rgba(201,82,52,.25);animation:spin1 20s linear infinite reverse}
-.ring-3{width:100px;height:100px;border-color:rgba(58,131,123,.3);animation:spin1 12s linear infinite}
-.ring-center{
-  width:56px;height:56px;border-radius:50%;
-  background:var(--navy-mid);border:2px solid var(--orange);
-  display:flex;align-items:center;justify-content:center;
-  position:relative;z-index:2;
-}
-.ring-center-text{font-family:var(--font-head);font-size:8px;font-weight:900;color:white;letter-spacing:.06em;text-align:center;line-height:1.3}
-.ring-dot{
-  position:absolute;width:10px;height:10px;border-radius:50%;
-  transform-origin:center;
-}
-.orbit-label{
-  position:absolute;
-  font-family:var(--font-head);font-size:8.5px;font-weight:700;
-  letter-spacing:.06em;text-transform:uppercase;
-  background:var(--navy-deep);border:1px solid rgba(255,255,255,.12);
-  color:rgba(255,255,255,.7);padding:4px 8px;border-radius:4px;
-  white-space:nowrap;
-}
-.diagram-steps{
-  display:grid;grid-template-columns:repeat(4,1fr);gap:.5rem;margin-top:1.5rem;position:relative;z-index:2;
-}
-.diagram-step{
-  background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.08);
-  border-radius:var(--radius);padding:.6rem;text-align:center;
-}
-.ds-num{
-  font-family:var(--font-head);font-size:8px;font-weight:700;
-  letter-spacing:.08em;color:var(--orange);margin-bottom:.3rem;
-}
-.ds-name{font-family:var(--font-head);font-size:9px;font-weight:700;color:white;line-height:1.3}
-@keyframes spin1{from{transform:rotate(0deg)}to{transform:rotate(360deg)}}
-
-/* ─── AEO ANSWER BLOCK ─── */
-.aeo-band{
-  background:var(--bg);border-bottom:1px solid var(--border);
-  padding:48px 0;
-}
-.aeo-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5px;background:var(--border)}
-.aeo-card{
-  background:white;padding:2rem 1.75rem;
-}
-.aeo-q{
-  font-family:var(--font-head);font-size:12px;font-weight:700;
-  letter-spacing:.05em;color:var(--navy);margin-bottom:.75rem;
-  text-transform:uppercase;
-}
-.aeo-a{font-size:14px;color:var(--text-2);line-height:1.65;margin-bottom:.75rem}
-.aeo-link{
-  font-family:var(--font-head);font-size:11px;font-weight:700;
-  letter-spacing:.04em;color:var(--orange);text-decoration:none;
-  display:inline-flex;align-items:center;gap:4px;
-}
-.aeo-link:hover{text-decoration:underline}
-
-/* ─── PROBLEM BAND ─── */
-.problem-band{background:var(--navy);padding:80px 0}
-.problem-inner{max-width:900px;margin:0 auto;padding:0 2rem;text-align:center}
-.problem-band h2{
-  font-family:var(--font-head);font-size:clamp(26px,3.5vw,40px);
-  font-weight:800;color:white;line-height:1.2;letter-spacing:-.02em;
-  margin-bottom:2.5rem;
-}
-.problem-band h2 em{font-style:normal;color:var(--orange)}
-.problem-pillars{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem;margin-top:2rem}
-.prob-pill{
-  background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.1);
-  border-radius:var(--radius-lg);padding:1.25rem 1.1rem;text-align:left;
-}
-.prob-icon{
-  width:36px;height:36px;border-radius:50%;
-  display:flex;align-items:center;justify-content:center;
-  margin-bottom:.75rem;font-size:16px;
-}
-.pi-orange{background:rgba(201,82,52,.2)}
-.pi-steel{background:rgba(98,144,201,.2)}
-.pi-teal{background:rgba(58,131,123,.2)}
-.prob-pill h3{
-  font-family:var(--font-head);font-size:12.5px;font-weight:700;
-  color:white;margin-bottom:.35rem;
-}
-.prob-pill p{font-size:12.5px;color:rgba(255,255,255,.55);line-height:1.6}
-
-/* ─── SYSTEM SECTION ─── */
-.system-section{padding:96px 0;background:white}
-.section-header{text-align:center;margin-bottom:3rem}
-.section-header h2{
-  font-family:var(--font-head);font-size:clamp(26px,3.5vw,38px);
-  font-weight:800;color:var(--navy);letter-spacing:-.02em;line-height:1.2;
-  margin-bottom:.75rem;
-}
-.section-header p{font-size:16px;color:var(--text-2);max-width:560px;margin:0 auto}
-.system-steps{
-  display:grid;grid-template-columns:repeat(4,1fr);gap:.75rem;
-  margin-bottom:3rem;position:relative;
-}
-.system-steps::before{
-  content:'';position:absolute;top:36px;left:calc(12.5% + 24px);
-  right:calc(12.5% + 24px);height:2px;
-  background:linear-gradient(90deg,var(--orange),var(--steel),var(--teal),var(--navy));
-  opacity:.3;z-index:0;
-}
-.sys-step{
-  background:var(--bg);border:1px solid var(--border);
-  border-radius:var(--radius-lg);padding:1.5rem 1.25rem;
-  text-align:center;position:relative;z-index:1;
-  transition:all .2s;cursor:pointer;
-}
-.sys-step:hover{transform:translateY(-3px);box-shadow:var(--shadow-md);border-color:var(--ltblue)}
-.sys-step-num{
-  width:48px;height:48px;border-radius:50%;
-  font-family:var(--font-head);font-size:14px;font-weight:800;
-  display:flex;align-items:center;justify-content:center;
-  margin:0 auto .75rem;
-}
-.sn-1{background:var(--orange);color:white}
-.sn-2{background:var(--steel);color:white}
-.sn-3{background:var(--teal);color:white}
-.sn-4{background:var(--navy);color:white}
-.sys-step h3{font-family:var(--font-head);font-size:13px;font-weight:700;color:var(--navy);margin-bottom:.35rem}
-.sys-step p{font-size:12px;color:var(--text-3);line-height:1.55}
-.sys-cta{text-align:center}
-
-/* ─── BELIEFS ─── */
-.beliefs-section{padding:96px 0;background:var(--bg)}
-.beliefs-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:1rem}
-.belief-card{
-  background:white;border:1px solid var(--border);
-  border-radius:var(--radius-lg);padding:2rem;
-  display:flex;gap:1.25rem;align-items:flex-start;
-  transition:all .2s;
-}
-.belief-card:hover{box-shadow:var(--shadow-md);transform:translateY(-2px)}
-.belief-num{
-  width:44px;height:44px;border-radius:50%;
-  font-family:var(--font-head);font-size:13px;font-weight:800;
-  display:flex;align-items:center;justify-content:center;
-  flex-shrink:0;
-}
-.bn-1{background:var(--orange-light);color:var(--orange)}
-.bn-2{background:var(--steel-light);color:var(--medblu)}
-.bn-3{background:var(--teal-light);color:var(--teal)}
-.bn-4{background:var(--gold-light);color:var(--gold)}
-.belief-content h3{
-  font-family:var(--font-head);font-size:14px;font-weight:700;
-  color:var(--navy);margin-bottom:.4rem;
-}
-.belief-content p{font-size:13.5px;color:var(--text-2);line-height:1.65}
-
-/* ─── WHO IT'S FOR ─── */
-.for-section{padding:96px 0;background:white}
-.for-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1rem;margin-bottom:2rem}
-.for-card{
-  border:1px solid var(--border);border-radius:var(--radius-lg);
-  overflow:hidden;transition:all .2s;cursor:pointer;
-  text-decoration:none;color:inherit;display:block;
-}
-.for-card:hover{transform:translateY(-3px);box-shadow:var(--shadow-lg)}
-.for-card-head{
-  padding:1.5rem;
-}
-.fch-1{background:var(--navy)}
-.fch-2{background:var(--medblu)}
-.fch-3{background:var(--teal)}
-.for-card-head h3{
-  font-family:var(--font-head);font-size:15px;font-weight:800;
-  color:white;margin-bottom:.4rem;
-}
-.for-card-head p{font-size:12.5px;color:rgba(255,255,255,.65);line-height:1.55}
-.for-card-body{padding:1.25rem 1.5rem;background:white}
-.for-outcome{
-  font-family:var(--font-head);font-size:11px;font-weight:700;
-  color:var(--teal);letter-spacing:.04em;margin-bottom:.4rem;
-}
-.for-body-text{font-size:12.5px;color:var(--text-2);line-height:1.6;margin-bottom:.75rem}
-.for-card-link{
-  font-family:var(--font-head);font-size:11px;font-weight:700;
-  letter-spacing:.04em;color:var(--orange);
-  display:inline-flex;align-items:center;gap:4px;
-}
-.qualifier-strip{
-  background:var(--bg);border:1px solid var(--border);
-  border-radius:var(--radius);padding:.85rem 1.25rem;
-  display:flex;align-items:center;gap:1.5rem;flex-wrap:wrap;justify-content:center;
-}
-.qs-item{
-  font-family:var(--font-head);font-size:11px;font-weight:700;
-  letter-spacing:.05em;text-transform:uppercase;color:var(--text-3);
-  display:flex;align-items:center;gap:.5rem;
-}
-.qs-item::before{content:'◆';font-size:6px;color:var(--orange)}
-
-/* ─── PROOF ─── */
-.proof-section{padding:96px 0;background:var(--bg)}
-.proof-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1rem;margin-bottom:2rem}
-.proof-card{
-  background:white;border:1px solid var(--border);
-  border-radius:var(--radius-lg);padding:1.5rem;
-  transition:all .2s;
-}
-.proof-card:hover{box-shadow:var(--shadow-md);transform:translateY(-2px)}
-.proof-archetype{
-  font-family:var(--font-head);font-size:10px;font-weight:700;
-  letter-spacing:.08em;text-transform:uppercase;
-  color:var(--text-3);margin-bottom:.75rem;
-  display:flex;align-items:center;gap:.5rem;
-}
-.proof-archetype::before{content:'';width:24px;height:2px;background:var(--orange);flex-shrink:0}
-.proof-quote{
-  font-size:14px;color:var(--navy);line-height:1.65;
-  font-style:italic;margin-bottom:1rem;
-}
-.proof-quote::before{content:'\201C';font-size:32px;line-height:1;color:var(--orange);font-family:Georgia,serif;display:block;margin-bottom:.25rem}
-.proof-stats{display:flex;gap:.75rem;flex-wrap:wrap}
-.proof-stat{
-  background:var(--bg);border-radius:var(--radius);padding:.5rem .75rem;
-  font-family:var(--font-head);
-}
-.ps-val{font-size:18px;font-weight:800;color:var(--navy)}
-.ps-label{font-size:10px;color:var(--text-3);margin-top:1px}
-.proof-section-cta{text-align:center}
-
-/* ─── TEAM ─── */
-.team-section{padding:96px 0;background:white}
-.team-intro{
-  display:grid;grid-template-columns:1fr 1fr;gap:4rem;
-  align-items:center;margin-bottom:3rem;
-}
-.team-intro-text h2{
-  font-family:var(--font-head);font-size:clamp(24px,3vw,36px);
-  font-weight:800;color:var(--navy);letter-spacing:-.02em;
-  line-height:1.2;margin-bottom:.75rem;
-}
-.team-intro-text p{font-size:15px;color:var(--text-2);line-height:1.7;margin-bottom:1.5rem}
-.role-cards{display:grid;grid-template-columns:1fr 1fr;gap:1rem}
-.role-card{
-  border-radius:var(--radius-lg);padding:1.25rem;
-}
-.rc-coach{background:var(--navy);color:white}
-.rc-arch{background:var(--orange);color:white}
-.rc-label{
-  font-family:var(--font-head);font-size:9px;font-weight:700;
-  letter-spacing:.1em;text-transform:uppercase;
-  opacity:.6;margin-bottom:.35rem;
-}
-.rc-title{font-family:var(--font-head);font-size:14px;font-weight:800;margin-bottom:.4rem}
-.rc-desc{font-size:12px;opacity:.75;line-height:1.55}
-.team-grid{
-  display:grid;grid-template-columns:repeat(6,1fr);gap:.75rem;
-}
-.team-member{text-align:center}
-.team-avatar{
-  width:72px;height:72px;border-radius:50%;
-  font-family:var(--font-head);font-size:14px;font-weight:800;
-  display:flex;align-items:center;justify-content:center;
-  margin:0 auto .6rem;
-  color:white;transition:transform .2s;
-}
-.team-member:hover .team-avatar{transform:scale(1.08)}
-.ta-1{background:var(--navy)}
-.ta-2{background:var(--orange)}
-.ta-3{background:var(--steel)}
-.ta-4{background:var(--teal)}
-.ta-5{background:var(--medblu)}
-.ta-6{background:var(--gold)}
-.tm-name{font-family:var(--font-head);font-size:11px;font-weight:700;color:var(--navy)}
-.tm-role{font-size:10.5px;color:var(--text-3);margin-top:2px}
-
-/* ─── INSIGHTS ─── */
-.insights-section{padding:96px 0;background:var(--bg)}
-.insights-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1rem;margin-bottom:2rem}
-.insight-card{
-  background:white;border:1px solid var(--border);
-  border-radius:var(--radius-lg);overflow:hidden;
-  transition:all .2s;text-decoration:none;color:inherit;display:block;
-}
-.insight-card:hover{transform:translateY(-3px);box-shadow:var(--shadow-md)}
-.insight-thumb{
-  height:6px;
-}
-.it-growth{background:linear-gradient(90deg,var(--navy),var(--steel))}
-.it-icp{background:linear-gradient(90deg,var(--orange),var(--gold))}
-.it-sales{background:linear-gradient(90deg,var(--teal),var(--medblu))}
-.insight-body{padding:1.5rem}
-.insight-meta{
-  display:flex;align-items:center;gap:.5rem;margin-bottom:.75rem;flex-wrap:wrap;
-}
-.ic-chip{
-  font-family:var(--font-head);font-size:9px;font-weight:700;
-  letter-spacing:.06em;text-transform:uppercase;
-  padding:3px 8px;border-radius:20px;
-}
-.icc-growth{background:var(--steel-light);color:var(--medblu)}
-.icc-icp{background:var(--orange-light);color:var(--orange)}
-.icc-sales{background:var(--teal-light);color:var(--teal)}
-.ic-read{font-size:11px;color:var(--text-3);margin-left:auto}
-.insight-body h3{
-  font-family:var(--font-head);font-size:14px;font-weight:700;
-  color:var(--navy);line-height:1.4;margin-bottom:.5rem;
-}
-.insight-body p{font-size:12.5px;color:var(--text-2);line-height:1.6}
-
-/* ─── FINAL CTA ─── */
-.final-cta{
-  background:var(--orange);
-  padding:96px 0;
-  text-align:center;
-  position:relative;overflow:hidden;
-}
-.final-cta::before{
-  content:'GROWTH IS GOOD™';
-  position:absolute;
-  font-family:var(--font-head);font-size:200px;font-weight:900;
-  color:rgba(255,255,255,.04);
-  top:50%;left:50%;transform:translate(-50%,-50%);
-  white-space:nowrap;letter-spacing:-.02em;
-  pointer-events:none;
-}
-.final-cta .eyebrow{color:rgba(255,255,255,.6)}
-.final-cta h2{
-  font-family:var(--font-head);font-size:clamp(28px,4vw,48px);
-  font-weight:900;color:white;letter-spacing:-.03em;line-height:1.1;
-  margin-bottom:.75rem;
-}
-.final-cta p{
-  font-size:17px;color:rgba(255,255,255,.8);
-  max-width:480px;margin:0 auto 2.5rem;line-height:1.65;
-}
-.final-cta-btns{display:flex;gap:1rem;justify-content:center;flex-wrap:wrap}
-
-/* ─── FOOTER ─── */
-.site-footer{background:var(--navy-deep);padding:64px 0 0}
-.footer-grid{
-  display:grid;grid-template-columns:repeat(4,1fr);gap:2rem;
-  margin-bottom:3rem;
-}
-.footer-col-head{
-  font-family:var(--font-head);font-size:10px;font-weight:700;
-  letter-spacing:.1em;text-transform:uppercase;
-  color:rgba(255,255,255,.35);margin-bottom:1rem;
-}
-.footer-links{list-style:none}
-.footer-links li{margin-bottom:.4rem}
-.footer-links a{
-  font-size:13px;color:rgba(255,255,255,.55);text-decoration:none;
-  transition:color .12s;
-}
-.footer-links a:hover{color:white}
-.footer-bottom{
-  border-top:1px solid rgba(255,255,255,.08);
-  padding:1.5rem 0;
-  display:flex;align-items:center;justify-content:space-between;
-  flex-wrap:wrap;gap:1rem;
-}
-.footer-tagline{
-  font-family:var(--font-head);font-size:12px;font-weight:700;
-  letter-spacing:.08em;text-transform:uppercase;color:var(--orange);
-}
-.footer-meta{
-  display:flex;align-items:center;gap:1.25rem;flex-wrap:wrap;
-}
-.footer-meta a,.footer-meta span{
-  font-size:12px;color:rgba(255,255,255,.3);text-decoration:none;
-  transition:color .12s;
-}
-.footer-meta a:hover{color:rgba(255,255,255,.6)}
-.footer-social{display:flex;gap:.75rem}
-.social-btn{
-  width:34px;height:34px;border-radius:50%;
-  background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.1);
-  display:flex;align-items:center;justify-content:center;
-  font-family:var(--font-head);font-size:10px;font-weight:700;
-  color:rgba(255,255,255,.4);text-decoration:none;
-  transition:all .14s;
-}
-.social-btn:hover{background:rgba(255,255,255,.12);color:white}
-
-/* ─── WIREFRAME ANNOTATION LAYER ─── */
-.section-label-band{
-  background:rgba(201,82,52,.07);
-  border-top:2px dashed rgba(201,82,52,.25);
-  border-bottom:1px dashed rgba(201,82,52,.1);
-  padding:5px 2rem;
-  display:flex;align-items:center;gap:.5rem;
-}
-.slb-text{
-  font-family:monospace;font-size:11px;
-  color:rgba(201,82,52,.7);letter-spacing:.06em;
+/* ─── LAYOUT ─── */
+.layout {
+  display: flex;
+  min-height: calc(100vh - 64px);
 }
 
-/* ─── SCROLL ANIMATIONS ─── */
-.fade-up{opacity:0;transform:translateY(24px);transition:opacity .55s ease,transform .55s ease}
-.fade-up.visible{opacity:1;transform:translateY(0)}
+/* ─── SIDEBAR ─── */
+.sidebar {
+  width: 220px;
+  flex-shrink: 0;
+  background: var(--navy);
+  display: flex;
+  flex-direction: column;
+  padding: 1.5rem 0 2rem;
+  position: sticky;
+  top: 64px;
+  height: calc(100vh - 64px);
+  overflow-y: auto;
+}
+.nav-group-label {
+  font-family: var(--font-head);
+  font-size: 9px;
+  font-weight: 700;
+  letter-spacing: .1em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,.35);
+  padding: 0 1.25rem;
+  margin: 1.25rem 0 .4rem;
+}
+.nav-group-label:first-child { margin-top: 0; }
+.nav-btn {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  width: 100%;
+  background: none;
+  border: none;
+  border-left: 3px solid transparent;
+  padding: .6rem 1.25rem .6rem 1.1rem;
+  font-family: var(--font-body);
+  font-size: 13px;
+  color: rgba(255,255,255,.6);
+  cursor: pointer;
+  text-align: left;
+  transition: all .12s;
+}
+.nav-btn:hover { background: rgba(255,255,255,.07); color: white; }
+.nav-btn.active {
+  background: rgba(201,82,52,.15);
+  color: white;
+  border-left-color: var(--orange);
+  font-weight: 600;
+}
+.nav-dot {
+  width: 7px; height: 7px;
+  border-radius: 50%;
+  background: rgba(255,255,255,.25);
+  flex-shrink: 0;
+}
+.nav-btn.active .nav-dot { background: var(--orange); }
+.sidebar-footer {
+  margin-top: auto;
+  padding: 1.25rem;
+  border-top: 1px solid rgba(255,255,255,.1);
+}
+.sidebar-footer p {
+  font-size: 10px;
+  color: rgba(255,255,255,.3);
+  line-height: 1.5;
+}
 
-/* ─── RESPONSIVE ─── */
-@media(max-width:900px){
-  .hero-grid{grid-template-columns:1fr;gap:2.5rem}
-  .hero-visual{display:none}
-  .aeo-grid{grid-template-columns:1fr}
-  .problem-pillars{grid-template-columns:1fr}
-  .system-steps{grid-template-columns:repeat(2,1fr)}
-  .beliefs-grid{grid-template-columns:1fr}
-  .for-grid{grid-template-columns:1fr}
-  .proof-grid{grid-template-columns:1fr}
-  .team-intro{grid-template-columns:1fr}
-  .team-grid{grid-template-columns:repeat(3,1fr)}
-  .insights-grid{grid-template-columns:1fr}
-  .footer-grid{grid-template-columns:repeat(2,1fr)}
-  .nav-links{display:none}
+/* ─── MAIN CONTENT ─── */
+.main {
+  flex: 1;
+  min-width: 0;
+  padding: 2rem 2.5rem;
+  overflow-y: auto;
 }
-@media(max-width:600px){
-  .hero{padding:60px 0 48px}
-  .hero h1{font-size:34px}
-  .hero-ctas{flex-direction:column}
-  .final-cta-btns{flex-direction:column;align-items:center}
-  .footer-grid{grid-template-columns:1fr}
-  .system-steps::before{display:none}
+.tab-panel { display: none; }
+.tab-panel.active { display: block; }
+
+/* ─── PAGE HEADER ─── */
+.page-header {
+  margin-bottom: 2rem;
+  padding-bottom: 1.5rem;
+  border-bottom: 1px solid var(--border);
 }
+.page-eyebrow {
+  font-family: var(--font-head);
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: .1em;
+  text-transform: uppercase;
+  color: var(--orange);
+  margin-bottom: .4rem;
+}
+.page-title {
+  font-family: var(--font-head);
+  font-size: 22px;
+  font-weight: 700;
+  color: var(--navy);
+  line-height: 1.25;
+  margin-bottom: .5rem;
+}
+.page-sub {
+  font-size: 14px;
+  color: var(--text-2);
+  max-width: 640px;
+}
+
+/* ─── SECTION LABEL ─── */
+.section-label {
+  font-family: var(--font-head);
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+  color: var(--text-3);
+  margin-bottom: .75rem;
+  margin-top: 1.75rem;
+}
+.section-label:first-child { margin-top: 0; }
+
+/* ─── CARDS ─── */
+.card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  padding: 1.1rem 1.25rem;
+  margin-bottom: .75rem;
+  box-shadow: var(--shadow);
+}
+.card-title {
+  font-family: var(--font-head);
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--navy);
+  margin-bottom: .35rem;
+}
+.card-body {
+  font-size: 13px;
+  color: var(--text-2);
+  line-height: 1.65;
+}
+.card-accent-orange { border-left: 3px solid var(--orange); border-radius: 0 var(--radius-lg) var(--radius-lg) 0; }
+.card-accent-teal   { border-left: 3px solid var(--teal);   border-radius: 0 var(--radius-lg) var(--radius-lg) 0; }
+.card-accent-navy   { border-left: 3px solid var(--navy);   border-radius: 0 var(--radius-lg) var(--radius-lg) 0; }
+
+/* ─── GRIDS ─── */
+.grid-2 { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: .75rem; }
+.grid-3 { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: .75rem; }
+
+/* ─── STAT ROW ─── */
+.stat-row { display: grid; grid-template-columns: repeat(auto-fit, minmax(120px, 1fr)); gap: .6rem; margin-bottom: .75rem; }
+.stat-card {
+  background: var(--navy);
+  border-radius: var(--radius);
+  padding: .85rem 1rem;
+}
+.stat-label { font-family: var(--font-head); font-size: 9px; font-weight: 700; letter-spacing: .07em; text-transform: uppercase; color: rgba(255,255,255,.5); margin-bottom: .25rem; }
+.stat-val { font-family: var(--font-head); font-size: 18px; font-weight: 700; color: white; }
+
+/* ─── BADGES ─── */
+.badge { display: inline-block; font-family: var(--font-head); font-size: 10px; font-weight: 700; padding: 3px 8px; border-radius: 20px; margin: 2px 3px 2px 0; }
+.badge-navy   { background: var(--ltblue-bg); color: var(--navy); }
+.badge-orange { background: var(--orange-light); color: var(--orange); }
+.badge-teal   { background: var(--teal-light); color: var(--teal); }
+.badge-steel  { background: var(--steel-light); color: var(--medblu); }
+.badge-gold   { background: var(--gold-light); color: var(--gold); }
+
+/* ─── PAIN CARDS ─── */
+.pain-card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  padding: 1rem 1.25rem;
+  margin-bottom: .75rem;
+  display: flex;
+  gap: 14px;
+  align-items: flex-start;
+  box-shadow: var(--shadow);
+}
+.pain-num {
+  background: var(--navy);
+  color: white;
+  font-family: var(--font-head);
+  font-size: 12px;
+  font-weight: 700;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+
+/* ─── TABLE ─── */
+.data-table { width: 100%; border-collapse: collapse; font-size: 12.5px; }
+.data-table th {
+  font-family: var(--font-head);
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: .06em;
+  text-transform: uppercase;
+  color: var(--text-3);
+  padding: 8px 12px;
+  text-align: left;
+  border-bottom: 1px solid var(--border);
+  white-space: nowrap;
+}
+.data-table td { padding: 9px 12px; border-bottom: 1px solid var(--border); vertical-align: top; color: var(--text-2); }
+.data-table tr:last-child td { border-bottom: none; }
+.data-table tr:hover td { background: var(--surface2); }
+.td-name { font-family: var(--font-head); font-weight: 600; color: var(--navy); font-size: 12.5px; }
+.td-price { font-size: 11px; color: var(--text-3); }
+.check { color: var(--teal); font-size: 14px; text-align: center; }
+.dash  { color: var(--border-str); text-align: center; }
+.table-wrap { overflow-x: auto; background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius-lg); box-shadow: var(--shadow); }
+
+/* ─── PROB TAG ─── */
+.prob-tag {
+  display: inline-block;
+  font-family: var(--font-head);
+  font-size: 10px;
+  font-weight: 700;
+  padding: 3px 8px;
+  border-radius: 4px;
+  margin: 2px 3px 2px 0;
+  cursor: default;
+  position: relative;
+  transition: opacity .12s;
+}
+.prob-tag:hover { opacity: .85; }
+.prob-tag.p1 { background: var(--ltblue-bg);    color: var(--navy);   border: 1px solid #BDD0E8; }
+.prob-tag.p2 { background: var(--orange-light);  color: var(--orange); border: 1px solid #E8C4B8; }
+.prob-tag.p3 { background: #e8eef5;              color: var(--medblu); border: 1px solid #B8C8DA; }
+.prob-tag.p4 { background: var(--teal-light);    color: var(--teal);   border: 1px solid #A8CCC8; }
+.prob-tag.p5 { background: var(--steel-light);   color: var(--medblu); border: 1px solid #B8CCDF; }
+.prob-tag.p6 { background: var(--gold-light);    color: var(--gold);   border: 1px solid #DEC87A; }
+
+/* ─── PROB-TAG TOOLTIP ─── */
+.prob-tag::after {
+  content: attr(data-tip);
+  position: absolute;
+  bottom: calc(100% + 7px);
+  left: 50%;
+  transform: translateX(-50%);
+  background: var(--navy);
+  color: rgba(255,255,255,.92);
+  font-family: var(--font-body);
+  font-size: 11.5px;
+  font-weight: 400;
+  line-height: 1.5;
+  white-space: nowrap;
+  padding: 6px 10px;
+  border-radius: 6px;
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity .15s;
+  z-index: 100;
+  max-width: 240px;
+  white-space: normal;
+  text-align: center;
+  width: max-content;
+}
+.prob-tag::before {
+  content: '';
+  position: absolute;
+  bottom: calc(100% + 2px);
+  left: 50%;
+  transform: translateX(-50%);
+  border: 5px solid transparent;
+  border-top-color: var(--navy);
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity .15s;
+  z-index: 100;
+}
+.prob-tag:hover::after,
+.prob-tag:hover::before { opacity: 1; }
+
+/* ─── PERSONA ─── */
+.avatar {
+  width: 38px; height: 38px;
+  border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+  font-family: var(--font-head);
+  font-size: 12px; font-weight: 700;
+  flex-shrink: 0;
+}
+.avatar-navy   { background: var(--navy);   color: white; }
+.avatar-orange { background: var(--orange); color: white; }
+.avatar-steel  { background: var(--steel);  color: white; }
+.persona-header { display: flex; align-items: center; gap: 10px; margin-bottom: .6rem; }
+.persona-name  { font-family: var(--font-head); font-size: 13px; font-weight: 700; color: var(--navy); }
+.persona-role  { font-size: 11px; color: var(--text-3); }
+
+/* ─── GLOSSARY ─── */
+.gloss-search {
+  width: 100%;
+  padding: 9px 14px;
+  font-family: var(--font-body);
+  font-size: 13px;
+  border: 1px solid var(--border-str);
+  border-radius: var(--radius);
+  background: var(--surface);
+  color: var(--text);
+  margin-bottom: 1.25rem;
+  outline: none;
+  transition: border .12s;
+}
+.gloss-search:focus { border-color: var(--steel); }
+.gloss-cat { margin-bottom: 1.75rem; }
+.gloss-cat-title {
+  font-family: var(--font-head);
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: .06em;
+  text-transform: uppercase;
+  color: var(--navy);
+  padding-bottom: .5rem;
+  border-bottom: 2px solid var(--navy);
+  margin-bottom: .75rem;
+}
+.gloss-item { padding: .7rem 0; border-bottom: 1px solid var(--border); }
+.gloss-item:last-child { border-bottom: none; }
+.gloss-term { font-family: var(--font-head); font-size: 13px; font-weight: 700; color: var(--navy); margin-bottom: .2rem; }
+.gloss-def  { font-size: 13px; color: var(--text-2); line-height: 1.65; margin-bottom: .2rem; }
+.gloss-why  { font-size: 12px; color: var(--teal); font-style: italic; padding: .3rem .6rem; background: var(--teal-light); border-radius: 4px; margin-top: .35rem; }
+
+/* ─── DIVIDER ─── */
+.divider { height: 1px; background: var(--border); margin: 1.5rem 0; }
+
+/* ─── CALLOUT ─── */
+.callout {
+  padding: .85rem 1.1rem;
+  border-radius: var(--radius);
+  font-size: 13px;
+  line-height: 1.65;
+}
+.callout-orange { background: var(--orange-light); color: var(--orange); border-left: 3px solid var(--orange); }
+.callout-teal   { background: var(--teal-light);   color: var(--teal);   border-left: 3px solid var(--teal);   }
+.callout-navy   { background: var(--ltblue-bg);     color: var(--navy);   border-left: 3px solid var(--navy);   }
+.callout strong { font-weight: 700; }
+
+/* ─── MESSAGING CARD ─── */
+.msg-card {
+  background: var(--navy);
+  color: white;
+  border-radius: var(--radius-lg);
+  padding: 1.1rem 1.25rem;
+  margin-bottom: .75rem;
+}
+.msg-card .msg-label { font-family: var(--font-head); font-size: 9px; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; color: rgba(255,255,255,.45); margin-bottom: .4rem; }
+.msg-card .msg-quote { font-size: 13px; color: rgba(255,255,255,.9); line-height: 1.65; font-style: italic; }
+
+/* ─── UTIL ─── */
+.tag-row { display: flex; flex-wrap: wrap; gap: 3px; margin-top: .5rem; }
+.mt-1 { margin-top: .5rem; }
+.mt-2 { margin-top: 1rem; }
+.text-sm { font-size: 12px; color: var(--text-3); }
+.font-head { font-family: var(--font-head); }
+
+/* ─── PERSONA PILL LISTS ─── */
+.pill-list { display: flex; flex-direction: column; gap: .4rem; }
+.pill-item {
+  display: flex; align-items: flex-start; gap: 10px;
+  background: var(--surface2); border-radius: var(--radius);
+  padding: .55rem .8rem; font-size: 12.5px; color: var(--text-2); line-height: 1.5;
+}
+.pill-item .pill-icon { flex-shrink: 0; font-size: 13px; margin-top: 1px; font-weight: 700; }
+.pill-item.pi-bad  .pill-icon { color: var(--orange); }
+.pill-item.pi-good .pill-icon { color: var(--teal); }
+.pill-item.pi-reach .pill-icon { color: var(--steel); }
+
+/* ─── PERSONA TRAIT CHIPS ─── */
+.trait-row { display: flex; flex-wrap: wrap; gap: 5px; margin: .5rem 0 .25rem; }
+.trait-chip {
+  font-family: var(--font-head); font-size: 10px; font-weight: 700;
+  padding: 4px 10px; border-radius: 20px; border: 1px solid var(--border-str);
+  color: var(--text-2); background: var(--surface);
+}
+
+/* ─── PERSONA SECTION DIVIDER ─── */
+.persona-section-head {
+  display: flex; align-items: center; gap: 8px; margin: 1rem 0 .6rem;
+}
+.persona-section-head span {
+  font-family: var(--font-head); font-size: 9px; font-weight: 700;
+  letter-spacing: .08em; text-transform: uppercase; color: var(--text-3); white-space: nowrap;
+}
+.persona-section-head::after { content: ''; flex: 1; height: 1px; background: var(--border); }
+
+/* ─── PAIN LANDSCAPE EXPANDED ─── */
+.pain-expanded {
+  background: var(--surface); border: 1px solid var(--border);
+  border-radius: var(--radius-lg); margin-bottom: 1rem; overflow: hidden; box-shadow: var(--shadow);
+}
+.pain-expanded-header {
+  display: flex; align-items: center; gap: 14px;
+  padding: 1rem 1.25rem; cursor: pointer; transition: background .12s;
+}
+.pain-expanded-header:hover { background: var(--surface2); }
+.pain-num-lg {
+  width: 36px; height: 36px; border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+  font-family: var(--font-head); font-size: 13px; font-weight: 700; color: white; flex-shrink: 0;
+}
+.pain-header-text { flex: 1; }
+.pain-header-title { font-family: var(--font-head); font-size: 13px; font-weight: 700; color: var(--navy); }
+.pain-header-sub { font-size: 12px; color: var(--text-3); margin-top: 2px; }
+.pain-toggle { font-size: 16px; color: var(--text-3); transition: transform .2s; user-select: none; }
+.pain-toggle.open { transform: rotate(180deg); }
+.pain-expanded-body { display: none; padding: 0 1.25rem 1.25rem; border-top: 1px solid var(--border); }
+.pain-expanded-body.open { display: block; }
+.pain-detail-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px,1fr)); gap: .6rem; margin-top: 1rem; }
+.pain-detail-card { border-radius: var(--radius); padding: .75rem .9rem; font-size: 12.5px; line-height: 1.55; }
+.pain-detail-card .pdc-label {
+  font-family: var(--font-head); font-size: 9px; font-weight: 700;
+  letter-spacing: .07em; text-transform: uppercase; margin-bottom: .35rem;
+}
+.pdc-navy   { background: var(--ltblue-bg);   } .pdc-navy   .pdc-label { color: var(--navy); }
+.pdc-orange { background: var(--orange-light); } .pdc-orange .pdc-label { color: var(--orange); }
+.pdc-teal   { background: var(--teal-light);   } .pdc-teal   .pdc-label { color: var(--teal); }
+.pdc-gold   { background: var(--gold-light);   } .pdc-gold   .pdc-label { color: var(--gold); }
+.pain-quote {
+  margin-top: .85rem; padding: .7rem 1rem; background: var(--navy);
+  border-radius: var(--radius); font-size: 12.5px; color: rgba(255,255,255,.85); font-style: italic; line-height: 1.6;
+}
+.pain-products { margin-top: .85rem; display: flex; flex-wrap: wrap; gap: 5px; align-items: center; }
+.pain-products .pp-label { font-family: var(--font-head); font-size: 9px; font-weight: 700; letter-spacing: .06em; text-transform: uppercase; color: var(--text-3); margin-right: 4px; }
+
+/* ─── PERSONA COLLAPSIBLE ─── */
+.persona-expanded {
+  background: var(--surface); border: 1px solid var(--border);
+  border-radius: var(--radius-lg); margin-bottom: .75rem; overflow: hidden; box-shadow: var(--shadow);
+}
+.persona-expanded-header {
+  display: flex; align-items: center; gap: 14px;
+  padding: 1rem 1.25rem; cursor: pointer; transition: background .12s;
+}
+.persona-expanded-header:hover { background: var(--surface2); }
+.persona-expanded-body { display: none; padding: 0 1.25rem 1.25rem; border-top: 1px solid var(--border); }
+.persona-expanded-body.open { display: block; }
+.persona-toggle { font-size: 16px; color: var(--text-3); transition: transform .2s; user-select: none; flex-shrink: 0; }
+.persona-toggle.open { transform: rotate(180deg); }
 </style>
 </head>
 <body>
 
-<!-- ══ NAVIGATION ══ -->
-<header class="site-header" id="siteHeader">
-  <nav class="nav-inner">
-    <a href="/" class="nav-logo">
-      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 168.5" height="36">
-        <defs><style>.st0{fill:#5390cc}.st1{fill:#d84627}.st2{fill:#162A49}</style></defs>
-        <path class="st0" d="M237.5,3.3h-36.3c0,0-82.9,111.2-82.9,111.2L35.6,3.2H0l118.1,162.2c2.4-3.2,4.7-6.7,6.9-10.1L237.5,3.3Z"/>
-        <polygon class="st1" points="155 47.9 122.4 3.2 85.4 3.2 136.5 72.8 155 47.9"/>
-        <polygon class="st1" points="167.5 115.3 200.5 160.6 237.5 160.5 186 90.3 167.5 115.3"/>
-        <g>
-          <path class="st2" d="M334.9,49.3l-28.8,66.5h-15.2l-28.7-66.5h16.6l20.2,47.5,20.5-47.5h15.3Z"/>
-          <path class="st2" d="M372.2,115.7l-11.2-15.7-11.6,15.7h-16.1l19.7-25.7-19-25.3h16.6l10.8,14.9,11.1-14.9h15.8l-19,25,19.7,26.1h-16.8Z"/>
-          <path class="st2" d="M461.7,81.4h14.1v34.3h-11.6v-4c-4.6,3.4-10.6,5.1-17.8,5.1s-11.8-1.3-16.9-4c-5.1-2.7-9.2-6.5-12.2-11.6-3-5.1-4.6-11.2-4.6-18.2s1.6-12.8,4.7-18.1c3.1-5.3,7.5-9.4,13.1-12.4,5.6-3,11.8-4.5,18.8-4.5s11.1,1,15.9,2.9c4.7,2,8.7,4.8,12,8.5l-9.9,9.1c-4.7-5-10.5-7.5-17.2-7.5s-8,.9-11.3,2.7c-3.3,1.8-5.9,4.4-7.7,7.6-1.8,3.3-2.8,7.1-2.8,11.4s.9,8.3,2.7,11.5c1.8,3.2,4.2,5.6,7.3,7.2,3,1.6,6.4,2.4,10,2.4,5.4,0,9.9-1.5,13.6-4.6v-18Z"/>
-          <path class="st2" d="M512.2,65.8c3-1.3,6.5-1.9,10.4-1.9v13.7c-1.6-.1-2.8-.2-3.3-.2-4.2,0-7.6,1.2-10,3.6-2.4,2.4-3.6,5.9-3.6,10.7v24.1h-14.8v-51.1h14.1v6.7c1.8-2.5,4.2-4.3,7.2-5.6Z"/>
-          <path class="st2" d="M542.8,113.1c-4.3-2.2-7.6-5.4-10-9.4-2.4-4-3.6-8.5-3.6-13.6s1.2-9.6,3.6-13.6c2.4-4,5.7-7.1,10-9.4,4.3-2.2,9.1-3.4,14.5-3.4s10.2,1.1,14.4,3.4c4.2,2.2,7.6,5.4,10,9.4,2.4,4,3.6,8.5,3.6,13.6s-1.2,9.6-3.6,13.6c-2.4,4-5.7,7.1-10,9.4-4.2,2.2-9.1,3.4-14.4,3.4s-10.2-1.1-14.5-3.4ZM566.6,100.5c2.4-2.6,3.7-6,3.7-10.3s-1.2-7.7-3.7-10.3c-2.4-2.6-5.6-3.8-9.4-3.8s-6.9,1.3-9.4,3.8c-2.5,2.6-3.7,6-3.7,10.3s1.2,7.7,3.7,10.3c2.5,2.6,5.6,3.8,9.4,3.8s6.9-1.3,9.4-3.8Z"/>
-          <path class="st2" d="M648.6,64.6v51.1h-14.1v-6.1c-2,2.2-4.3,3.9-7,5.1-2.7,1.2-5.7,1.8-8.8,1.8-6.7,0-12-1.9-15.9-5.8-3.9-3.9-5.9-9.6-5.9-17.2v-28.9h14.8v26.7c0,8.2,3.4,12.3,10.3,12.3s6.4-1.2,8.5-3.5c2.2-2.3,3.2-5.7,3.2-10.3v-25.3h14.8Z"/>
-          <path class="st2" d="M707.5,67.2c3.9,2.2,6.9,5.3,9.2,9.2,2.2,4,3.3,8.6,3.3,13.8s-1.1,9.9-3.3,13.8c-2.2,4-5.3,7-9.2,9.2-3.9,2.2-8.2,3.3-13,3.3s-11.6-2.1-15.4-6.2v23.8h-14.8v-69.5h14.1v5.9c3.7-4.4,9-6.6,16-6.6s9.1,1.1,13,3.3ZM701.3,100.5c2.4-2.6,3.7-6,3.7-10.3s-1.2-7.7-3.7-10.3c-2.4-2.6-5.6-3.8-9.4-3.8s-6.9,1.3-9.4,3.8c-2.4,2.6-3.7,6-3.7,10.3s1.2,7.7,3.7,10.3c2.4,2.6,5.6,3.8,9.4,3.8s6.9-1.3,9.4-3.8Z"/>
-        </g>
-      </svg>
-    </a>
-    <div class="nav-links">
-      <a href="#system" class="nav-link">The System <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg></a>
-      <a href="#for-section" class="nav-link">Solutions <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg></a>
-      <a href="#system" class="nav-link">Programs <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg></a>
-      <a href="#insights" class="nav-link">Insights <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg></a>
-      <a href="#insights" class="nav-link">Resources</a>
-      <a href="#team" class="nav-link">About</a>
+<!-- HEADER -->
+<header class="site-header">
+  <div class="header-left">
+    <!-- VX GROUP PRIMARY LOGO — DARK BACKGROUND -->
+    <div class="vx-logo" style="width:140px;">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 168.5">
+      <defs><style>.st0{fill:#5390cc}.st1{fill:#d84627}.st2{fill:#ffffff}</style></defs>
+      <path class="st0" d="M237.5,3.3h-36.3c0,0-82.9,111.2-82.9,111.2L35.6,3.2H0l118.1,162.2c2.4-3.2,4.7-6.7,6.9-10.1L237.5,3.3Z"/>
+      <polygon class="st1" points="155 47.9 122.4 3.2 85.4 3.2 136.5 72.8 155 47.9"/>
+      <polygon class="st1" points="167.5 115.3 200.5 160.6 237.5 160.5 186 90.3 167.5 115.3"/>
+      <g>
+        <path class="st2" d="M334.9,49.3l-28.8,66.5h-15.2l-28.7-66.5h16.6l20.2,47.5,20.5-47.5h15.3Z"/>
+        <path class="st2" d="M372.2,115.7l-11.2-15.7-11.6,15.7h-16.1l19.7-25.7-19-25.3h16.6l10.8,14.9,11.1-14.9h15.8l-19,25,19.7,26.1h-16.8Z"/>
+        <path class="st2" d="M461.7,81.4h14.1v34.3h-11.6v-4c-4.6,3.4-10.6,5.1-17.8,5.1s-11.8-1.3-16.9-4c-5.1-2.7-9.2-6.5-12.2-11.6-3-5.1-4.6-11.2-4.6-18.2s1.6-12.8,4.7-18.1c3.1-5.3,7.5-9.4,13.1-12.4,5.6-3,11.8-4.5,18.8-4.5s11.1,1,15.9,2.9c4.7,2,8.7,4.8,12,8.5l-9.9,9.1c-4.7-5-10.5-7.5-17.2-7.5s-8,.9-11.3,2.7c-3.3,1.8-5.9,4.4-7.7,7.6-1.8,3.3-2.8,7.1-2.8,11.4s.9,8.3,2.7,11.5c1.8,3.2,4.2,5.6,7.3,7.2,3,1.6,6.4,2.4,10,2.4,5.4,0,9.9-1.5,13.6-4.6v-18Z"/>
+        <path class="st2" d="M512.2,65.8c3-1.3,6.5-1.9,10.4-1.9v13.7c-1.6-.1-2.8-.2-3.3-.2-4.2,0-7.6,1.2-10,3.6-2.4,2.4-3.6,5.9-3.6,10.7v24.1h-14.8v-51.1h14.1v6.7c1.8-2.5,4.2-4.3,7.2-5.6Z"/>
+        <path class="st2" d="M542.8,113.1c-4.3-2.2-7.6-5.4-10-9.4-2.4-4-3.6-8.5-3.6-13.6s1.2-9.6,3.6-13.6c2.4-4,5.7-7.1,10-9.4,4.3-2.2,9.1-3.4,14.5-3.4s10.2,1.1,14.4,3.4c4.2,2.2,7.6,5.4,10,9.4,2.4,4,3.6,8.5,3.6,13.6s-1.2,9.6-3.6,13.6c-2.4,4-5.7,7.1-10,9.4-4.2,2.2-9.1,3.4-14.4,3.4s-10.2-1.1-14.5-3.4ZM566.6,100.5c2.4-2.6,3.7-6,3.7-10.3s-1.2-7.7-3.7-10.3c-2.4-2.6-5.6-3.8-9.4-3.8s-6.9,1.3-9.4,3.8c-2.5,2.6-3.7,6-3.7,10.3s1.2,7.7,3.7,10.3c2.5,2.6,5.6,3.8,9.4,3.8s6.9-1.3,9.4-3.8Z"/>
+        <path class="st2" d="M648.6,64.6v51.1h-14.1v-6.1c-2,2.2-4.3,3.9-7,5.1-2.7,1.2-5.7,1.8-8.8,1.8-6.7,0-12-1.9-15.9-5.8-3.9-3.9-5.9-9.6-5.9-17.2v-28.9h14.8v26.7c0,8.2,3.4,12.3,10.3,12.3s6.4-1.2,8.5-3.5c2.2-2.3,3.2-5.7,3.2-10.3v-25.3h14.8Z"/>
+        <path class="st2" d="M707.5,67.2c3.9,2.2,6.9,5.3,9.2,9.2,2.2,4,3.3,8.6,3.3,13.8s-1.1,9.9-3.3,13.8c-2.2,4-5.3,7-9.2,9.2-3.9,2.2-8.2,3.3-13,3.3s-11.6-2.1-15.4-6.2v23.8h-14.8v-69.5h14.1v5.9c3.7-4.4,9-6.6,16-6.6s9.1,1.1,13,3.3ZM701.3,100.5c2.4-2.6,3.7-6,3.7-10.3s-1.2-7.7-3.7-10.3c-2.4-2.6-5.6-3.8-9.4-3.8s-6.9,1.3-9.4,3.8c-2.4,2.6-3.7,6-3.7,10.3s1.2,7.7,3.7,10.3c2.4,2.6,5.6,3.8,9.4,3.8s6.9-1.3,9.4-3.8Z"/>
+      </g>
+    </svg>
     </div>
-    <div class="nav-cta">
-      <a href="#final-cta" class="btn btn-primary btn-sm">Book a Call →</a>
-    </div>
-  </nav>
+    <div class="header-divider"></div>
+    <span class="header-title">Family Office &amp; PE — GTM Hub</span>
+  </div>
+  <span class="header-badge">Internal Use Only</span>
 </header>
 
-<!-- ══ SECTION 2: HERO ══ -->
-<section class="hero" id="hero">
-  <div class="hero-grid">
-    <div class="hero-left">
-      <div class="hero-eyebrow">The Growth Operating System for B2B</div>
-      <h1>Growth is a <em>system,</em><br>not a sprint.</h1>
-      <p class="hero-sub">Vx Group installs MiMOS™ — the Measured in Millions® Operating System — inside relationship-driven B2B companies. We turn the trust you've built into a system that grows without you.</p>
-      <div class="hero-ctas">
-        <a href="#final-cta" class="btn btn-primary btn-lg">Start with Quick Start™ — $9,500 →</a>
-        <a href="#system" class="btn btn-ghost-white">See How MiMOS™ Works</a>
-      </div>
-      <div class="hero-trust">
-        <span class="hero-trust-label">Trusted by</span>
-        <div class="hero-trust-logos">
-          <span class="trust-logo">Main St Capital</span>
-          <span class="trust-logo">Hemingway Capital</span>
-          <span class="trust-logo">Validor Capital</span>
-          <span class="trust-logo">+ more</span>
-        </div>
-      </div>
-    </div>
-    <div class="hero-visual">
-      <div class="hero-diagram">
-        <div class="diagram-label">MiMOS™ Operating System</div>
-        <div class="diagram-rings">
-          <div class="ring ring-1">
-            <div style="position:absolute;top:-5px;left:50%;transform:translateX(-50%);width:10px;height:10px;border-radius:50%;background:rgba(98,144,201,.5)"></div>
-          </div>
-          <div class="ring ring-2">
-            <div style="position:absolute;bottom:-5px;left:50%;transform:translateX(-50%);width:10px;height:10px;border-radius:50%;background:rgba(201,82,52,.6)"></div>
-          </div>
-          <div class="ring ring-3">
-            <div style="position:absolute;right:-5px;top:50%;transform:translateY(-50%);width:10px;height:10px;border-radius:50%;background:rgba(58,131,123,.6)"></div>
-          </div>
-          <div class="ring-center">
-            <div class="ring-center-text">MiM™<br>OS</div>
-          </div>
-          <span class="orbit-label" style="top:8px;right:-10px;font-size:8px">QUICK START™</span>
-          <span class="orbit-label" style="bottom:40px;right:-15px;font-size:8px">FIRST 180™</span>
-          <span class="orbit-label" style="bottom:8px;left:-5px;font-size:8px">GROWTH PLAN</span>
-        </div>
-        <div class="diagram-steps">
-          <div class="diagram-step">
-            <div class="ds-num">01</div>
-            <div class="ds-name">Quick Start™</div>
-          </div>
-          <div class="diagram-step">
-            <div class="ds-num">02</div>
-            <div class="ds-name">Playbook</div>
-          </div>
-          <div class="diagram-step">
-            <div class="ds-num">03</div>
-            <div class="ds-name">First 180™</div>
-          </div>
-          <div class="diagram-step">
-            <div class="ds-num">04</div>
-            <div class="ds-name">MiMOS™</div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
+<!-- LAYOUT -->
+<div class="layout">
 
-<!-- ══ SECTION 3: AEO ANSWER BLOCK ══ -->
-<section class="aeo-band">
-  <div class="aeo-grid">
-    <div class="aeo-card fade-up">
-      <div class="aeo-q">What is a growth operating system?</div>
-      <div class="aeo-a">A growth operating system is a structured, repeatable system installed inside a business that makes growth organizational — not personal. It defines who your best customers are, how you open new relationships, who owns each growth role, and how progress is measured. Unlike consulting, it runs after the engagement ends.</div>
-      <a href="#system" class="aeo-link">Learn about MiMOS™ →</a>
-    </div>
-    <div class="aeo-card fade-up" style="transition-delay:.1s">
-      <div class="aeo-q">How is MiMOS™ different from EOS?</div>
-      <div class="aeo-a">EOS focuses on entrepreneurial operating habits — meetings, accountability, and traction. MiMOS™ installs a growth system specifically built for B2B companies whose revenue depends on relationships. Where EOS asks "how do you run your business," MiMOS™ asks "how do you grow it?" They complement each other — MiMOS™ is the commercial engine EOS doesn't include.</div>
-      <a href="#system" class="aeo-link">MiMOS™ vs EOS →</a>
-    </div>
-    <div class="aeo-card fade-up" style="transition-delay:.2s">
-      <div class="aeo-q">Who is Vx Group for?</div>
-      <div class="aeo-a">Vx Group serves B2B companies with $25M–$100M in revenue whose growth depends on high-value relationships — manufacturers, distributors, channel-sold businesses, and PE-backed portfolio companies. If your best customers represent years of earned trust and your growth is tied to a few people, MiMOS™ was built for you.</div>
-      <a href="#for-section" class="aeo-link">See who we serve →</a>
-    </div>
-  </div>
-</section>
+  <!-- SIDEBAR -->
+  <nav class="sidebar">
+    <div class="nav-group-label">ICP Framework</div>
+    <button class="nav-btn active" onclick="showTab('icp', this)"><span class="nav-dot"></span>ICP Overview</button>
+    <button class="nav-btn" onclick="showTab('personas', this)"><span class="nav-dot"></span>Personas</button>
+    <button class="nav-btn" onclick="showTab('problems', this)"><span class="nav-dot"></span>Pain Landscape</button>
 
-<!-- ══ SECTION 4: THE PROBLEM ══ -->
-<section class="problem-band">
-  <div class="problem-inner">
-    <div class="eyebrow eyebrow-white">The Problem</div>
-    <h2>You grew on relationships.<br>They're now the <em>riskiest</em> thing<br>about your business.</h2>
-    <div class="problem-pillars fade-up">
-      <div class="prob-pill">
-        <div class="prob-icon pi-orange">👤</div>
-        <h3>Owner-dependent growth</h3>
-        <p>If the founder, the top rep, or a key relationships person left tomorrow, growth would stall. That's not a business — it's a person with a company around them.</p>
-      </div>
-      <div class="prob-pill">
-        <div class="prob-icon pi-steel">📋</div>
-        <h3>No repeatable system</h3>
-        <p>Ask how new customers are found and the answer is "relationships" or "word of mouth." There's no process, no playbook, and no one who owns it. Growth is hope, not a plan.</p>
-      </div>
-      <div class="prob-pill">
-        <div class="prob-icon pi-teal">⚡</div>
-        <h3>Reactive, not intentional</h3>
-        <p>Marketing reacts to operations. Sales reacts to inquiries. There's no forward motion — just constant friction between departments that should be pulling in the same direction.</p>
-      </div>
-    </div>
-  </div>
-</section>
+    <div class="nav-group-label">Product</div>
+    <button class="nav-btn" onclick="showTab('products', this)"><span class="nav-dot"></span>Product Mapping</button>
 
-<!-- ══ SECTION 5: THE SYSTEM ══ -->
-<section class="system-section" id="system">
-  <div class="container">
-    <div class="section-header fade-up">
-      <div class="eyebrow">MiMOS™</div>
-      <h2>MiMOS™ installs a growth system<br>in your business.</h2>
-      <p>Two roles. Six workshops. One Digital Playbook. A six-month activation plan tailored to you.</p>
-    </div>
-    <div class="system-steps fade-up">
-      <div class="sys-step" onclick="location.href='#final-cta'">
-        <div class="sys-step-num sn-1">1</div>
-        <h3>Quick Start™</h3>
-        <p>6 workshops over 6 weeks<br>$9,500 — no commitment</p>
-      </div>
-      <div class="sys-step" onclick="location.href='#final-cta'">
-        <div class="sys-step-num sn-2">2</div>
-        <h3>Digital Playbook</h3>
-        <p>Your complete growth system documented and owned by your team</p>
-      </div>
-      <div class="sys-step" onclick="location.href='#final-cta'">
-        <div class="sys-step-num sn-3">3</div>
-        <h3>First 180™</h3>
-        <p>A sequenced 6-month activation plan with up to 5 program recommendations</p>
-      </div>
-      <div class="sys-step" onclick="location.href='#final-cta'">
-        <div class="sys-step-num sn-4">4</div>
-        <h3>MiMOS™ Rhythm</h3>
-        <p>An operating cadence your leadership team runs — long after the engagement ends</p>
-      </div>
-    </div>
-    <div class="sys-cta fade-up">
-      <a href="#final-cta" class="btn btn-primary">See the full system →</a>
-    </div>
-  </div>
-</section>
+    <div class="nav-group-label">GTM Intelligence</div>
+    <button class="nav-btn" onclick="showTab('glossary', this)"><span class="nav-dot"></span>ICP Glossary</button>
 
-<!-- ══ SECTION 6: FOUR BELIEFS ══ -->
-<section class="beliefs-section">
-  <div class="container">
-    <div class="section-header fade-up">
-      <div class="eyebrow">The Philosophy</div>
-      <h2>Built on four beliefs that turn<br>instinct into clarity.</h2>
+    <div class="sidebar-footer">
+      <p>Vx Group · MiM™ GTM Series<br>Family Office &amp; PE Vertical<br>thevxgroup.com · v1.1</p>
     </div>
-    <div class="beliefs-grid fade-up">
-      <div class="belief-card">
-        <div class="belief-num bn-1">01</div>
-        <div class="belief-content">
-          <h3>One Relationship Can Change Everything</h3>
-          <p>The most valuable companies in relationship-driven B2B were built on a handful of transformational customers — Generational Customers™ whose lifetime value is measured in millions. Identifying them isn't luck. It's a system.</p>
-        </div>
-      </div>
-      <div class="belief-card">
-        <div class="belief-num bn-2">02</div>
-        <div class="belief-content">
-          <h3>Growth Comes from Clarity, Not Luck</h3>
-          <p>The businesses that grow consistently know exactly who their Ideal Profiles are, where they find them, and what it takes to open those relationships. Clarity at every stage of the commercial process is the foundation of a growth system.</p>
-        </div>
-      </div>
-      <div class="belief-card">
-        <div class="belief-num bn-3">03</div>
-        <div class="belief-content">
-          <h3>Systems Make Relationships Scalable</h3>
-          <p>Great relationship builders are an asset — but an undocumented one. When the system lives in one person's head, the company's growth is only as durable as that person's tenure. Systems make what they do repeatable.</p>
-        </div>
-      </div>
-      <div class="belief-card">
-        <div class="belief-num bn-4">04</div>
-        <div class="belief-content">
-          <h3>Trust Compounds</h3>
-          <p>In relationship-driven B2B, every interaction either builds or erodes trust. A growth system that activates trust — from first impression through long-term account expansion — is the most powerful commercial engine a business can install.</p>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
+  </nav>
 
-<!-- ══ SECTION 7: WHO IT'S FOR ══ -->
-<section class="for-section" id="for-section">
-  <div class="container">
-    <div class="section-header fade-up">
-      <div class="eyebrow">Solutions</div>
-      <h2>Built for B2B companies whose<br>growth depends on relationships.</h2>
-    </div>
-    <div class="for-grid fade-up">
-      <a href="#" class="for-card">
-        <div class="for-card-head fch-1">
-          <h3>For Owners &amp; CEOs</h3>
-          <p>$25M–$100M revenue · multi-generational or PE-backed · growth plateaued on relationships</p>
-        </div>
-        <div class="for-card-body">
-          <div class="for-outcome">What changes →</div>
-          <div class="for-body-text">You stop growing on hope and start growing on a system. A documented playbook your team runs. Clarity on where your best next customers are. Progress you can report upstairs with confidence.</div>
-          <span class="for-card-link">See the Owner/CEO solutions →</span>
-        </div>
-      </a>
-      <a href="#" class="for-card">
-        <div class="for-card-head fch-2">
-          <h3>For Private Equity</h3>
-          <p>Portfolio companies that stall on growth · no repeatable commercial system across holdings</p>
-        </div>
-        <div class="for-card-body">
-          <div class="for-outcome">What changes →</div>
-          <div class="for-body-text">One growth operating system installed across your portfolio — standardized, portable, scalable. The same diagnostic, the same reporting artifacts, the same compounding system. Deploy once. Replicate everywhere.</div>
-          <span class="for-card-link">See PE solutions →</span>
-        </div>
-      </a>
-      <a href="#" class="for-card">
-        <div class="for-card-head fch-3">
-          <h3>For Manufacturing &amp; Distribution</h3>
-          <p>Contract manufacturers, machine shops, OEM suppliers, and channel-sold brands</p>
-        </div>
-        <div class="for-card-body">
-          <div class="for-outcome">What changes →</div>
-          <div class="for-body-text">You stop being the best-kept secret. Your brand matches the quality of your work. New account outreach is documented, owned, and running. Your top rep's approach becomes your whole team's standard.</div>
-          <span class="for-card-link">See manufacturing solutions →</span>
-        </div>
-      </a>
-    </div>
-    <div class="qualifier-strip fade-up">
-      <div class="qs-item">$25M–$100M revenue</div>
-      <div class="qs-item">Multi-generational or PE-backed</div>
-      <div class="qs-item">Channel, direct, or hybrid B2B</div>
-      <div class="qs-item">Relationship-driven growth model</div>
-    </div>
-  </div>
-</section>
+  <!-- MAIN -->
+  <main class="main">
 
-<!-- ══ SECTION 8: PROOF ══ -->
-<section class="proof-section">
-  <div class="container">
-    <div class="section-header fade-up">
-      <div class="eyebrow">Client Outcomes</div>
-      <h2>Outcomes that compound.</h2>
-    </div>
-    <div class="proof-grid fade-up">
-      <div class="proof-card">
-        <div class="proof-archetype">Contract Manufacturer · OEM Supplier</div>
-        <div class="proof-quote">We'd been supplying the same three customers for 15 years. After Quick Start™, we had a documented playbook for new accounts and our first new Tier-1 relationship in over a decade.</div>
-        <div class="proof-stats">
-          <div class="proof-stat">
-            <div class="ps-val">3→9</div>
-            <div class="ps-label">Active target accounts</div>
+    <!-- ══════════════════════════════
+         TAB: ICP OVERVIEW
+    ══════════════════════════════ -->
+    <div id="tab-icp" class="tab-panel active">
+      <div class="page-header">
+        <div class="page-eyebrow">ICP Overview</div>
+        <div class="page-title">Family Office &amp; PE-Owned Family Office</div>
+        <div class="page-sub">A breakdown of who this vertical is, why MiM™ is a strong fit, and the qualification guardrails that matter before advancing a relationship.</div>
+      </div>
+
+      <div class="section-label">Who they are</div>
+      <div class="grid-2">
+        <div class="card">
+          <div class="card-title">Family Offices</div>
+          <div class="card-body">Private wealth management organizations managing investments, assets, and often operating companies for ultra-high-net-worth families. Investment horizons are long — measured in decades, not fund cycles. Relationship-first culture by nature. The operating companies they own are the MiM™ client.</div>
+          <div class="tag-row mt-1">
+            <span class="badge badge-navy">Long time horizon</span>
+            <span class="badge badge-teal">Legacy oriented</span>
+            <span class="badge badge-teal">Relationship-first</span>
           </div>
-          <div class="proof-stat">
-            <div class="ps-val">6 wks</div>
-            <div class="ps-label">To playbook complete</div>
+        </div>
+        <div class="card">
+          <div class="card-title">PE Firms with Family Office Structure</div>
+          <div class="card-body">Private equity firms structured as or backed by family offices. Prioritize sustainable value creation over rapid exits. Portfolio companies receive more patient capital and longer runway — but still need growth systems to perform and protect enterprise value.</div>
+          <div class="tag-row mt-1">
+            <span class="badge badge-steel">Patient capital</span>
+            <span class="badge badge-steel">Value creation focus</span>
+            <span class="badge badge-steel">Multi-company</span>
           </div>
         </div>
       </div>
-      <div class="proof-card">
-        <div class="proof-archetype">PE Portfolio Company · Industrial Services</div>
-        <div class="proof-quote">The family office asked for a growth plan every quarter. We'd been giving them activity reports. After MiMOS™, we finally had an actual plan — and the confidence to defend it in every review.</div>
-        <div class="proof-stats">
-          <div class="proof-stat">
-            <div class="ps-val">18mo</div>
-            <div class="ps-label">To hit growth targets</div>
-          </div>
-          <div class="proof-stat">
-            <div class="ps-val">+31%</div>
-            <div class="ps-label">Revenue growth</div>
-          </div>
-        </div>
-      </div>
-      <div class="proof-card">
-        <div class="proof-archetype">Distribution Company · Channel Sales</div>
-        <div class="proof-quote">Our top salesperson was carrying everything. MiMOS™ gave us the infrastructure to bottle what she was doing and get the whole team operating at her level. The gap closed significantly in six months.</div>
-        <div class="proof-stats">
-          <div class="proof-stat">
-            <div class="ps-val">73%→52%</div>
-            <div class="ps-label">Close rate gap closed</div>
-          </div>
-          <div class="proof-stat">
-            <div class="ps-val">4x</div>
-            <div class="ps-label">Faster rep onboarding</div>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div class="proof-section-cta fade-up">
-      <a href="#" class="btn btn-ghost-navy">Read all client stories →</a>
-    </div>
-  </div>
-</section>
 
-<!-- ══ SECTION 9: TEAM ══ -->
-<section class="team-section" id="team">
-  <div class="container">
-    <div class="team-intro fade-up">
-      <div class="team-intro-text">
-        <div class="eyebrow">The Team</div>
-        <h2>Every engagement is led by a<br>Coach + Architect pair.</h2>
-        <p>We don't assign account managers. We assign Coach + Architect pairs — two dedicated specialists who lead every workshop, build every deliverable, and stay accountable to your outcomes from day one through the end of your First 180™.</p>
-        <a href="#" class="btn btn-ghost-navy">Meet the team →</a>
+      <div class="divider"></div>
+      <div class="section-label">ICP fit at a glance</div>
+      <div class="stat-row">
+        <div class="stat-card"><div class="stat-label">Revenue sweet spot</div><div class="stat-val">$5–$50M</div></div>
+        <div class="stat-card"><div class="stat-label">Qualified range</div><div class="stat-val">up to $100M</div></div>
+        <div class="stat-card"><div class="stat-label">Employees</div><div class="stat-val">10–200</div></div>
+        <div class="stat-card"><div class="stat-label">Monthly retainer</div><div class="stat-val">$3–$12K</div></div>
+        <div class="stat-card"><div class="stat-label">LTV potential</div><div class="stat-val">$36K–$1M+</div></div>
       </div>
-      <div class="role-cards">
-        <div class="role-card rc-coach">
-          <div class="rc-label">Role 01</div>
-          <div class="rc-title">The Coach</div>
-          <div class="rc-desc">Leads Workshops 1, 2, and 6. Works directly with company leadership on clarity, alignment, and the strategic foundation of the growth plan. Keeps the room focused and the decisions defensible.</div>
-        </div>
-        <div class="role-card rc-arch">
-          <div class="rc-label">Role 02</div>
-          <div class="rc-title">The Architect</div>
-          <div class="rc-desc">Leads Workshops 3, 4, and 5. Builds the system — the brand and tech audit, the priority market analysis, the ideal profile framework. Produces the Digital Playbook you take home.</div>
-        </div>
-      </div>
-    </div>
-    <div class="team-grid fade-up">
-      <div class="team-member">
-        <div class="team-avatar ta-1">EZ</div>
-        <div class="tm-name">Eric Zoromski</div>
-        <div class="tm-role">Coach</div>
-      </div>
-      <div class="team-member">
-        <div class="team-avatar ta-2">DT</div>
-        <div class="tm-name">David Tisdale</div>
-        <div class="tm-role">Architect</div>
-      </div>
-      <div class="team-member">
-        <div class="team-avatar ta-3">RK</div>
-        <div class="tm-name">Ryan Knapp</div>
-        <div class="tm-role">Coach</div>
-      </div>
-      <div class="team-member">
-        <div class="team-avatar ta-4">KW</div>
-        <div class="tm-name">Kelsey Weaver</div>
-        <div class="tm-role">Architect</div>
-      </div>
-      <div class="team-member">
-        <div class="team-avatar ta-5">JC</div>
-        <div class="tm-name">Jacob Camhi</div>
-        <div class="tm-role">Leadership</div>
-      </div>
-      <div class="team-member">
-        <div class="team-avatar ta-6">TH</div>
-        <div class="tm-name">Tim Hogan</div>
-        <div class="tm-role">Creative</div>
-      </div>
-    </div>
-  </div>
-</section>
 
-<!-- ══ SECTION 10: INSIGHTS ══ -->
-<section class="insights-section" id="insights">
-  <div class="container">
-    <div class="section-header fade-up">
-      <div class="eyebrow">Insights</div>
-      <h2>Sharper thinking on<br>relationship-driven growth.</h2>
-    </div>
-    <div class="insights-grid fade-up">
-      <a href="#" class="insight-card">
-        <div class="insight-thumb it-growth"></div>
-        <div class="insight-body">
-          <div class="insight-meta">
-            <span class="ic-chip icc-growth">Growth Systems</span>
-            <span class="ic-chip badge-navy">Pillar</span>
-            <span class="ic-read">8 min read</span>
-          </div>
-          <h3>What Is a Growth Operating System? (And Why Your Business Needs One)</h3>
-          <p>A growth operating system is the documented, repeatable system that makes revenue growth organizational rather than personal. Here's what it includes — and what it replaces.</p>
-        </div>
-      </a>
-      <a href="#" class="insight-card">
-        <div class="insight-thumb it-icp"></div>
-        <div class="insight-body">
-          <div class="insight-meta">
-            <span class="ic-chip icc-icp">Ideal Customer Profile</span>
-            <span class="ic-chip badge-navy">How-To</span>
-            <span class="ic-read">6 min read</span>
-          </div>
-          <h3>How to Create an Ideal Customer Profile for B2B Sales</h3>
-          <p>The ICP you have is probably demographic. The one you need is behavioral. Here's the framework MiMOS™ uses to build profiles that actually change who your team pursues.</p>
-        </div>
-      </a>
-      <a href="#" class="insight-card">
-        <div class="insight-thumb it-sales"></div>
-        <div class="insight-body">
-          <div class="insight-meta">
-            <span class="ic-chip icc-sales">Sales &amp; Relationships</span>
-            <span class="ic-chip badge-navy">Pillar</span>
-            <span class="ic-read">10 min read</span>
-          </div>
-          <h3>The Relationship-Driven Growth Playbook: How to Scale What Your Best Rep Does</h3>
-          <p>Your top salesperson closes at 73%. The rest close at 30%. The gap isn't skill — it's infrastructure. Here's how to build a system that closes it.</p>
-        </div>
-      </a>
-    </div>
-    <div style="text-align:center" class="fade-up">
-      <a href="#" class="btn btn-ghost-navy">Browse all Insights →</a>
-    </div>
-  </div>
-</section>
+      <div class="divider"></div>
+      <div class="section-label">Ownership preference</div>
+      <div class="callout callout-teal" style="margin-bottom:.75rem">
+        <strong>Family office–owned businesses are explicitly preferred over pure PE</strong> in the Vx Group ICP. PE-owned companies qualify only when the investor prioritizes long-term value creation — not short-term extraction. Ownership orientation must be confirmed before advancing any relationship.
+      </div>
 
-<!-- ══ SECTION 11: FINAL CTA ══ -->
-<section class="final-cta" id="final-cta">
-  <div class="container-narrow">
-    <div class="eyebrow eyebrow-white fade-up">Ready to start</div>
-    <h2 class="fade-up">Ready to make growth<br>a system?</h2>
-    <p class="fade-up">Start with Quick Start™. Six workshops over six weeks, $9,500, no long-term commitment. You'll walk out with a documented playbook and a prioritized path forward your leadership team built together.</p>
-    <div class="final-cta-btns fade-up">
-      <a href="#" class="btn btn-white btn-lg">Book your Quick Start™ call →</a>
-      <a href="#" class="btn btn-ghost-white btn-lg">Download the MiMOS™ overview</a>
-    </div>
-  </div>
-</section>
+      <div class="divider"></div>
+      <div class="section-label">Why MiM™ fits this vertical</div>
+      <div class="grid-3">
+        <div class="card"><div class="card-title">Long horizons align</div><div class="card-body">MiM™ is a compounding system — not a sprint. Family offices think the same way.</div></div>
+        <div class="card"><div class="card-title">Portfolio companies match the ICP</div><div class="card-body">"Best kept secret" generational businesses — strong relationships, no growth system.</div></div>
+        <div class="card"><div class="card-title">One relationship, multiple engagements</div><div class="card-body">A family office with 5–10 portfolio companies is a MiM™ multiplier at the fund level.</div></div>
+        <div class="card"><div class="card-title">Relationship-first culture</div><div class="card-body">MiM™'s core belief already matches how these businesses operate and think about growth.</div></div>
+        <div class="card"><div class="card-title">De-risks enterprise value</div><div class="card-body">Growth systems reduce key-person dependency — directly impactful to portfolio company valuations.</div></div>
+        <div class="card"><div class="card-title">Arkenology™ angle</div><div class="card-body">Knowledge loss risk is acute in legacy businesses mid-transition or approaching succession.</div></div>
+      </div>
 
-<!-- ══ FOOTER ══ -->
-<footer class="site-footer">
-  <div class="container">
-    <div class="footer-grid">
-      <div>
-        <div class="footer-col-head">Company</div>
-        <ul class="footer-links">
-          <li><a href="#">About</a></li>
-          <li><a href="#">Team</a></li>
-          <li><a href="#">Careers</a></li>
-          <li><a href="#">Press</a></li>
-          <li><a href="#">Contact</a></li>
-          <li><a href="#">Partner with Us</a></li>
-        </ul>
+      <div class="divider"></div>
+      <div class="section-label">Existing client proof points</div>
+      <div class="card">
+        <div class="card-body">Current and past clients validating this vertical: <strong>Main St Capital Corporation</strong> &nbsp;·&nbsp; <strong>Hemingway Capital</strong> &nbsp;·&nbsp; <strong>Validor Capital</strong></div>
       </div>
-      <div>
-        <div class="footer-col-head">The System</div>
-        <ul class="footer-links">
-          <li><a href="#">MiMOS™</a></li>
-          <li><a href="#">The Philosophy</a></li>
-          <li><a href="#">Quick Start™</a></li>
-          <li><a href="#">First 180™</a></li>
-          <li><a href="#">MiMOS™ vs EOS</a></li>
-        </ul>
-      </div>
-      <div>
-        <div class="footer-col-head">Programs</div>
-        <ul class="footer-links">
-          <li><a href="#">All Programs</a></li>
-          <li><a href="#">Brand Modernization</a></li>
-          <li><a href="#">Trade Show Program</a></li>
-          <li><a href="#">Land Strategy Planning</a></li>
-          <li><a href="#">First Impressions Suite</a></li>
-          <li><a href="#">Website Development</a></li>
-        </ul>
-      </div>
-      <div>
-        <div class="footer-col-head">Resources</div>
-        <ul class="footer-links">
-          <li><a href="#">Insights</a></li>
-          <li><a href="#">Free Tools</a></li>
-          <li><a href="#">Templates</a></li>
-          <li><a href="#">Trade Show ROI Calculator</a></li>
-          <li><a href="#">ICP Scorecard</a></li>
-          <li><a href="#">Newsletter</a></li>
-        </ul>
+
+      <div class="divider"></div>
+      <div class="section-label">Disqualifiers — do not advance</div>
+      <div class="callout callout-orange">
+        <strong>Hard stops:</strong> Short-term extraction orientation &nbsp;·&nbsp; B2C portfolio companies &nbsp;·&nbsp; Revenue below $5M without exception review &nbsp;·&nbsp; No executive-level access or sponsorship
       </div>
     </div>
-    <div class="footer-bottom">
-      <div>
-        <div class="footer-tagline">GROWTH IS GOOD™</div>
-        <div style="font-size:11px;color:rgba(255,255,255,.25);margin-top:4px">Wisconsin + South Carolina · thevxgroup.com</div>
+
+    <!-- ══════════════════════════════
+         TAB: PAIN LANDSCAPE
+    ══════════════════════════════ -->
+    <div id="tab-problems" class="tab-panel">
+      <div class="page-header">
+        <div class="page-eyebrow">Pain Landscape</div>
+        <div class="page-title">Six Core Pain States</div>
+        <div class="page-sub">The recurring problems carried by family office–owned operating companies. Click any pain state to expand the full picture — what it looks like on the ground, why it matters to the investor, and how MiM™ addresses it.</div>
       </div>
-      <div class="footer-meta">
-        <div class="footer-social">
-          <a href="#" class="social-btn">in</a>
-          <a href="#" class="social-btn">yt</a>
-          <a href="#" class="social-btn">sp</a>
+
+      <div class="callout callout-navy" style="margin-bottom:1.5rem">
+        <strong>The structural root cause:</strong> These aren't six separate problems — they're one condition. A business that grew through people and relationships, never through systems. When the family office acquires it, they inherit the growth fragility alongside the revenue.
+      </div>
+
+      <!-- P1 -->
+      <div class="pain-expanded">
+        <div class="pain-expanded-header" onclick="togglePain(this)">
+          <div class="pain-num-lg" style="background:var(--navy)">P1</div>
+          <div class="pain-header-text">
+            <div class="pain-header-title">No growth system</div>
+            <div class="pain-header-sub">Growth is founder- or salesperson-dependent with no repeatable process behind it</div>
+          </div>
+          <div class="tag-row" style="margin:0;gap:4px">
+            <span class="badge badge-navy" style="margin:0">Quick Start™</span>
+            <span class="badge badge-navy" style="margin:0">Land Strategy</span>
+            <span class="badge badge-navy" style="margin:0">Lore™</span>
+          </div>
+          <div class="pain-toggle">▾</div>
         </div>
-        <a href="#">Privacy</a>
-        <a href="#">Terms</a>
-        <a href="#">Accessibility</a>
-        <span>© 2026 Vx Group, Inc.</span>
+        <div class="pain-expanded-body">
+          <div class="pain-detail-grid">
+            <div class="pain-detail-card pdc-orange">
+              <div class="pdc-label">What it looks like on the ground</div>
+              <div style="color:var(--text-2)">Ask the CEO how growth happens and they'll say "relationships" or "word of mouth." There is no documented process for identifying target accounts, initiating outreach, or moving a new relationship from first contact to first contract. Growth is a byproduct of individual effort, not an organizational system — and it shows in the flatness of the revenue curve.</div>
+            </div>
+            <div class="pain-detail-card pdc-navy">
+              <div class="pdc-label">Why the family office feels this</div>
+              <div style="color:var(--text-2)">They acquired a business for its revenue, not its revenue system. When they ask "what's the growth plan?" and the answer is "we're building relationships," that's not a plan — it's a hope. The principal has no visibility into pipeline, no confidence in the forward trajectory, and no way to model what the business could be worth in 5–7 years without a system driving it.</div>
+            </div>
+            <div class="pain-detail-card pdc-teal">
+              <div class="pdc-label">The deeper risk</div>
+              <div style="color:var(--text-2)">When the person who "does relationships" leaves — and they will eventually — the business has no institutional mechanism for replacing what they were doing. Every departure is a potential revenue event. The company doesn't just lose an employee; it loses the growth function entirely until someone rebuilds it from scratch.</div>
+            </div>
+            <div class="pain-detail-card pdc-gold">
+              <div class="pdc-label">What good looks like</div>
+              <div style="color:var(--text-2)">A documented playbook that any team member can execute. A clear definition of who the ideal customer is, how new relationships are initiated, who owns each step, and how progress is tracked. Growth that is organizational — not personal. New hires can ramp into the system; it doesn't evaporate when someone leaves.</div>
+            </div>
+          </div>
+          <div class="pain-quote">We grow through relationships. But if you asked me to write down how we find new ones, I honestly couldn't tell you there's a process. It just... happens.</div>
+          <div class="pain-products">
+            <span class="pp-label">MiM™ solutions:</span>
+            <span class="badge badge-orange">Quick Start™</span>
+            <span class="badge badge-navy">Land Strategy Planning</span>
+            <span class="badge badge-navy">Growth Plan Design™</span>
+            <span class="badge badge-teal">Lore™</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- P2 -->
+      <div class="pain-expanded">
+        <div class="pain-expanded-header" onclick="togglePain(this)">
+          <div class="pain-num-lg" style="background:var(--orange)">P2</div>
+          <div class="pain-header-text">
+            <div class="pain-header-title">Dangerous customer concentration</div>
+            <div class="pain-header-sub">Revenue held by 2–3 accounts — one departure is an existential event</div>
+          </div>
+          <div class="tag-row" style="margin:0;gap:4px">
+            <span class="badge badge-orange" style="margin:0">Quick Start™</span>
+            <span class="badge badge-orange" style="margin:0">Land Strategy</span>
+          </div>
+          <div class="pain-toggle">▾</div>
+        </div>
+        <div class="pain-expanded-body">
+          <div class="pain-detail-grid">
+            <div class="pain-detail-card pdc-orange">
+              <div class="pdc-label">What it looks like on the ground</div>
+              <div style="color:var(--text-2)">Three customers represent 65–80% of revenue. The team knows them by first name, visits their facilities regularly, and has delivered for them for 15+ years. Everyone knows this is a problem. Nobody has fixed it — because the relationships feel safe, new business development is hard, and there's never been a structured system for going after new accounts.</div>
+            </div>
+            <div class="pain-detail-card pdc-navy">
+              <div class="pdc-label">Why the family office feels this</div>
+              <div style="color:var(--text-2)">This shows up immediately in due diligence and it never fully goes away. Revenue concentration suppresses the valuation multiple at acquisition — and it suppresses it again at exit if it hasn't been fixed. A QoE report that flags 70% customer concentration is a direct hit to enterprise value. Every quarter that passes without new account wins is a quarter of unnecessary valuation risk.</div>
+            </div>
+            <div class="pain-detail-card pdc-teal">
+              <div class="pdc-label">The deeper risk</div>
+              <div style="color:var(--text-2)">Generational customers don't leave dramatically — they transition slowly. A new procurement team, a strategic pivot, an acquisition, a vendor consolidation initiative. By the time the warning signs are visible, the relationship is already 60% gone. The company that has been counting on this account for 20 years suddenly has a revenue hole it has no system to fill.</div>
+            </div>
+            <div class="pain-detail-card pdc-gold">
+              <div class="pdc-label">What good looks like</div>
+              <div style="color:var(--text-2)">No single customer represents more than 20–25% of revenue. The pipeline includes active pursuit of 10–15 ideal-fit new accounts at any given time. The team has a documented, owned process for opening relationships — and leadership can point to new logo wins in the last 12 months that came from intentional outreach, not referrals.</div>
+            </div>
+          </div>
+          <div class="pain-quote">We know we're too dependent on a handful of customers. It keeps me up at night. But building a system to go get new ones — we've never really done that.</div>
+          <div class="pain-products">
+            <span class="pp-label">MiM™ solutions:</span>
+            <span class="badge badge-orange">Quick Start™</span>
+            <span class="badge badge-navy">Land Strategy Planning</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- P3 -->
+      <div class="pain-expanded">
+        <div class="pain-expanded-header" onclick="togglePain(this)">
+          <div class="pain-num-lg" style="background:var(--medblu)">P3</div>
+          <div class="pain-header-text">
+            <div class="pain-header-title">No documented growth plan</div>
+            <div class="pain-header-sub">Targets handed down from above — but no documented path to reach them</div>
+          </div>
+          <div class="tag-row" style="margin:0;gap:4px">
+            <span class="badge badge-steel" style="margin:0">Quick Start™</span>
+            <span class="badge badge-steel" style="margin:0">Growth Plan Design™</span>
+          </div>
+          <div class="pain-toggle">▾</div>
+        </div>
+        <div class="pain-expanded-body">
+          <div class="pain-detail-grid">
+            <div class="pain-detail-card pdc-orange">
+              <div class="pdc-label">What it looks like on the ground</div>
+              <div style="color:var(--text-2)">The family office sets a revenue target — say, 20% top-line growth in 18 months. The portfolio company CEO nods, goes back to the office, and has no plan for how to achieve it. They might have vague priorities — "grow the manufacturing segment," "expand in the Midwest" — but nothing tied to the economic reality of the business or assigned to specific owners. The goal becomes a number everyone ignores in practice.</div>
+            </div>
+            <div class="pain-detail-card pdc-navy">
+              <div class="pdc-label">Why the family office feels this</div>
+              <div style="color:var(--text-2)">At every portfolio review, the CEO presents activity — meetings held, proposals sent, relationships "in progress." But there's no plan, no framework, and no accountability structure that connects activity to the growth target. The principal is funding a business that has goals but no roadmap. That gap between ambition and execution is a primary source of friction between the family office and the portco leadership team.</div>
+            </div>
+            <div class="pain-detail-card pdc-teal">
+              <div class="pdc-label">The deeper risk</div>
+              <div style="color:var(--text-2)">Without a documented plan, there's no shared definition of success and no accountability mechanism. The CEO defends activity; the principal evaluates outcomes. They're measuring different things, leading to eroding trust over time — even when individual team members are working hard. The absence of a plan is often the precursor to a leadership change.</div>
+            </div>
+            <div class="pain-detail-card pdc-gold">
+              <div class="pdc-label">What good looks like</div>
+              <div style="color:var(--text-2)">A SMARTER growth plan — documented, shared, and pressure-tested against the economics of the business. Leadership can articulate the exact path from current revenue to the growth target: which segments, which accounts, which new capabilities, and who owns each initiative. The principal reviews progress against the plan, not against gut feel.</div>
+            </div>
+          </div>
+          <div class="pain-quote">They gave us a number. I believe we can hit it. But if you ask me to walk you through the plan step by step — I'd have to admit we don't really have one.</div>
+          <div class="pain-products">
+            <span class="pp-label">MiM™ solutions:</span>
+            <span class="badge badge-orange">Quick Start™</span>
+            <span class="badge badge-navy">Growth Plan Design™</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- P4 -->
+      <div class="pain-expanded">
+        <div class="pain-expanded-header" onclick="togglePain(this)">
+          <div class="pain-num-lg" style="background:var(--teal)">P4</div>
+          <div class="pain-header-text">
+            <div class="pain-header-title">Key-person knowledge dependency</div>
+            <div class="pain-header-sub">One or two people hold everything — relationships, process, institutional memory</div>
+          </div>
+          <div class="tag-row" style="margin:0;gap:4px">
+            <span class="badge badge-teal" style="margin:0">Echo™</span>
+            <span class="badge badge-teal" style="margin:0">Lore™</span>
+          </div>
+          <div class="pain-toggle">▾</div>
+        </div>
+        <div class="pain-expanded-body">
+          <div class="pain-detail-grid">
+            <div class="pain-detail-card pdc-orange">
+              <div class="pdc-label">What it looks like on the ground</div>
+              <div style="color:var(--text-2)">There is one person — often the founder, a 25-year sales veteran, or the original engineering lead — who holds the company's most critical knowledge entirely in their head. They know every customer's quirks, every pricing precedent, every product specification, every relationship history. They are irreplaceable in practice. And they are almost certainly within 5–10 years of leaving.</div>
+            </div>
+            <div class="pain-detail-card pdc-navy">
+              <div class="pdc-label">Why the family office feels this</div>
+              <div style="color:var(--text-2)">This is a direct enterprise value problem. Buyers in any M&amp;A process will ask: what happens if this person leaves? If the answer is "the business struggles significantly," that's a valuation discount — and sometimes a deal-killer. It also increases operating risk during the hold period: an unplanned departure, a health event, or an unwanted resignation can destabilize the entire company overnight.</div>
+            </div>
+            <div class="pain-detail-card pdc-teal">
+              <div class="pdc-label">The deeper risk</div>
+              <div style="color:var(--text-2)">The knowledge holder often doesn't intend to leave — but they're also not actively transferring what they know. Onboarding takes months longer than it should. New team members make errors that a tenured person would never make. Institutional memory fades gradually, not all at once, which makes the problem easy to ignore — until it becomes catastrophic.</div>
+            </div>
+            <div class="pain-detail-card pdc-gold">
+              <div class="pdc-label">What good looks like</div>
+              <div style="color:var(--text-2)">Critical knowledge is documented, accessible, and queryable by the team — not locked in one person's head or in an email thread from 2014. New hires ramp in weeks, not months. Customer relationships are documented at the account level. When the knowledge holder does eventually leave, the business continues operating at full capability.</div>
+            </div>
+          </div>
+          <div class="pain-quote">If Dave retired tomorrow, we'd be in real trouble. He knows every customer, every relationship, every quirk of every product line. Nobody else has that. We've never written any of it down.</div>
+          <div class="pain-products">
+            <span class="pp-label">MiM™ solutions:</span>
+            <span class="badge badge-teal">Echo™ by Arkenology™</span>
+            <span class="badge badge-teal">Lore™ by Arkenology™</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- P5 -->
+      <div class="pain-expanded">
+        <div class="pain-expanded-header" onclick="togglePain(this)">
+          <div class="pain-num-lg" style="background:var(--steel)">P5</div>
+          <div class="pain-header-text">
+            <div class="pain-header-title">Brand and presence don't match reality</div>
+            <div class="pain-header-sub">The company signals "small supplier" when it has become a premium, trusted partner</div>
+          </div>
+          <div class="tag-row" style="margin:0;gap:4px">
+            <span class="badge badge-steel" style="margin:0">Brand Mod.</span>
+            <span class="badge badge-steel" style="margin:0">Website Dev.</span>
+          </div>
+          <div class="pain-toggle">▾</div>
+        </div>
+        <div class="pain-expanded-body">
+          <div class="pain-detail-grid">
+            <div class="pain-detail-card pdc-orange">
+              <div class="pdc-label">What it looks like on the ground</div>
+              <div style="color:var(--text-2)">The website was last updated in 2017. The logo looks like it was made in Microsoft Word. The capabilities deck is a 40-slide PowerPoint with inconsistent fonts, stock photography, and no clear value proposition. Sales materials vary wildly by rep. The company looks like a small, regional supplier — which directly contradicts their track record of serving Fortune 500 customers for two decades.</div>
+            </div>
+            <div class="pain-detail-card pdc-navy">
+              <div class="pdc-label">Why the family office feels this</div>
+              <div style="color:var(--text-2)">The brand gap creates friction at every stage of the customer acquisition process. Prospects who find the company online don't understand what they do or why they're different. Sales meetings start with credibility deficits that the salesperson has to overcome in the first 10 minutes. The brand is actively working against the business development goals the family office has set — and fixing it is almost always faster and cheaper than leadership assumes.</div>
+            </div>
+            <div class="pain-detail-card pdc-teal">
+              <div class="pdc-label">The deeper risk</div>
+              <div style="color:var(--text-2)">For businesses pursuing larger, more sophisticated buyers — the type of Generational Customer a family office wants more of — brand signals maturity and institutional quality before any conversation begins. A brand that signals "small regional supplier" is self-selecting out of opportunities with premium buyers who make snap judgments about capability from the first touchpoint.</div>
+            </div>
+            <div class="pain-detail-card pdc-gold">
+              <div class="pdc-label">What good looks like</div>
+              <div style="color:var(--text-2)">External presence that matches internal reality. A brand identity that signals the quality, maturity, and sophistication of the work the company actually does. A website that works as a sales tool — structured around the ideal customer, with a clear next step, CRM-integrated, and capable of starting million-dollar conversations around the clock.</div>
+            </div>
+          </div>
+          <div class="pain-quote">We've been supplying Boeing for 18 years. But if you found us on Google, you'd think we were a 10-person shop in a garage. That has to change.</div>
+          <div class="pain-products">
+            <span class="pp-label">MiM™ solutions:</span>
+            <span class="badge badge-navy">Brand Modernization</span>
+            <span class="badge badge-navy">Website Development</span>
+            <span class="badge badge-navy">First Impressions Suite</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- P6 -->
+      <div class="pain-expanded">
+        <div class="pain-expanded-header" onclick="togglePain(this)">
+          <div class="pain-num-lg" style="background:var(--gold)">P6</div>
+          <div class="pain-header-text">
+            <div class="pain-header-title">Sales team without infrastructure</div>
+            <div class="pain-header-sub">Good relationship builders — but every rep sells differently with no consistent standard</div>
+          </div>
+          <div class="tag-row" style="margin:0;gap:4px">
+            <span class="badge badge-gold" style="margin:0">First Impressions</span>
+            <span class="badge badge-gold" style="margin:0">Website Dev.</span>
+          </div>
+          <div class="pain-toggle">▾</div>
+        </div>
+        <div class="pain-expanded-body">
+          <div class="pain-detail-grid">
+            <div class="pain-detail-card pdc-orange">
+              <div class="pdc-label">What it looks like on the ground</div>
+              <div style="color:var(--text-2)">The top sales rep has a 73% close rate and a dozen accounts worth millions — entirely because of who they are, their personal network, and how they run a room. The other reps close at 30%. The difference isn't skill; it's infrastructure. No shared standard for how first meetings are structured. Proposals sent as email attachments with no context. No defined second-meeting agenda. No follow-up sequence. No CRM hygiene.</div>
+            </div>
+            <div class="pain-detail-card pdc-navy">
+              <div class="pdc-label">Why the family office feels this</div>
+              <div style="color:var(--text-2)">Sales infrastructure inconsistency means the business can't scale its commercial capacity. Adding headcount doesn't solve the problem — new reps inherit the same broken process. The family office wants a sales team that performs like the top rep, not one where results are entirely personality-dependent. This also creates key-person risk at the sales layer: lose the top rep and the performance gap becomes catastrophic.</div>
+            </div>
+            <div class="pain-detail-card pdc-teal">
+              <div class="pdc-label">The deeper risk</div>
+              <div style="color:var(--text-2)">Without a consistent sales process, the company can't diagnose why deals are stalling. Is it the proposal? The first meeting? The follow-up? Nobody knows, because nobody is measuring the same thing. Inconsistent process means inconsistent data, which means no ability to improve. The commercial function runs on intuition — which works until it doesn't.</div>
+            </div>
+            <div class="pain-detail-card pdc-gold">
+              <div class="pdc-label">What good looks like</div>
+              <div style="color:var(--text-2)">Every rep shows up the way the best rep does. A standard for how first, second, and third meetings are structured and what each one is designed to accomplish. A branded proposal that makes saying yes easy. An email follow-up sequence that keeps relationships warm. A CRM that's actually used because it's integrated into the process — not bolted on top of it.</div>
+            </div>
+          </div>
+          <div class="pain-quote">Our best salesperson is incredible. But she's a unicorn. I don't know how to bottle what she does. The rest of the team is inconsistent and I can't figure out why.</div>
+          <div class="pain-products">
+            <span class="pp-label">MiM™ solutions:</span>
+            <span class="badge badge-navy">First Impressions Suite</span>
+            <span class="badge badge-navy">Website Development</span>
+            <span class="badge badge-navy">Quick Start™</span>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- ══════════════════════════════
+         TAB: PERSONAS
+    ══════════════════════════════ -->
+    <div id="tab-personas" class="tab-panel">
+      <div class="page-header">
+        <div class="page-eyebrow">Personas</div>
+        <div class="page-title">Two-Level GTM Dynamic</div>
+        <div class="page-sub">This vertical requires distinct messaging at two levels. The family office principal is the entry point and champion — not the buyer. The portfolio company CEO is the buyer and day-to-day partner.</div>
+      </div>
+
+      <div class="callout callout-navy" style="margin-bottom:1.5rem">
+        <strong>Key rule:</strong> Never use the same message at both levels. The principal cares about portfolio performance and enterprise value. The portfolio company CEO cares about getting a plan they can execute and report upstairs with confidence. Conflating them is the fastest way to lose the room at either level.
+      </div>
+
+      <!-- ── LEVEL 1 HEADER ── -->
+      <div style="background:var(--navy);border-radius:var(--radius-lg);padding:.75rem 1.25rem;margin-bottom:1rem;display:flex;align-items:center;gap:12px">
+        <div style="font-family:var(--font-head);font-size:10px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:rgba(255,255,255,.5)">Level 1</div>
+        <div style="width:1px;height:16px;background:rgba(255,255,255,.2)"></div>
+        <div style="font-family:var(--font-head);font-size:13px;font-weight:700;color:white">Fund / Principal Level</div>
+        <div style="margin-left:auto;font-size:12px;color:rgba(255,255,255,.5)">Entry point &amp; champion — not the buyer</div>
+      </div>
+
+      <!-- ── PERSONA 1: FAMILY OFFICE PRINCIPAL ── -->
+      <div class="persona-expanded" style="margin-bottom:.75rem">
+        <div class="persona-expanded-header" onclick="togglePersona(this)">
+          <div class="avatar avatar-navy">FO</div>
+          <div style="flex:1">
+            <div class="persona-name">Family Office Principal</div>
+            <div class="persona-role">Managing Director · Family Principal · Patriarch/Matriarch · Investment Committee Chair</div>
+            <div class="trait-row">
+              <span class="trait-chip">Patient but exacting</span>
+              <span class="trait-chip">Relationship-oriented</span>
+              <span class="trait-chip">Allergic to hype</span>
+              <span class="trait-chip">Credibility-first</span>
+            </div>
+          </div>
+          <div style="display:flex;align-items:center;gap:8px;flex-shrink:0">
+            <span class="badge badge-navy">Champion</span>
+            <span class="badge badge-navy">Gatekeeper</span>
+            <div class="persona-toggle">▾</div>
+          </div>
+        </div>
+        <div class="persona-expanded-body">
+          <div class="grid-3" style="margin-bottom:1rem;margin-top:1rem">
+            <div style="background:var(--surface2);border-radius:var(--radius);padding:.85rem 1rem">
+              <div style="font-family:var(--font-head);font-size:9px;font-weight:700;letter-spacing:.07em;text-transform:uppercase;color:var(--text-3);margin-bottom:.4rem">Background</div>
+              <div style="font-size:12.5px;color:var(--text-2);line-height:1.6">Often a former operator or 2nd/3rd-generation family member who transitioned into capital allocation. May have led one of the portfolio businesses themselves earlier in their career.</div>
+            </div>
+            <div style="background:var(--surface2);border-radius:var(--radius);padding:.85rem 1rem">
+              <div style="font-family:var(--font-head);font-size:9px;font-weight:700;letter-spacing:.07em;text-transform:uppercase;color:var(--text-3);margin-bottom:.4rem">How they decide</div>
+              <div style="font-size:12.5px;color:var(--text-2);line-height:1.6">Consensus-builder internally, ultimately decisive. Will quietly reference-check Vx before committing. Slow to decide — very slow to reverse. The portfolio company CEO must co-sign.</div>
+            </div>
+            <div style="background:var(--surface2);border-radius:var(--radius);padding:.85rem 1rem">
+              <div style="font-family:var(--font-head);font-size:9px;font-weight:700;letter-spacing:.07em;text-transform:uppercase;color:var(--text-3);margin-bottom:.4rem">Their financial stake</div>
+              <div style="font-size:12.5px;color:var(--text-2);line-height:1.6">Motivated by carry, family wealth, or legacy. Portfolio company growth isn't just a business KPI — it's personal. Every EBITDA point matters to their net worth and the family's legacy.</div>
+            </div>
+          </div>
+          <div class="grid-2" style="margin-bottom:1rem">
+            <div>
+              <div class="persona-section-head"><span>What keeps them up at night</span></div>
+              <div class="pill-list">
+                <div class="pill-item pi-bad"><span class="pill-icon">→</span>Revenue dangerously concentrated in 1–2 customers — and no one is fixing it</div>
+                <div class="pill-item pi-bad"><span class="pill-icon">→</span>A founder aging out with no succession plan and no knowledge transfer</div>
+                <div class="pill-item pi-bad"><span class="pill-icon">→</span>Portfolio company CEOs who report activity, not progress</div>
+                <div class="pill-item pi-bad"><span class="pill-icon">→</span>QoE exposure at exit — undocumented processes, people-dependent revenue</div>
+                <div class="pill-item pi-bad"><span class="pill-icon">→</span>Constantly re-engaging at the portco level because growth still isn't self-sustaining</div>
+              </div>
+            </div>
+            <div>
+              <div class="persona-section-head"><span>What they want from a partner</span></div>
+              <div class="pill-list">
+                <div class="pill-item pi-good"><span class="pill-icon">✓</span>Proof the methodology works — references from similar-stage businesses</div>
+                <div class="pill-item pi-good"><span class="pill-icon">✓</span>A system that sticks — not a project that evaporates at engagement end</div>
+                <div class="pill-item pi-good"><span class="pill-icon">✓</span>Portfolio-wide scalability — deploy once, replicate across holdings</div>
+                <div class="pill-item pi-good"><span class="pill-icon">✓</span>Low-risk entry — prove value before a long-term commitment</div>
+                <div class="pill-item pi-good"><span class="pill-icon">✓</span>A partner who speaks their language: EBITDA, enterprise value, exit readiness</div>
+              </div>
+            </div>
+          </div>
+          <div class="grid-2" style="margin-bottom:1rem">
+            <div>
+              <div class="persona-section-head"><span>How to reach them</span></div>
+              <div class="pill-list">
+                <div class="pill-item pi-reach"><span class="pill-icon">◆</span>Warm intros through M&amp;A attorneys, accountants, investment bankers — far outweigh cold outreach</div>
+                <div class="pill-item pi-reach"><span class="pill-icon">◆</span>ACG events, lower middle market PE conferences, family office summits</div>
+                <div class="pill-item pi-reach"><span class="pill-icon">◆</span>LinkedIn content in their vocabulary — EBITDA, enterprise value, portco performance</div>
+                <div class="pill-item pi-reach"><span class="pill-icon">◆</span>Portco CEO referrals — a successful engagement is the best next sales call</div>
+              </div>
+            </div>
+            <div>
+              <div class="persona-section-head"><span>What to avoid</span></div>
+              <div class="pill-list">
+                <div class="pill-item pi-bad"><span class="pill-icon">✗</span>"Brand awareness," "content strategy," "social presence" — will lose the room immediately</div>
+                <div class="pill-item pi-bad"><span class="pill-icon">✗</span>Pitching before establishing you understand their portfolio situation</div>
+                <div class="pill-item pi-bad"><span class="pill-icon">✗</span>Long-term commitment as the entry point — Quick Start™'s no-commitment structure is a feature</div>
+                <div class="pill-item pi-bad"><span class="pill-icon">✗</span>Positioning MiM™ as a marketing agency or creative firm</div>
+              </div>
+            </div>
+          </div>
+          <div class="msg-card" style="margin-bottom:0">
+            <div class="msg-label">Key message angle — Family Office Principal</div>
+            <div class="msg-quote">"MiM™ installs a growth operating system inside your portfolio companies — one that reduces key-person dependency, builds enterprise value through scalable relationship systems, and gives you clear visibility into how growth actually works inside each business. Quick Start™ is the entry point: six weeks, $9,500, no long-term commitment. If it works at one portco, it scales to all of them."</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ── PERSONA 2: PORTFOLIO OPS LEAD ── -->
+      <div class="persona-expanded" style="margin-bottom:1.5rem">
+        <div class="persona-expanded-header" onclick="togglePersona(this)">
+          <div class="avatar" style="background:var(--medblu);color:white">PO</div>
+          <div style="flex:1">
+            <div class="persona-name">Portfolio Operations Lead</div>
+            <div class="persona-role">VP of Portfolio Operations · Operating Partner · Director of Value Creation</div>
+            <div class="trait-row">
+              <span class="trait-chip">Pragmatic</span>
+              <span class="trait-chip">Process-minded</span>
+              <span class="trait-chip">Skeptical of new vendors</span>
+              <span class="trait-chip">Repeatability-focused</span>
+            </div>
+          </div>
+          <div style="display:flex;align-items:center;gap:8px;flex-shrink:0">
+            <span class="badge badge-steel">Internal champion</span>
+            <span class="badge badge-steel">Vendor manager</span>
+            <div class="persona-toggle">▾</div>
+          </div>
+        </div>
+        <div class="persona-expanded-body">
+          <div class="grid-3" style="margin-bottom:1rem;margin-top:1rem">
+            <div style="background:var(--surface2);border-radius:var(--radius);padding:.85rem 1rem">
+              <div style="font-family:var(--font-head);font-size:9px;font-weight:700;letter-spacing:.07em;text-transform:uppercase;color:var(--text-3);margin-bottom:.4rem">Background</div>
+              <div style="font-size:12.5px;color:var(--text-2);line-height:1.6">Often a former operator — ex-VP of Sales, COO, or management consultant. Manages a vendor ecosystem and deploys specialists selectively by portco need. Hired to drive operational improvement across the portfolio.</div>
+            </div>
+            <div style="background:var(--surface2);border-radius:var(--radius);padding:.85rem 1rem">
+              <div style="font-family:var(--font-head);font-size:9px;font-weight:700;letter-spacing:.07em;text-transform:uppercase;color:var(--text-3);margin-bottom:.4rem">What success looks like</div>
+              <div style="font-size:12.5px;color:var(--text-2);line-height:1.6">A trusted vendor they can deploy across multiple portcos with minimal hand-holding — one that integrates cleanly with portco leadership and reports back with structure. No noise, no drama at the fund level.</div>
+            </div>
+            <div style="background:var(--surface2);border-radius:var(--radius);padding:.85rem 1rem">
+              <div style="font-family:var(--font-head);font-size:9px;font-weight:700;letter-spacing:.07em;text-transform:uppercase;color:var(--text-3);margin-bottom:.4rem">Their biggest frustration</div>
+              <div style="font-size:12.5px;color:var(--text-2);line-height:1.6">Every portco engagement feels like starting from scratch. No standardized growth playbook to drop in. Portco CEOs can't report progress upward in a structured, consistent way. Vendors who work for one company but don't translate to the next.</div>
+            </div>
+          </div>
+          <div class="grid-2" style="margin-bottom:1rem">
+            <div>
+              <div class="persona-section-head"><span>What keeps them up at night</span></div>
+              <div class="pill-list">
+                <div class="pill-item pi-bad"><span class="pill-icon">→</span>Every portco engagement feels like starting from scratch — no standardized growth playbook to drop in</div>
+                <div class="pill-item pi-bad"><span class="pill-icon">→</span>Portco CEOs who can't report growth progress upward in a structured, consistent way</div>
+                <div class="pill-item pi-bad"><span class="pill-icon">→</span>Vendors who deliver for one company but don't translate to the next — no portability</div>
+                <div class="pill-item pi-bad"><span class="pill-icon">→</span>Accountability gaps at the portco level — growth goals set but no system to track execution</div>
+                <div class="pill-item pi-bad"><span class="pill-icon">→</span>Being personally blamed when a portco stalls after a vendor they recommended didn't deliver</div>
+              </div>
+            </div>
+            <div>
+              <div class="persona-section-head"><span>What they want from a partner</span></div>
+              <div class="pill-list">
+                <div class="pill-item pi-good"><span class="pill-icon">✓</span>A system they can deploy portfolio-wide — not a custom engagement rebuilt from scratch each time</div>
+                <div class="pill-item pi-good"><span class="pill-icon">✓</span>Structured reporting artifacts they can use in portco reviews without extra work</div>
+                <div class="pill-item pi-good"><span class="pill-icon">✓</span>A low-risk entry point — prove the model at one portco before committing across the portfolio</div>
+                <div class="pill-item pi-good"><span class="pill-icon">✓</span>A vendor who integrates cleanly with portco leadership and doesn't create noise at the fund level</div>
+                <div class="pill-item pi-good"><span class="pill-icon">✓</span>Consistency — the same quality of output regardless of which portco the system is deployed at</div>
+              </div>
+            </div>
+          </div>
+          <div class="grid-2" style="margin-bottom:1rem">
+            <div>
+              <div class="persona-section-head"><span>How to reach them</span></div>
+              <div class="pill-list">
+                <div class="pill-item pi-reach"><span class="pill-icon">◆</span>The family office principal is the primary pathway — a principal who champions MiM™ will direct their portco ops lead to engage</div>
+                <div class="pill-item pi-reach"><span class="pill-icon">◆</span>PE operations networks and lower middle market operating partner communities (ACG, PE-backed ops forums)</div>
+                <div class="pill-item pi-reach"><span class="pill-icon">◆</span>Portco CEO referrals — a successful engagement earns an introduction to the ops lead managing that fund</div>
+                <div class="pill-item pi-reach"><span class="pill-icon">◆</span>Content framed around portfolio-wide systems and scalability — not individual company transformation stories</div>
+              </div>
+            </div>
+            <div>
+              <div class="persona-section-head"><span>What to avoid</span></div>
+              <div class="pill-list">
+                <div class="pill-item pi-bad"><span class="pill-icon">✗</span>Overpromising at the portco level without their awareness — they're protective of those relationships</div>
+                <div class="pill-item pi-bad"><span class="pill-icon">✗</span>Positioning MiM™ as a one-off custom engagement — scalability is their primary filter</div>
+                <div class="pill-item pi-bad"><span class="pill-icon">✗</span>Reporting that creates more work for them — make the outputs usable as-is, not raw material</div>
+                <div class="pill-item pi-bad"><span class="pill-icon">✗</span>Going around them to the portco CEO without establishing their buy-in first</div>
+              </div>
+            </div>
+          </div>
+          <div class="msg-card" style="margin-bottom:0">
+            <div class="msg-label">Key message angle — Portfolio Operations Lead</div>
+            <div class="msg-quote">"MiM™ is a system, not a project. Quick Start™ gives you a repeatable diagnostic you can deploy across any portco that's stalled on growth — and the Digital Playbook gives you a structured artifact you can use in every portco review. One methodology. Consistent results. Scalable across your whole portfolio."</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ── LEVEL 2 HEADER ── -->
+      <div style="background:var(--orange);border-radius:var(--radius-lg);padding:.75rem 1.25rem;margin-bottom:1rem;display:flex;align-items:center;gap:12px">
+        <div style="font-family:var(--font-head);font-size:10px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:rgba(255,255,255,.65)">Level 2</div>
+        <div style="width:1px;height:16px;background:rgba(255,255,255,.3)"></div>
+        <div style="font-family:var(--font-head);font-size:13px;font-weight:700;color:white">Portfolio Company Leadership</div>
+        <div style="margin-left:auto;font-size:12px;color:rgba(255,255,255,.65)">Primary buyer &amp; day-to-day partner</div>
+      </div>
+
+      <!-- ── PERSONA 3: PRESIDENT / CEO ── -->
+      <div class="persona-expanded" style="margin-bottom:.75rem">
+        <div class="persona-expanded-header" onclick="togglePersona(this)">
+          <div class="avatar avatar-orange">CE</div>
+          <div style="flex:1">
+            <div class="persona-name">President / CEO</div>
+            <div class="persona-role">President · CEO · General Manager — hired executive, accountable to the family office</div>
+            <div class="trait-row">
+              <span class="trait-chip">Driven</span>
+              <span class="trait-chip">Decisive</span>
+              <span class="trait-chip">Results-oriented</span>
+              <span class="trait-chip">Quietly anxious</span>
+              <span class="trait-chip">Wants answers, not questions</span>
+            </div>
+          </div>
+          <div style="display:flex;align-items:center;gap:8px;flex-shrink:0">
+            <span class="badge badge-orange">Primary buyer</span>
+            <span class="badge badge-orange">Day-to-day partner</span>
+            <div class="persona-toggle">▾</div>
+          </div>
+        </div>
+        <div class="persona-expanded-body">
+          <div class="grid-3" style="margin-bottom:1rem;margin-top:1rem">
+            <div style="background:var(--surface2);border-radius:var(--radius);padding:.85rem 1rem">
+              <div style="font-family:var(--font-head);font-size:9px;font-weight:700;letter-spacing:.07em;text-transform:uppercase;color:var(--text-3);margin-bottom:.4rem">Their situation</div>
+              <div style="font-size:12.5px;color:var(--text-2);line-height:1.6">Hired executive — not the founder. May have been brought in specifically to professionalize the business. Carries full P&amp;L accountability with limited institutional knowledge of how the company actually grew. Often has 18–36 months to show results.</div>
+            </div>
+            <div style="background:var(--surface2);border-radius:var(--radius);padding:.85rem 1rem">
+              <div style="font-family:var(--font-head);font-size:9px;font-weight:700;letter-spacing:.07em;text-transform:uppercase;color:var(--text-3);margin-bottom:.4rem">Their core tension</div>
+              <div style="font-size:12.5px;color:var(--text-2);line-height:1.6">Accountable for growth targets they didn't set, using a growth system they inherited — which is usually just "the founder's relationships." They need to show upstairs they have a plan. The absence of one is both a professional risk and a daily anxiety.</div>
+            </div>
+            <div style="background:var(--surface2);border-radius:var(--radius);padding:.85rem 1rem">
+              <div style="font-family:var(--font-head);font-size:9px;font-weight:700;letter-spacing:.07em;text-transform:uppercase;color:var(--text-3);margin-bottom:.4rem">Communication style</div>
+              <div style="font-size:12.5px;color:var(--text-2);line-height:1.6">Executive summaries and direct recommendations over long explanations. Wants to be treated as a peer. Respects partners who flag problems early and own their work. Expects proactive communication — not reactivity.</div>
+            </div>
+          </div>
+          <div class="grid-2" style="margin-bottom:1rem">
+            <div>
+              <div class="persona-section-head"><span>What keeps them up at night</span></div>
+              <div class="pill-list">
+                <div class="pill-item pi-bad"><span class="pill-icon">→</span>The next ownership review — "what is the growth plan?" with no good answer</div>
+                <div class="pill-item pi-bad"><span class="pill-icon">→</span>The top salesperson who holds all the commercial relationships — and could leave</div>
+                <div class="pill-item pi-bad"><span class="pill-icon">→</span>Customer concentration — one lost account triggers a hard conversation upstairs</div>
+                <div class="pill-item pi-bad"><span class="pill-icon">→</span>Deploying budget on growth initiatives that don't produce visible results</div>
+                <div class="pill-item pi-bad"><span class="pill-icon">→</span>Looking like they don't have control of the commercial side of the business</div>
+              </div>
+            </div>
+            <div>
+              <div class="persona-section-head"><span>What they want from a partner</span></div>
+              <div class="pill-list">
+                <div class="pill-item pi-good"><span class="pill-icon">✓</span>A clear, documented growth plan they can present upstairs with confidence</div>
+                <div class="pill-item pi-good"><span class="pill-icon">✓</span>Clarity on where the best growth opportunities actually are — evidence, not instinct</div>
+                <div class="pill-item pi-good"><span class="pill-icon">✓</span>A team that integrates — not one that creates more meetings and deliverables to manage</div>
+                <div class="pill-item pi-good"><span class="pill-icon">✓</span>Progress they can report upstairs — tied to the metrics the family office tracks</div>
+                <div class="pill-item pi-good"><span class="pill-icon">✓</span>A low entry cost — $9,500 and 6 weeks is the right ask for where they are right now</div>
+              </div>
+            </div>
+          </div>
+          <div class="grid-2" style="margin-bottom:1rem">
+            <div>
+              <div class="persona-section-head"><span>How to reach them</span></div>
+              <div class="pill-list">
+                <div class="pill-item pi-reach"><span class="pill-icon">◆</span>Introductions from the family office principal or portfolio ops lead carry the most weight — entry from above is always faster</div>
+                <div class="pill-item pi-reach"><span class="pill-icon">◆</span>Industry peer networks — they talk to other hired CEOs at portcos facing the same pressures</div>
+                <div class="pill-item pi-reach"><span class="pill-icon">◆</span>LinkedIn content focused on growth accountability, portco performance, and the "inherited business" challenge</div>
+                <div class="pill-item pi-reach"><span class="pill-icon">◆</span>Direct outreach works when personalized to their specific situation — company stage, ownership structure, obvious growth gaps</div>
+              </div>
+            </div>
+            <div>
+              <div class="persona-section-head"><span>What to avoid</span></div>
+              <div class="pill-list">
+                <div class="pill-item pi-bad"><span class="pill-icon">✗</span>"We've tried this before" is their first objection — never position MiM™ as a consulting engagement</div>
+                <div class="pill-item pi-bad"><span class="pill-icon">✗</span>Long-term commitment as the entry point — Quick Start™'s no-commitment structure is a feature, not a limitation</div>
+                <div class="pill-item pi-bad"><span class="pill-icon">✗</span>Presentations and decks over progress and action — they want momentum, not more slide reviews</div>
+                <div class="pill-item pi-bad"><span class="pill-icon">✗</span>Generic growth language — speak specifically to the hired executive's unique pressure to deliver to an owner above them</div>
+              </div>
+            </div>
+          </div>
+          <div class="msg-card" style="margin-bottom:0">
+            <div class="msg-label">Key message angle — President / CEO</div>
+            <div class="msg-quote">"Quick Start™ gives you the clarity, alignment, and six-month growth plan you need to move from reactive to intentional — and something you can take upstairs with confidence. Six weeks. $9,500. No long-term commitment. You'll walk out with a documented playbook and a prioritized path forward that your leadership team built together."</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ── PERSONA 4: CFO / COO ── -->
+      <div class="persona-expanded" style="margin-bottom:1.5rem">
+        <div class="persona-expanded-header" onclick="togglePersona(this)">
+          <div class="avatar avatar-steel">CF</div>
+          <div style="flex:1">
+            <div class="persona-name">CFO / COO</div>
+            <div class="persona-role">Chief Financial Officer · Chief Operating Officer · VP Finance · VP Operations</div>
+            <div class="trait-row">
+              <span class="trait-chip">Systematic</span>
+              <span class="trait-chip">Analytical</span>
+              <span class="trait-chip">Risk-averse</span>
+              <span class="trait-chip">Skeptic first</span>
+              <span class="trait-chip">Champion once convinced</span>
+            </div>
+          </div>
+          <div style="display:flex;align-items:center;gap:8px;flex-shrink:0">
+            <span class="badge badge-steel">Skeptic first</span>
+            <span class="badge badge-steel">Highest-yield champion</span>
+            <div class="persona-toggle">▾</div>
+          </div>
+        </div>
+        <div class="persona-expanded-body">
+          <div class="grid-3" style="margin-bottom:1rem;margin-top:1rem">
+            <div style="background:var(--surface2);border-radius:var(--radius);padding:.85rem 1rem">
+              <div style="font-family:var(--font-head);font-size:9px;font-weight:700;letter-spacing:.07em;text-transform:uppercase;color:var(--text-3);margin-bottom:.4rem">Who they are</div>
+              <div style="font-size:12.5px;color:var(--text-2);line-height:1.6">Controls budget timing and the operational calendar. Can quietly kill an initiative by deprioritizing it — or accelerate one by clearing the path. In family office portcos, they often have the principal's ear on financial performance.</div>
+            </div>
+            <div style="background:var(--surface2);border-radius:var(--radius);padding:.85rem 1rem">
+              <div style="font-family:var(--font-head);font-size:9px;font-weight:700;letter-spacing:.07em;text-transform:uppercase;color:var(--text-3);margin-bottom:.4rem">Their lens on growth</div>
+              <div style="font-size:12.5px;color:var(--text-2);line-height:1.6">They don't see growth as exciting — they see it as risk. Undocumented processes and key-person dependencies are operational risks that show up in financials. They want growth systematized and visible, not inspirational.</div>
+            </div>
+            <div style="background:var(--surface2);border-radius:var(--radius);padding:.85rem 1rem">
+              <div style="font-family:var(--font-head);font-size:9px;font-weight:700;letter-spacing:.07em;text-transform:uppercase;color:var(--text-3);margin-bottom:.4rem">The CFO/COO flip</div>
+              <div style="font-size:12.5px;color:var(--text-2);line-height:1.6">Once this persona is convinced, they become the most powerful internal champion. Getting them to yes is harder than any other stakeholder — but the downstream yield is higher. Don't skip them or go around them.</div>
+            </div>
+          </div>
+          <div class="grid-2" style="margin-bottom:1rem">
+            <div>
+              <div class="persona-section-head"><span>What keeps them up at night</span></div>
+              <div class="pill-list">
+                <div class="pill-item pi-bad"><span class="pill-icon">→</span>Revenue that's unpredictable — can't model cash flow because sales is entirely relationship-dependent</div>
+                <div class="pill-item pi-bad"><span class="pill-icon">→</span>Budget requests for growth initiatives with no measurable ROI framework attached</div>
+                <div class="pill-item pi-bad"><span class="pill-icon">→</span>Key-person risk creating business continuity exposure — an undocumented sales relationship is an uninsured asset</div>
+                <div class="pill-item pi-bad"><span class="pill-icon">→</span>Building growth reporting slides from scratch every quarter with no structured framework</div>
+                <div class="pill-item pi-bad"><span class="pill-icon">→</span>A CEO who commits to growth investments without ops or finance sign-off — creating budget surprises</div>
+              </div>
+            </div>
+            <div>
+              <div class="persona-section-head"><span>What they want from a partner</span></div>
+              <div class="pill-list">
+                <div class="pill-item pi-good"><span class="pill-icon">✓</span>Systems and scoreboards — visible, measurable, tied to financial outcomes they already track</div>
+                <div class="pill-item pi-good"><span class="pill-icon">✓</span>A clear ROI framework — they need to understand the return before they endorse any investment</div>
+                <div class="pill-item pi-good"><span class="pill-icon">✓</span>Reduced operational risk — documented processes that eliminate key-person and continuity exposure</div>
+                <div class="pill-item pi-good"><span class="pill-icon">✓</span>Reporting artifacts they can use — the Digital Playbook and First 180™ become the growth scorecard they've lacked</div>
+                <div class="pill-item pi-good"><span class="pill-icon">✓</span>Predictability — a system that makes revenue growth more forecastable, not more random</div>
+              </div>
+            </div>
+          </div>
+          <div class="grid-2" style="margin-bottom:1rem">
+            <div>
+              <div class="persona-section-head"><span>How to reach them</span></div>
+              <div class="pill-list">
+                <div class="pill-item pi-reach"><span class="pill-icon">◆</span>They are a secondary contact — almost always engaged after the CEO relationship is established</div>
+                <div class="pill-item pi-reach"><span class="pill-icon">◆</span>CEO introductions are the most effective path — ask the CEO to include them early in the process, not late</div>
+                <div class="pill-item pi-reach"><span class="pill-icon">◆</span>CFO/COO peer networks and finance-focused PE operations communities</div>
+                <div class="pill-item pi-reach"><span class="pill-icon">◆</span>Content framed around operational risk, revenue predictability, and growth infrastructure — not growth inspiration</div>
+              </div>
+            </div>
+            <div>
+              <div class="persona-section-head"><span>What to avoid</span></div>
+              <div class="pill-list">
+                <div class="pill-item pi-bad"><span class="pill-icon">✗</span>Leading with vision, relationships, or MiM™ philosophy — they need data and structure first</div>
+                <div class="pill-item pi-bad"><span class="pill-icon">✗</span>Vague ROI claims — they will do their own math; be specific and conservative</div>
+                <div class="pill-item pi-bad"><span class="pill-icon">✗</span>"Trust the process" language — they want to see the process, not be told to trust it</div>
+                <div class="pill-item pi-bad"><span class="pill-icon">✗</span>Going around them to get CEO approval — they'll find out and it will cost you the engagement</div>
+              </div>
+            </div>
+          </div>
+          <div style="background:var(--gold-light);border-left:3px solid var(--gold);border-radius:0 var(--radius) var(--radius) 0;padding:.75rem 1rem;margin-bottom:1rem;font-size:12.5px;color:var(--text-2);line-height:1.6">
+            <strong style="font-family:var(--font-head);color:var(--navy)">The CFO / COO flip:</strong> Once this persona is convinced, they become the most powerful internal champion in the engagement. They own the operational calendar, control budget timing, and have the principal's ear on financial performance. Getting them to yes is harder than any other stakeholder — but the downstream yield is higher.
+          </div>
+          <div class="msg-card" style="margin-bottom:0">
+            <div class="msg-label">Key message angle — CFO / COO</div>
+            <div class="msg-quote">"MiM™ gives your growth system the same discipline you apply to your financial system — documented processes, assigned ownership, measurable KPIs, and a scoreboard you can actually report against. The Digital Playbook isn't a marketing deliverable; it's the operational growth infrastructure your business has never had. And it starts with a $9,500 diagnostic that either proves the need or tells you there isn't one."</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ── ENGAGEMENT RULES ── -->
+      <div class="divider"></div>
+      <div class="section-label">Cross-persona engagement rules</div>
+      <div class="grid-2" style="margin-bottom:1.25rem">
+        <div class="card card-accent-teal">
+          <div class="card-title">Sequencing matters</div>
+          <div class="card-body">The ideal entry sequence is Principal → Portfolio Ops Lead → Portfolio Company CEO — in that order. Getting principal-level awareness before the CEO conversation frames MiM™ as a strategic investment, not a vendor pitch. If you enter at the CEO level first, establish upward alignment early.</div>
+        </div>
+        <div class="card card-accent-orange">
+          <div class="card-title">Never lose the executive sponsor</div>
+          <div class="card-body">If CEO-level sponsorship goes cold — leadership change, competing priorities, ownership pressure — the engagement is at immediate risk. The CFO/COO cannot carry it alone. Escalate to the principal level and re-establish the strategic rationale before the next session.</div>
+        </div>
+      </div>
+
+      <div class="section-label">Persona messaging matrix</div>
+      <div class="table-wrap">
+        <table class="data-table">
+          <thead><tr><th>Persona</th><th>Core pain</th><th>MiM™ angle</th><th>Lead with</th><th>Never say</th></tr></thead>
+          <tbody>
+            <tr><td class="td-name">Family office principal</td><td>Portfolio growth is unscalable &amp; people-dependent</td><td>MiMOS as portfolio-wide growth infrastructure</td><td>Enterprise value, EBITDA, exit readiness</td><td>Marketing, brand awareness, social media</td></tr>
+            <tr><td class="td-name">Portfolio ops lead</td><td>No repeatable system to deploy across portcos</td><td>Quick Start™ as a scalable, portable diagnostic</td><td>Repeatability, portability, reporting structure</td><td>Custom solutions, one-off engagements</td></tr>
+            <tr><td class="td-name">Portfolio company CEO</td><td>No system, accountable for results they can't control</td><td>Quick Start™ as clarity + alignment in 6 weeks</td><td>Confidence, clear plan, results to report up</td><td>"This will take time" — they need speed</td></tr>
+            <tr><td class="td-name">CFO / COO</td><td>Chaotic growth, unclear ROI, key-person risk</td><td>Systems, scoreboards, risk reduction framework</td><td>Structure, visibility, operational discipline</td><td>Vision, relationships, "trust the process"</td></tr>
+          </tbody>
+        </table>
       </div>
     </div>
-  </div>
-</footer>
+
+    <!-- ══════════════════════════════
+         TAB: PRODUCT MAPPING
+    ══════════════════════════════ -->
+    <div id="tab-products" class="tab-panel">
+      <div class="page-header">
+        <div class="page-eyebrow">Product Mapping</div>
+        <div class="page-title">MiM™ Products × Pain States</div>
+        <div class="page-sub">Every MiM™ program and Arkenology™ product mapped to the specific problems this vertical carries — with positioning language for each.</div>
+      </div>
+
+      <div class="section-label">At-a-glance matrix</div>
+      <div class="table-wrap" style="margin-bottom:1.75rem">
+        <table class="data-table">
+          <thead><tr>
+            <th>Product</th><th>Price / duration</th>
+            <th title="No growth system">P1</th>
+            <th title="Customer concentration">P2</th>
+            <th title="No growth plan">P3</th>
+            <th title="Knowledge dependency">P4</th>
+            <th title="Brand gap">P5</th>
+            <th title="Sales infrastructure">P6</th>
+          </tr></thead>
+          <tbody>
+            <tr><td class="td-name">Quick Start™</td><td class="td-price">$9,500 · 6 wks</td><td class="check">✓</td><td class="check">✓</td><td class="check">✓</td><td class="dash">—</td><td class="check">✓</td><td class="dash">—</td></tr>
+            <tr><td class="td-name">Growth Plan Design™</td><td class="td-price">4 sessions</td><td class="dash">—</td><td class="dash">—</td><td class="check">✓</td><td class="dash">—</td><td class="dash">—</td><td class="dash">—</td></tr>
+            <tr><td class="td-name">Land Strategy Planning</td><td class="td-price">5 sessions · 6 wks</td><td class="check">✓</td><td class="check">✓</td><td class="dash">—</td><td class="dash">—</td><td class="dash">—</td><td class="dash">—</td></tr>
+            <tr><td class="td-name">First Impressions Suite</td><td class="td-price">4 sessions</td><td class="dash">—</td><td class="dash">—</td><td class="dash">—</td><td class="dash">—</td><td class="check">✓</td><td class="check">✓</td></tr>
+            <tr><td class="td-name">Brand Modernization</td><td class="td-price">5 sessions</td><td class="dash">—</td><td class="dash">—</td><td class="dash">—</td><td class="dash">—</td><td class="check">✓</td><td class="dash">—</td></tr>
+            <tr><td class="td-name">Website Development</td><td class="td-price">Multi-phase</td><td class="dash">—</td><td class="dash">—</td><td class="dash">—</td><td class="dash">—</td><td class="check">✓</td><td class="check">✓</td></tr>
+            <tr><td class="td-name">Echo™ by Arkenology™</td><td class="td-price">$5K/person + $49/mo</td><td class="dash">—</td><td class="dash">—</td><td class="dash">—</td><td class="check">✓</td><td class="dash">—</td><td class="dash">—</td></tr>
+            <tr><td class="td-name">Lore™ by Arkenology™</td><td class="td-price">Ongoing subscription</td><td class="check">✓</td><td class="dash">—</td><td class="dash">—</td><td class="check">✓</td><td class="dash">—</td><td class="dash">—</td></tr>
+            <tr style="background:var(--ltblue-bg)">
+              <td class="td-name" style="color:var(--medblu)">AI Accelerator</td>
+              <td class="td-price">$7,500/mo · 90 days</td>
+              <td colspan="6" style="font-family:var(--font-head);font-size:10px;font-weight:700;letter-spacing:.05em;text-transform:uppercase;color:var(--medblu);text-align:center">Standalone Vx Group product — not part of the MiM™ program pathway</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="callout callout-navy" style="margin-bottom:1.75rem;font-size:12.5px">
+        <strong>Note on the AI Accelerator:</strong> Unlike the MiM™ programs above, the AI Accelerator is a standalone Vx Group product — it does not require Quick Start™ as a prerequisite and does not map to the P1–P6 pain framework. It addresses a distinct dimension: moving a portfolio company from AI awareness to AI capability in 90 days. It is a natural complement to MiM™, not a replacement for it.
+      </div>
+
+      <div class="card">
+        <div style="display:flex;justify-content:space-between;align-items:flex-start;gap:12px;flex-wrap:wrap">
+          <div class="card-title">Quick Start™ — the diagnostic foundation</div>
+          <span class="badge badge-orange">Entry point · $9,500</span>
+        </div>
+        <div class="tag-row" style="margin-bottom:.6rem"><span class="prob-tag p1" data-tip="No growth system — growth is founder- or salesperson-dependent with no repeatable process behind it">P1</span><span class="prob-tag p2" data-tip="Dangerous customer concentration — revenue held by 2–3 accounts, one departure is an existential event">P2</span><span class="prob-tag p3" data-tip="No documented growth plan — targets handed down from above but no documented path to reach them">P3</span><span class="prob-tag p5" data-tip="Brand & presence don't match reality — the company signals "small supplier" when it has become a premium partner">P5</span></div>
+        <div class="card-body">Six workshops over six weeks. Surfaces the clarity the family office is paying for but the portfolio company has never had. Workshop 1 (Growth Snapshot) and Workshop 5 (Ideal Profiles) are especially high-impact — revealing where growth actually comes from and how concentrated the risk is. Delivers the Digital Playbook and First 180™ Readiness Plan. No long-term commitment.</div>
+        <div class="callout callout-teal mt-2" style="font-size:12px">"Quick Start™ is the six-week diagnostic that tells a family office exactly why their portfolio company has stalled — and what to do about it."</div>
+      </div>
+
+      <div class="card">
+        <div class="card-title">Growth Plan Design™ — turning ambition into an actual plan</div>
+        <div class="tag-row" style="margin-bottom:.6rem"><span class="prob-tag p3" data-tip="No documented growth plan — targets handed down from above but no documented path to reach them">P3</span></div>
+        <div class="card-body">Translates leadership ambitions and family office targets into a SMARTER growth plan tied to the economic reality of the business. Goes two steps beyond the standard SMART framework by asking: Is this goal anchored to the company's End Game? If achieved, does it produce Real Impact? For a CEO accountable to a principal, this delivers something they can take back upstairs — a documented plan grounded in business economics, not just a number handed down from above.</div>
+      </div>
+
+      <div class="card">
+        <div class="card-title">Land Strategy Planning — a documented playbook for new relationships</div>
+        <div class="tag-row" style="margin-bottom:.6rem"><span class="prob-tag p1" data-tip="No growth system — growth is founder- or salesperson-dependent with no repeatable process behind it">P1</span><span class="prob-tag p2" data-tip="Dangerous customer concentration — revenue held by 2–3 accounts, one departure is an existential event">P2</span></div>
+        <div class="card-body">Five sessions producing one deliverable: a documented playbook defining exactly how the company opens new relationships — strategic roadmap, process map, assigned ownership, and target criteria. Directly attacks customer concentration risk. For the family office principal, this answers the question they've been asking forever: "Why aren't we bringing in new customers?" The answer is almost always the same: no one owns it, no process exists, and there's no documented strategy.</div>
+      </div>
+
+      <div class="card">
+        <div class="card-title">First Impressions Suite — infrastructure for relationship-driven sales teams</div>
+        <div class="tag-row" style="margin-bottom:.6rem"><span class="prob-tag p5" data-tip="Brand & presence don't match reality — the company signals "small supplier" when it has become a premium partner">P5</span><span class="prob-tag p6" data-tip="Sales team without infrastructure — good relationship builders but every rep sells differently with no consistent standard">P6</span></div>
+        <div class="card-body">Builds the complete sales toolkit so every rep shows up the way the best rep does. Capabilities presentations, branded proposals (non-negotiable deliverable in every engagement), meeting templates for first, second, and third meetings, email follow-up sequences, and CRM playbooks. Embeds the MiM™ Sales Meeting Philosophy — reframing the sales conversation from a pitch to a relationship-opening conversation.</div>
+      </div>
+
+      <div class="card">
+        <div class="card-title">Brand Modernization — closing the perception gap</div>
+        <div class="tag-row" style="margin-bottom:.6rem"><span class="prob-tag p5" data-tip="Brand & presence don't match reality — the company signals "small supplier" when it has become a premium partner">P5</span></div>
+        <div class="card-body">Discover → Define → Design → Deliver. Aligns external presence with who the company has actually become. For a portfolio company pursuing larger, more sophisticated buyers, brand that signals maturity and credibility is table stakes. Delivers a complete visual identity system with brand guidelines for consistent team-wide execution.</div>
+      </div>
+
+      <div class="card">
+        <div class="card-title">Website Development — a sales-aligned digital system</div>
+        <div class="tag-row" style="margin-bottom:.6rem"><span class="prob-tag p5" data-tip="Brand & presence don't match reality — the company signals "small supplier" when it has become a premium partner">P5</span><span class="prob-tag p6" data-tip="Sales team without infrastructure — good relationship builders but every rep sells differently with no consistent standard">P6</span></div>
+        <div class="card-body">Not a design project — a digital sales system built around a clearly defined Million-Dollar Action (MDA). Structured around the Ideal Profile and Priority Markets surfaced in Quick Start™. CRM-integrated from day one. Treats launch as activation, not completion. Turns the website from decoration into infrastructure that starts million-dollar relationships around the clock.</div>
+      </div>
+
+      <div class="card">
+        <div style="display:flex;justify-content:space-between;align-items:flex-start;gap:12px;flex-wrap:wrap">
+          <div class="card-title">Echo™ by Arkenology™ — individual knowledge capture</div>
+          <span class="badge badge-gold">$5,000/person</span>
+        </div>
+        <div class="tag-row" style="margin-bottom:.6rem"><span class="prob-tag p4" data-tip="Key-person knowledge dependency — one or two people hold all relationships, process, and institutional memory">P4</span></div>
+        <div class="card-body">Captures the knowledge, instincts, and institutional memory of a specific individual before they leave — delivered as an Infinite Teammate: an AI-powered interactive resource the team can query in real time. For family office principals, this is a risk mitigation and enterprise value play. A portfolio company with documented, accessible institutional knowledge is a more defensible, more transferable, more valuable business.</div>
+        <div class="callout callout-orange mt-2" style="font-size:12px"><strong>The conversation-starter question:</strong> "Who in this organization, if they left tomorrow, would leave a hole that would take years to fill?"</div>
+      </div>
+
+      <div class="card">
+        <div class="card-title">Lore™ by Arkenology™ — organizational knowledge capture</div>
+        <div class="tag-row" style="margin-bottom:.6rem"><span class="prob-tag p1" data-tip="No growth system — growth is founder- or salesperson-dependent with no repeatable process behind it">P1</span><span class="prob-tag p4" data-tip="Key-person knowledge dependency — one or two people hold all relationships, process, and institutional memory">P4</span></div>
+        <div class="card-body">Captures the knowledge of the whole organization — methodology, processes, institutional intelligence — and makes it living and queryable for the entire team. New hires ramp faster. Processes become consistent. The business stops depending on any single person to carry knowledge forward. Answers the principal's deepest question: "How do we make this company run independently of the people who built it?"</div>
+      </div>
+
+      <div class="divider"></div>
+      <div class="section-label">Standalone Vx Group Product</div>
+
+      <div class="card" style="border-left:3px solid var(--medblu);border-radius:0 var(--radius-lg) var(--radius-lg) 0">
+        <div style="display:flex;justify-content:space-between;align-items:flex-start;gap:12px;flex-wrap:wrap;margin-bottom:.5rem">
+          <div>
+            <div class="card-title" style="color:var(--medblu)">AI Accelerator — from AI awareness to AI capability in 90 days</div>
+            <div style="font-size:11px;color:var(--text-3);margin-top:2px;font-family:var(--font-head);letter-spacing:.04em;text-transform:uppercase;font-weight:700">Vx Group product · Independent of MiM™ program pathway</div>
+          </div>
+          <span class="badge badge-steel">$7,500/mo · 90-day commitment</span>
+        </div>
+
+        <div class="grid-3" style="margin-bottom:1rem">
+          <div style="background:var(--ltblue-bg);border-radius:var(--radius);padding:.85rem 1rem">
+            <div style="font-family:var(--font-head);font-size:9px;font-weight:700;letter-spacing:.07em;text-transform:uppercase;color:var(--medblu);margin-bottom:.4rem">Phase 1 — Inspire</div>
+            <div style="font-size:12.5px;color:var(--text-2);line-height:1.6">Month 1. Leadership alignment, use case discovery, and platform selection. The team leaves with a clear picture of what's possible and shared conviction to build it.</div>
+          </div>
+          <div style="background:var(--ltblue-bg);border-radius:var(--radius);padding:.85rem 1rem">
+            <div style="font-family:var(--font-head);font-size:9px;font-weight:700;letter-spacing:.07em;text-transform:uppercase;color:var(--medblu);margin-bottom:.4rem">Phase 2 — Build</div>
+            <div style="font-size:12.5px;color:var(--text-2);line-height:1.6">Months 2–3. The Chassis is constructed and the first tool is deployed against a real business problem. First tool targeted live within 60 days of program start.</div>
+          </div>
+          <div style="background:var(--ltblue-bg);border-radius:var(--radius);padding:.85rem 1rem">
+            <div style="font-family:var(--font-head);font-size:9px;font-weight:700;letter-spacing:.07em;text-transform:uppercase;color:var(--medblu);margin-bottom:.4rem">Phase 3 — Grow</div>
+            <div style="font-size:12.5px;color:var(--text-2);line-height:1.6">Beyond Month 3. The platform is live and every tool added, every process captured, and every team member added compounds on what came before. The 90-day investment becomes a compounding capability.</div>
+          </div>
+        </div>
+
+        <div class="card-body" style="margin-bottom:.75rem">The core deliverable is <strong>The Chassis</strong> — the client's own secure, scalable AI application foundation. Every tool deployed lives on top of it. It is owned by the client, lives in their environment, and keeps growing after the engagement ends. For PE-backed portfolio companies, the AI Accelerator is particularly powerful: they typically have clear operational inefficiencies, budget authority, a growth mandate, and a scaling moment where manual processes are about to get more expensive.</div>
+
+        <div class="grid-2" style="margin-bottom:.75rem">
+          <div style="background:var(--teal-light);border-radius:var(--radius);padding:.75rem .9rem">
+            <div style="font-family:var(--font-head);font-size:9px;font-weight:700;letter-spacing:.07em;text-transform:uppercase;color:var(--teal);margin-bottom:.35rem">Strong fit signals for this vertical</div>
+            <div style="font-size:12.5px;color:var(--text-2);line-height:1.6">New facility or expanding team · Succession planning underway · PE-backed growth push · Manual processes approaching a scaling break · At least one internal AI champion · Clear operational workflows currently dependent on individual knowledge</div>
+          </div>
+          <div style="background:var(--orange-light);border-radius:var(--radius);padding:.75rem .9rem">
+            <div style="font-family:var(--font-head);font-size:9px;font-weight:700;letter-spacing:.07em;text-transform:uppercase;color:var(--orange);margin-bottom:.35rem">Not a fit when</div>
+            <div style="font-size:12.5px;color:var(--text-2);line-height:1.6">Leadership is not yet committed to change · No clear business problem to solve with the first tool · Expecting turnkey software — this is a build engagement, not a license</div>
+          </div>
+        </div>
+
+        <div class="callout callout-navy" style="font-size:12.5px">"Your people are your edge. Systems make that edge permanent." — The Chassis gives a family office portfolio company AI infrastructure they own outright, with no vendor dependency, that compounds in value with every tool added.</div>
+      </div>
+    </div>
+
+    <!-- ══════════════════════════════
+         TAB: GLOSSARY
+    ══════════════════════════════ -->
+    <div id="tab-glossary" class="tab-panel">
+      <div class="page-header">
+        <div class="page-eyebrow">ICP Glossary</div>
+        <div class="page-title">Know Their Language</div>
+        <div class="page-sub">The vocabulary of family office principals, PE portfolio ops teams, and portfolio company leadership. Knowing these terms — and why they matter for MiM™ — is the difference between sounding like an insider and sounding like a vendor.</div>
+      </div>
+
+      <input class="gloss-search" type="text" placeholder="Search terms, definitions, or relevance notes..." id="gloss-search" oninput="filterGloss()" />
+
+      <div id="gloss-container">
+
+        <div class="gloss-cat" data-cat>
+          <div class="gloss-cat-title">Capital structure &amp; deal terms</div>
+
+          <div class="gloss-item">
+            <div class="gloss-term">Mezzanine financing (mezz)</div>
+            <div class="gloss-def">Hybrid debt/equity capital sitting between senior debt and equity in the capital stack. Higher risk than senior debt, so it carries a higher interest rate — often 12–20%. Commonly used by PE firms and family offices to fund acquisitions without diluting equity too much.</div>
+            <div class="gloss-why">MiM™ relevance: Portfolio companies using mezz financing are under real cost-of-capital pressure. Growth systems that improve revenue and EBITDA directly affect their ability to service this debt — making the ROI conversation very concrete.</div>
+          </div>
+
+          <div class="gloss-item">
+            <div class="gloss-term">Capital stack</div>
+            <div class="gloss-def">The layered structure of a company's financing — from most secure (senior debt) to most risky (common equity). Includes senior debt, junior/subordinated debt, mezzanine, preferred equity, and common equity.</div>
+            <div class="gloss-why">MiM™ relevance: Understanding where a portfolio company sits in the capital stack helps frame the urgency of growth — higher leverage means more pressure on revenue performance.</div>
+          </div>
+
+          <div class="gloss-item">
+            <div class="gloss-term">EBITDA</div>
+            <div class="gloss-def">Earnings Before Interest, Taxes, Depreciation, and Amortization. The most common valuation proxy in PE and family office contexts. Enterprise value is expressed as a multiple of EBITDA (e.g., "we acquired at 6x EBITDA").</div>
+            <div class="gloss-why">MiM™ relevance: MiM™ programs that grow revenue or reduce sales inefficiency directly improve EBITDA — and therefore enterprise value. Frame outcomes in EBITDA impact terms when speaking to principals.</div>
+          </div>
+
+          <div class="gloss-item">
+            <div class="gloss-term">EBITDA multiple / valuation multiple</div>
+            <div class="gloss-def">The ratio used to value a business at acquisition or sale. "We're trading at 7x" means enterprise value is 7 times annual EBITDA. Lower middle market companies typically transact at 4–8x.</div>
+          </div>
+
+          <div class="gloss-item">
+            <div class="gloss-term">Add-on acquisition (bolt-on)</div>
+            <div class="gloss-def">A smaller acquisition made to supplement a PE or family office's existing platform company. Bolt-ons expand geography, capabilities, or customer base without building from scratch.</div>
+            <div class="gloss-why">MiM™ relevance: Post-acquisition integration is a common trigger for MiM™ — two companies suddenly need a unified growth system, brand identity, and sales infrastructure.</div>
+          </div>
+
+          <div class="gloss-item">
+            <div class="gloss-term">Platform company</div>
+            <div class="gloss-def">The primary operating company in a PE or family office portfolio — the anchor business that bolt-on acquisitions are added to. Usually the largest or most strategically scalable company in the portfolio.</div>
+          </div>
+
+          <div class="gloss-item">
+            <div class="gloss-term">Dry powder</div>
+            <div class="gloss-def">Capital committed by LPs but not yet deployed into investments. A family office or PE firm "sitting on dry powder" has capital available to invest but hasn't found the right opportunity.</div>
+          </div>
+
+          <div class="gloss-item">
+            <div class="gloss-term">Recapitalization (recap)</div>
+            <div class="gloss-def">A restructuring of a company's debt and equity mix — often used by PE firms to take equity off the table while keeping the company operating. A partial recap lets founders monetize while staying involved.</div>
+          </div>
+
+          <div class="gloss-item">
+            <div class="gloss-term">Rollover equity</div>
+            <div class="gloss-def">When a founder or management team retains a portion of their equity stake in a new deal rather than cashing out entirely. Signals continued skin in the game.</div>
+            <div class="gloss-why">MiM™ relevance: A founder with rollover equity is still emotionally invested in the business's growth — a very different conversation than a purely hired CEO with no ownership stake.</div>
+          </div>
+
+          <div class="gloss-item">
+            <div class="gloss-term">Deal flow</div>
+            <div class="gloss-def">The pipeline of investment opportunities a PE firm or family office is currently evaluating. High deal flow means many opportunities; quality of deal flow refers to how well those opportunities fit the firm's investment thesis.</div>
+          </div>
+        </div>
+
+        <div class="gloss-cat" data-cat>
+          <div class="gloss-cat-title">Portfolio management &amp; operations</div>
+
+          <div class="gloss-item">
+            <div class="gloss-term">Portfolio operations (portco ops)</div>
+            <div class="gloss-def">The function within a PE firm or family office responsible for actively improving the operating performance of portfolio companies — not just financial oversight, but operational help with sales, marketing, HR, technology, and more.</div>
+            <div class="gloss-why">MiM™ relevance: Portfolio ops teams are the primary internal champions for MiM™ at the fund level. They are often looking for proven vendors they can deploy consistently across multiple companies.</div>
+          </div>
+
+          <div class="gloss-item">
+            <div class="gloss-term">Portco (portfolio company)</div>
+            <div class="gloss-def">Shorthand for a company owned by a PE firm or family office. "Our portcos" refers to all the operating businesses in the portfolio. This is where MiM™ engagements live.</div>
+          </div>
+
+          <div class="gloss-item">
+            <div class="gloss-term">Value creation plan (VCP)</div>
+            <div class="gloss-def">The documented strategic plan a PE firm or family office builds for each portfolio company at acquisition — defining how they will grow the business and what it needs to look like at exit. Often includes revenue targets, operational improvements, and acquisition strategy.</div>
+            <div class="gloss-why">MiM™ relevance: Quick Start™ and the First 180™ effectively serve as the growth execution layer of a VCP. Framing it this way with portfolio ops teams immediately establishes strategic fit.</div>
+          </div>
+
+          <div class="gloss-item">
+            <div class="gloss-term">100-day plan</div>
+            <div class="gloss-def">The immediate post-acquisition operating plan covering the first 100 days of ownership. Focuses on quick wins, stabilization, and setting the foundation for longer-term value creation.</div>
+            <div class="gloss-why">MiM™ relevance: Quick Start™ at $9,500 with no long-term commitment is a natural fit for the first 100 days — it delivers clarity without locking the new owner into a long engagement before they fully understand what they've acquired.</div>
+          </div>
+
+          <div class="gloss-item">
+            <div class="gloss-term">Operating partner</div>
+            <div class="gloss-def">A senior executive embedded in or advising a PE firm to help run and improve portfolio companies. Often a former CEO or COO brought in specifically to drive operational improvement. A key relationship target for MiM™.</div>
+          </div>
+
+          <div class="gloss-item">
+            <div class="gloss-term">MOIC (Multiple on Invested Capital)</div>
+            <div class="gloss-def">How much money was returned relative to how much was invested. A 3x MOIC means $3 returned for every $1 invested. Key performance metric for PE funds and a driver of carry calculations.</div>
+          </div>
+
+          <div class="gloss-item">
+            <div class="gloss-term">IRR (Internal Rate of Return)</div>
+            <div class="gloss-def">The annualized return on an investment, accounting for the time value of money. PE firms typically target 20–30% IRR. Shorter hold periods with strong exits improve IRR significantly.</div>
+          </div>
+
+          <div class="gloss-item">
+            <div class="gloss-term">Hold period</div>
+            <div class="gloss-def">How long a PE firm or family office plans to own a portfolio company before exit. Traditional PE: 3–7 years. Family offices: often 7–15+ years or indefinite. This fundamentally changes the growth investment thesis.</div>
+            <div class="gloss-why">MiM™ relevance: Longer hold periods strongly favor MiM™ — the compounding nature of relationship-driven growth systems produces exponentially better outcomes over 5+ years than in a 2–3 year sprint.</div>
+          </div>
+        </div>
+
+        <div class="gloss-cat" data-cat>
+          <div class="gloss-cat-title">Exit &amp; liquidity</div>
+
+          <div class="gloss-item">
+            <div class="gloss-term">Exit (liquidity event)</div>
+            <div class="gloss-def">The event at which a PE firm or family office sells or monetizes a portfolio company — through a strategic sale, secondary buyout, IPO, or recapitalization. The primary way PE firms return capital to LPs.</div>
+          </div>
+
+          <div class="gloss-item">
+            <div class="gloss-term">Exit readiness</div>
+            <div class="gloss-def">How prepared a portfolio company is to go through a sale or liquidity event. Factors include clean financials, documented processes, diversified revenue, and a management team that can operate independently of any single person.</div>
+            <div class="gloss-why">MiM™ relevance: MiM™ and Arkenology™ both directly improve exit readiness — documented growth systems, de-risked knowledge concentration, and brand that signals institutional quality all support stronger valuations at exit.</div>
+          </div>
+
+          <div class="gloss-item">
+            <div class="gloss-term">Quality of earnings (QoE)</div>
+            <div class="gloss-def">A due diligence report that analyzes the sustainability and reliability of a company's EBITDA. Buyers use it to validate whether reported earnings will persist post-acquisition. Strong customer relationships and diversified revenue improve QoE significantly.</div>
+            <div class="gloss-why">MiM™ relevance: Customer concentration (P2) is a direct QoE risk factor. MiM™ programs that diversify revenue — particularly Land Strategy Planning — improve QoE and therefore sale price.</div>
+          </div>
+
+          <div class="gloss-item">
+            <div class="gloss-term">Strategic buyer</div>
+            <div class="gloss-def">A company (rather than a financial investor) that acquires another company for strategic reasons — market share, capability, geography, or talent. Often pays a higher multiple than financial buyers because of synergy value.</div>
+          </div>
+
+          <div class="gloss-item">
+            <div class="gloss-term">Secondary buyout (SBO)</div>
+            <div class="gloss-def">When one PE firm sells a portfolio company to another PE firm. Common when the first firm has maximized its value creation but the company still has meaningful growth runway under new ownership.</div>
+          </div>
+        </div>
+
+        <div class="gloss-cat" data-cat>
+          <div class="gloss-cat-title">Family office structure &amp; governance</div>
+
+          <div class="gloss-item">
+            <div class="gloss-term">Single family office (SFO)</div>
+            <div class="gloss-def">A private organization managing the wealth and investments of a single ultra-high-net-worth family. Fully private, highly customized, typically managing $100M+ in assets. Decision-making is concentrated with the family patriarch/matriarch or a small leadership team.</div>
+          </div>
+
+          <div class="gloss-item">
+            <div class="gloss-term">Multi-family office (MFO)</div>
+            <div class="gloss-def">A family office that serves multiple wealthy families — essentially an outsourced family office model. More institutional than an SFO, with professional staff and formalized investment processes.</div>
+          </div>
+
+          <div class="gloss-item">
+            <div class="gloss-term">Direct investment</div>
+            <div class="gloss-def">When a family office invests directly into a private company rather than through a fund. Family offices are increasingly doing direct investments to get closer to their operating company assets and avoid fund management fees.</div>
+            <div class="gloss-why">MiM™ relevance: Direct investment family offices are hands-on with their portfolio companies — they are more likely to be receptive to growth partners because they care deeply about day-to-day operating performance.</div>
+          </div>
+
+          <div class="gloss-item">
+            <div class="gloss-term">Investment thesis</div>
+            <div class="gloss-def">The documented rationale and criteria a family office or PE firm uses to make investment decisions — what types of companies they buy, what they believe they can do to improve them, and what returns they expect.</div>
+          </div>
+
+          <div class="gloss-item">
+            <div class="gloss-term">LP (Limited Partner)</div>
+            <div class="gloss-def">The passive investors in a PE fund who commit capital but don't make investment decisions. In a family office context, the family members themselves are typically the LPs.</div>
+          </div>
+
+          <div class="gloss-item">
+            <div class="gloss-term">GP (General Partner)</div>
+            <div class="gloss-def">The active manager of a PE fund — makes investment decisions, manages portfolio companies, and earns carried interest. In a family office, the GP is typically the principal or investment team.</div>
+          </div>
+
+          <div class="gloss-item">
+            <div class="gloss-term">Carry (carried interest)</div>
+            <div class="gloss-def">The share of profits (typically 20%) that the GP earns after returning committed capital to LPs. The primary performance incentive for PE professionals — when portfolio companies grow, carry grows.</div>
+            <div class="gloss-why">MiM™ relevance: The carry incentive means PE portfolio ops teams are personally motivated by portfolio company performance, not just professionally. Growth matters to them financially.</div>
+          </div>
+
+          <div class="gloss-item">
+            <div class="gloss-term">Succession planning</div>
+            <div class="gloss-def">The process of preparing for leadership transitions — especially relevant when a founder or key executive is approaching retirement. In family offices, succession often involves generational wealth transfer as well as operational continuity.</div>
+            <div class="gloss-why">MiM™ relevance: Succession triggers both Echo™ (capture the departing leader's knowledge) and MiM™ Quick Start™ (give the incoming leader a documented growth foundation on day one).</div>
+          </div>
+        </div>
+
+        <div class="gloss-cat" data-cat>
+          <div class="gloss-cat-title">Growth &amp; revenue language</div>
+
+          <div class="gloss-item">
+            <div class="gloss-term">Revenue concentration risk</div>
+            <div class="gloss-def">The degree to which a company's revenue is dependent on a small number of customers. A company with 60%+ of revenue from three customers has high concentration risk — a major red flag in due diligence and a direct valuation suppressor.</div>
+            <div class="gloss-why">MiM™ relevance: This is P2 in MiM™ language. Land Strategy Planning and Quick Start™ are the direct solutions. Always frame outcomes in terms of reducing revenue concentration risk when speaking to principals.</div>
+          </div>
+
+          <div class="gloss-item">
+            <div class="gloss-term">Organic growth</div>
+            <div class="gloss-def">Revenue growth generated through the company's own operations — selling more to existing customers or winning new ones — rather than through acquisitions. PE firms and family offices value organic growth because it reflects the underlying health of the business model.</div>
+          </div>
+
+          <div class="gloss-item">
+            <div class="gloss-term">Wallet share</div>
+            <div class="gloss-def">The percentage of a customer's total spend in a category that goes to your company. Expanding wallet share with existing customers is often faster and cheaper than landing new ones — directly aligned with MiM™'s Expand quadrant of the Growth Engine.</div>
+          </div>
+
+          <div class="gloss-item">
+            <div class="gloss-term">Customer lifetime value (CLV / LTV)</div>
+            <div class="gloss-def">The total revenue a customer is expected to generate over the entire relationship. In relationship-driven B2B, LTV is often 10–20x the initial contract value. MiM™'s entire philosophy is built around identifying and maximizing CLV.</div>
+          </div>
+
+          <div class="gloss-item">
+            <div class="gloss-term">Go-to-market (GTM)</div>
+            <div class="gloss-def">The strategy and plan for how a company brings its product or service to market — including target customers, channels, messaging, and sales process. A portfolio company's GTM strategy is almost always undocumented or founder-dependent at acquisition.</div>
+          </div>
+
+          <div class="gloss-item">
+            <div class="gloss-term">ARR / MRR (Annual / Monthly Recurring Revenue)</div>
+            <div class="gloss-def">Predictable, contracted revenue that recurs on a regular basis. High ARR/MRR improves valuation multiples significantly because it reduces revenue risk for acquirers.</div>
+          </div>
+
+          <div class="gloss-item">
+            <div class="gloss-term">NPS (Net Promoter Score)</div>
+            <div class="gloss-def">A metric for customer loyalty — how likely customers are to recommend the company on a 0–10 scale. High NPS signals strong relationships and is a leading indicator of organic growth and referral-driven revenue.</div>
+          </div>
+
+          <div class="gloss-item">
+            <div class="gloss-term">Key performance indicator (KPI)</div>
+            <div class="gloss-def">A measurable value that demonstrates how effectively a company is achieving its key business objectives. PE and family office owners expect portfolio company leadership to manage and report against clearly defined KPIs on a regular cadence.</div>
+            <div class="gloss-why">MiM™ relevance: MiM™ programs build the scoreboard infrastructure that makes KPI reporting possible — giving the CEO something concrete to show the principal at every review.</div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+  </main>
+</div>
 
 <script>
-// ── STICKY HEADER ──
-const header = document.getElementById('siteHeader');
-window.addEventListener('scroll', () => {
-  header.classList.toggle('scrolled', window.scrollY > 20);
-});
+function showTab(id, btn) {
+  document.querySelectorAll('.tab-panel').forEach(p => p.classList.remove('active'));
+  document.querySelectorAll('.nav-btn').forEach(b => b.classList.remove('active'));
+  document.getElementById('tab-' + id).classList.add('active');
+  if (btn) btn.classList.add('active');
+}
 
-// ── SCROLL ANIMATIONS ──
-const observer = new IntersectionObserver((entries) => {
-  entries.forEach(e => {
-    if (e.isIntersecting) {
-      e.target.classList.add('visible');
-    }
+function togglePain(header) {
+  const body = header.nextElementSibling;
+  const toggle = header.querySelector('.pain-toggle');
+  const isOpen = body.classList.contains('open');
+  body.classList.toggle('open', !isOpen);
+  toggle.classList.toggle('open', !isOpen);
+}
+
+function togglePersona(header) {
+  const body = header.nextElementSibling;
+  const toggle = header.querySelector('.persona-toggle');
+  const isOpen = body.classList.contains('open');
+  body.classList.toggle('open', !isOpen);
+  toggle.classList.toggle('open', !isOpen);
+}
+
+function filterGloss() {
+  const q = document.getElementById('gloss-search').value.toLowerCase();
+  document.querySelectorAll('.gloss-item').forEach(item => {
+    item.style.display = item.textContent.toLowerCase().includes(q) ? '' : 'none';
   });
-}, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
-
-document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
+  document.querySelectorAll('.gloss-cat').forEach(cat => {
+    const visible = [...cat.querySelectorAll('.gloss-item')].some(i => i.style.display !== 'none');
+    cat.style.display = visible ? '' : 'none';
+  });
+}
 </script>
 </body>
 </html>
