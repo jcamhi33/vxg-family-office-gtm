@@ -3313,26 +3313,31 @@ function showSelectionTooltip(text, rect) {
   removeSelectionUI();
   if (!text.trim() || text.trim().length < 3) return;
 
-  const main = document.querySelector('.main');
-  if (!main) return;
-
   // Capture range NOW while selection is still active
   const sel = window.getSelection();
   if (sel && sel.rangeCount > 0) {
     pendingRange = sel.getRangeAt(0).cloneRange();
   }
 
+  // position: fixed — viewport coords only, no scrollY
+  const tooltipWidth = 200;
+  const left = Math.max(8, Math.min(
+    rect.left + rect.width / 2 - tooltipWidth / 2,
+    window.innerWidth - tooltipWidth - 8
+  ));
+  const top = Math.max(8, rect.top - 46);
+
   const tooltip = document.createElement('div');
   tooltip.className = 'selection-tooltip';
   tooltip.innerHTML = '💬 Comment on selection';
-  tooltip.style.left = `${rect.left + rect.width / 2 - 90}px`;
-  tooltip.style.top = `${rect.top - 42 + window.scrollY}px`;
+  tooltip.style.left = `${left}px`;
+  tooltip.style.top = `${top}px`;
   document.body.appendChild(tooltip);
   selectionTooltip = tooltip;
   pendingSelection = { text, rect };
 
   tooltip.addEventListener('mousedown', (e) => {
-    e.preventDefault(); // keep selection alive
+    e.preventDefault();
     showSelectionPopup(text, rect);
   });
 }
@@ -3340,13 +3345,19 @@ function showSelectionTooltip(text, rect) {
 function showSelectionPopup(selectedText, rect) {
   removeSelectionUI();
 
+  const popupWidth = 320;
+  const popupEstHeight = 290;
+
+  // position: fixed — viewport coords only, clamped to screen
+  const left = Math.max(8, Math.min(rect.left, window.innerWidth - popupWidth - 8));
+  const spaceBelow = window.innerHeight - rect.bottom;
+  const top = spaceBelow >= popupEstHeight
+    ? rect.bottom + 8
+    : Math.max(8, rect.top - popupEstHeight - 8);
+
   const popup = document.createElement('div');
   popup.className = 'selection-comment-popup';
-
-  // Position below the selection
-  const left = Math.min(rect.left, window.innerWidth - 340);
-  const top = rect.bottom + window.scrollY + 10;
-  popup.style.left = `${Math.max(8, left)}px`;
+  popup.style.left = `${left}px`;
   popup.style.top = `${top}px`;
 
   const savedName = localStorage.getItem('vxg-commenter-name') || '';
@@ -3375,7 +3386,6 @@ function showSelectionPopup(selectedText, rect) {
     submitSelectionComment(selectedText);
   });
 
-  // Close on outside click
   setTimeout(() => {
     document.addEventListener('click', selectionOutsideClick);
   }, 50);
@@ -3427,7 +3437,6 @@ async function submitSelectionComment(selectedText) {
   allComments.push(comment);
   removeSelectionUI();
 
-  // Apply highlight using the range saved at tooltip time
   if (pendingRange) {
     wrapRangeWithHighlight(pendingRange, commentId);
     pendingRange = null;
@@ -3437,11 +3446,10 @@ async function submitSelectionComment(selectedText) {
   await saveComments();
 }
 
-// Listen for text selections inside .main
+// Listen for text selections everywhere except sidebar nav and comment UI
 document.addEventListener('mouseup', (e) => {
-  // Don't trigger inside popups/drawers
   if (e.target.closest('.selection-comment-popup, .comments-drawer, .comment-popup, .selection-tooltip')) return;
-  if (!e.target.closest('.main')) return;
+  if (e.target.closest('.sidebar')) return;
 
   setTimeout(() => {
     const sel = window.getSelection();
