@@ -453,6 +453,95 @@ body {
 .text-sm { font-size: 12px; color: var(--text-3); }
 .font-head { font-family: var(--font-head); }
 
+/* ─── COMMENT SYSTEM ─── */
+.commentable { position: relative; }
+.comment-trigger {
+  display: inline-flex; align-items: center; justify-content: center;
+  width: 20px; height: 20px; border-radius: 50%;
+  background: transparent; border: 1px solid var(--border-str);
+  color: var(--text-3); font-size: 10px; cursor: pointer;
+  margin-left: 7px; vertical-align: middle;
+  opacity: 0; transition: opacity .15s, background .12s;
+  flex-shrink: 0; position: relative; top: -1px;
+}
+.commentable:hover .comment-trigger,
+.comment-trigger:hover,
+.comment-trigger.has-comments { opacity: 1; }
+.comment-trigger.has-comments {
+  background: var(--orange-light); border-color: var(--orange);
+  color: var(--orange); font-weight: 700;
+}
+.comment-trigger:hover { background: var(--surface2); color: var(--navy); }
+
+/* Comment popup */
+.comment-popup {
+  position: absolute; z-index: 300; top: calc(100% + 8px); left: 0;
+  background: var(--surface); border: 1px solid var(--border-str);
+  border-radius: var(--radius-lg); box-shadow: var(--shadow-md);
+  width: 300px; padding: 1rem;
+}
+.comment-popup::before {
+  content: ''; position: absolute; top: -6px; left: 14px;
+  border-left: 6px solid transparent; border-right: 6px solid transparent;
+  border-bottom: 6px solid var(--border-str);
+}
+.comment-popup-title { font-family: var(--font-head); font-size: 11px; font-weight: 700; letter-spacing: .06em; text-transform: uppercase; color: var(--navy); margin-bottom: .6rem; }
+.comment-input { width: 100%; padding: 7px 9px; font-family: var(--font-body); font-size: 13px; border: 1px solid var(--border-str); border-radius: var(--radius); resize: vertical; min-height: 72px; color: var(--text); outline: none; margin-bottom: .5rem; }
+.comment-input:focus { border-color: var(--steel); }
+.comment-name-input { width: 100%; padding: 6px 9px; font-family: var(--font-body); font-size: 12px; border: 1px solid var(--border-str); border-radius: var(--radius); color: var(--text); outline: none; margin-bottom: .5rem; }
+.comment-name-input:focus { border-color: var(--steel); }
+.comment-popup-actions { display: flex; gap: 6px; justify-content: flex-end; }
+.btn-comment-submit { background: var(--navy); color: white; border: none; padding: 5px 12px; font-family: var(--font-head); font-size: 10px; font-weight: 700; letter-spacing: .05em; text-transform: uppercase; border-radius: var(--radius); cursor: pointer; }
+.btn-comment-cancel { background: none; color: var(--text-3); border: 1px solid var(--border); padding: 5px 10px; font-family: var(--font-head); font-size: 10px; font-weight: 700; letter-spacing: .05em; text-transform: uppercase; border-radius: var(--radius); cursor: pointer; }
+.existing-comments { margin-bottom: .6rem; max-height: 160px; overflow-y: auto; }
+.existing-comment { padding: .45rem 0; border-bottom: 1px solid var(--border); }
+.existing-comment:last-child { border-bottom: none; }
+.existing-comment-author { font-family: var(--font-head); font-size: 10px; font-weight: 700; color: var(--navy); }
+.existing-comment-date { font-size: 10px; color: var(--text-3); margin-left: 5px; }
+.existing-comment-text { font-size: 12.5px; color: var(--text-2); line-height: 1.5; margin-top: 2px; }
+.existing-comment-resolve { font-size: 10px; color: var(--text-3); cursor: pointer; float: right; }
+.existing-comment-resolve:hover { color: var(--orange); }
+
+/* Comments drawer */
+.comments-drawer {
+  position: fixed; top: 0; right: -380px; width: 380px; height: 100vh;
+  background: var(--surface); border-left: 1px solid var(--border);
+  box-shadow: -4px 0 20px rgba(22,42,73,.12);
+  z-index: 400; transition: right .25s ease; display: flex; flex-direction: column;
+}
+.comments-drawer.open { right: 0; }
+.comments-drawer-header {
+  background: var(--navy); padding: 1rem 1.25rem;
+  display: flex; align-items: center; justify-content: space-between; flex-shrink: 0;
+}
+.comments-drawer-title { font-family: var(--font-head); font-size: 13px; font-weight: 700; color: white; }
+.comments-drawer-close { background: none; border: none; color: rgba(255,255,255,.6); font-size: 18px; cursor: pointer; padding: 0 4px; line-height: 1; }
+.comments-drawer-close:hover { color: white; }
+.comments-drawer-body { flex: 1; overflow-y: auto; padding: 1rem; }
+.drawer-comment-group { margin-bottom: 1.25rem; }
+.drawer-comment-section { font-family: var(--font-head); font-size: 10px; font-weight: 700; letter-spacing: .06em; text-transform: uppercase; color: var(--orange); margin-bottom: .5rem; padding-bottom: .35rem; border-bottom: 1px solid var(--border); }
+.drawer-comment-item { background: var(--surface2); border-radius: var(--radius); padding: .65rem .8rem; margin-bottom: .4rem; }
+.drawer-comment-meta { display: flex; justify-content: space-between; align-items: center; margin-bottom: .25rem; }
+.drawer-comment-author { font-family: var(--font-head); font-size: 11px; font-weight: 700; color: var(--navy); }
+.drawer-comment-date { font-size: 10px; color: var(--text-3); }
+.drawer-comment-text { font-size: 13px; color: var(--text-2); line-height: 1.55; }
+.drawer-comment-actions { display: flex; gap: 8px; margin-top: .35rem; }
+.drawer-comment-resolve { font-size: 10px; font-family: var(--font-head); font-weight: 700; color: var(--teal); cursor: pointer; background: none; border: none; padding: 0; }
+.drawer-comment-delete { font-size: 10px; font-family: var(--font-head); font-weight: 700; color: var(--text-3); cursor: pointer; background: none; border: none; padding: 0; }
+.drawer-comment-delete:hover { color: var(--orange); }
+.drawer-empty { text-align: center; padding: 2rem; color: var(--text-3); font-size: 13px; }
+
+/* Comments header button */
+.comments-header-btn {
+  display: flex; align-items: center; gap: 6px;
+  background: rgba(255,255,255,.1); color: white; border: 1px solid rgba(255,255,255,.2);
+  padding: 5px 12px; border-radius: var(--radius); font-family: var(--font-head);
+  font-size: 11px; font-weight: 700; letter-spacing: .04em; cursor: pointer;
+  transition: background .12s; text-transform: uppercase;
+}
+.comments-header-btn:hover { background: rgba(255,255,255,.18); }
+.comments-header-count { background: var(--orange); color: white; font-size: 10px; font-weight: 700; padding: 1px 6px; border-radius: 20px; min-width: 18px; text-align: center; }
+
 /* ─── PERSONA PILL LISTS ─── */
 .pill-list { display: flex; flex-direction: column; gap: .4rem; }
 .pill-item {
@@ -565,7 +654,21 @@ body {
     <span class="header-title">Family Office &amp; PE — GTM Hub</span>
   </div>
   <span class="header-badge">Internal Use Only</span>
+  <button class="comments-header-btn" onclick="toggleDrawer()">
+    💬 Comments <span class="comments-header-count" id="header-comment-count">0</span>
+  </button>
 </header>
+
+<!-- COMMENTS DRAWER -->
+<div class="comments-drawer" id="comments-drawer">
+  <div class="comments-drawer-header">
+    <span class="comments-drawer-title">💬 Team Comments</span>
+    <button class="comments-drawer-close" onclick="toggleDrawer()">✕</button>
+  </div>
+  <div class="comments-drawer-body" id="comments-drawer-body">
+    <div class="drawer-empty">No comments yet. Hover over any section title and click the 💬 icon to leave a comment.</div>
+  </div>
+</div>
 
 <!-- LAYOUT -->
 <div class="layout">
@@ -2563,6 +2666,221 @@ function filterGloss() {
     cat.style.display = visible ? '' : 'none';
   });
 }
+
+/* ─── COMMENT SYSTEM ─── */
+let allComments = [];
+let activePopup = null;
+const STORAGE_KEY = 'vxg-fo-gtm-comments';
+
+async function loadComments() {
+  try {
+    const result = await window.storage.get(STORAGE_KEY, true);
+    allComments = result ? JSON.parse(result.value) : [];
+  } catch(e) {
+    allComments = [];
+  }
+  renderAllBadges();
+  renderDrawer();
+}
+
+async function saveComments() {
+  try {
+    await window.storage.set(STORAGE_KEY, JSON.stringify(allComments), true);
+  } catch(e) { console.error('Failed to save comments', e); }
+  renderAllBadges();
+  renderDrawer();
+  updateHeaderCount();
+}
+
+function updateHeaderCount() {
+  const total = allComments.filter(c => !c.resolved).length;
+  document.getElementById('header-comment-count').textContent = total;
+}
+
+function getSectionId(el) {
+  return el.dataset.sectionId || el.textContent.trim().slice(0, 60).replace(/[^a-z0-9]/gi, '-').toLowerCase();
+}
+
+function getSectionTitle(el) {
+  return el.textContent.trim().replace(/💬.*$/, '').trim().slice(0, 80);
+}
+
+function renderAllBadges() {
+  document.querySelectorAll('.comment-trigger').forEach(btn => {
+    const sid = btn.dataset.sectionId;
+    const count = allComments.filter(c => c.sectionId === sid && !c.resolved).length;
+    if (count > 0) {
+      btn.classList.add('has-comments');
+      btn.textContent = count;
+    } else {
+      btn.classList.remove('has-comments');
+      btn.textContent = '💬';
+    }
+  });
+  updateHeaderCount();
+}
+
+function openPopup(btn) {
+  closePopup();
+  const sid = btn.dataset.sectionId;
+  const sTitle = btn.dataset.sectionTitle;
+  const existing = allComments.filter(c => c.sectionId === sid && !c.resolved);
+
+  const popup = document.createElement('div');
+  popup.className = 'comment-popup';
+  popup.id = 'active-comment-popup';
+
+  let existingHtml = '';
+  if (existing.length > 0) {
+    existingHtml = `<div class="existing-comments">${existing.map(c => `
+      <div class="existing-comment">
+        <span class="existing-comment-author">${c.author}</span>
+        <span class="existing-comment-date">${c.date}</span>
+        <span class="existing-comment-resolve" onclick="resolveComment('${c.id}')">✓ Resolve</span>
+        <div class="existing-comment-text">${c.text}</div>
+      </div>`).join('')}</div>`;
+  }
+
+  popup.innerHTML = `
+    <div class="comment-popup-title">💬 ${sTitle}</div>
+    ${existingHtml}
+    <input class="comment-name-input" id="popup-name" placeholder="Your name" value="${localStorage.getItem('vxg-commenter-name') || ''}" />
+    <textarea class="comment-input" id="popup-text" placeholder="Leave a comment..."></textarea>
+    <div class="comment-popup-actions">
+      <button class="btn-comment-cancel" onclick="closePopup()">Cancel</button>
+      <button class="btn-comment-submit" onclick="submitComment('${sid}', '${sTitle.replace(/'/g,"\\'")}')">Post</button>
+    </div>`;
+
+  btn.parentElement.style.position = 'relative';
+  btn.parentElement.appendChild(popup);
+  activePopup = popup;
+  popup.querySelector('#popup-text').focus();
+
+  setTimeout(() => document.addEventListener('click', outsideClick), 10);
+}
+
+function outsideClick(e) {
+  if (activePopup && !activePopup.contains(e.target) && !e.target.classList.contains('comment-trigger')) {
+    closePopup();
+  }
+}
+
+function closePopup() {
+  if (activePopup) { activePopup.remove(); activePopup = null; }
+  document.removeEventListener('click', outsideClick);
+}
+
+async function submitComment(sid, sTitle) {
+  const name = document.getElementById('popup-name').value.trim() || 'Anonymous';
+  const text = document.getElementById('popup-text').value.trim();
+  if (!text) return;
+
+  localStorage.setItem('vxg-commenter-name', name);
+
+  const comment = {
+    id: Date.now().toString(),
+    sectionId: sid,
+    sectionTitle: sTitle,
+    author: name,
+    text: text,
+    date: new Date().toLocaleDateString('en-US', { month: 'short', day: 'numeric' }),
+    resolved: false
+  };
+
+  allComments.push(comment);
+  closePopup();
+  await saveComments();
+}
+
+async function resolveComment(id) {
+  const c = allComments.find(c => c.id === id);
+  if (c) { c.resolved = true; }
+  closePopup();
+  await saveComments();
+}
+
+async function deleteComment(id) {
+  allComments = allComments.filter(c => c.id !== id);
+  await saveComments();
+}
+
+function renderDrawer() {
+  const body = document.getElementById('comments-drawer-body');
+  const active = allComments.filter(c => !c.resolved);
+
+  if (active.length === 0) {
+    body.innerHTML = '<div class="drawer-empty">No open comments yet.<br><br>Hover over any section title and click the 💬 icon to leave a comment.</div>';
+    return;
+  }
+
+  const grouped = {};
+  active.forEach(c => {
+    if (!grouped[c.sectionId]) grouped[c.sectionId] = { title: c.sectionTitle, comments: [] };
+    grouped[c.sectionId].comments.push(c);
+  });
+
+  body.innerHTML = Object.values(grouped).map(g => `
+    <div class="drawer-comment-group">
+      <div class="drawer-comment-section">${g.title}</div>
+      ${g.comments.map(c => `
+        <div class="drawer-comment-item">
+          <div class="drawer-comment-meta">
+            <span class="drawer-comment-author">${c.author}</span>
+            <span class="drawer-comment-date">${c.date}</span>
+          </div>
+          <div class="drawer-comment-text">${c.text}</div>
+          <div class="drawer-comment-actions">
+            <button class="drawer-comment-resolve" onclick="resolveComment('${c.id}')">✓ Mark resolved</button>
+            <button class="drawer-comment-delete" onclick="deleteComment('${c.id}')">Delete</button>
+          </div>
+        </div>`).join('')}
+    </div>`).join('');
+}
+
+function toggleDrawer() {
+  document.getElementById('comments-drawer').classList.toggle('open');
+}
+
+function injectCommentTriggers() {
+  const selectors = [
+    '.section-label',
+    '.card-title',
+    '.pain-header-title',
+    '.persona-name',
+    '.page-title',
+    '.gloss-cat-title',
+    '.gloss-term'
+  ];
+
+  selectors.forEach(sel => {
+    document.querySelectorAll(sel).forEach(el => {
+      if (el.querySelector('.comment-trigger')) return;
+      el.classList.add('commentable');
+      el.style.display = 'flex';
+      el.style.alignItems = 'center';
+      el.style.flexWrap = 'wrap';
+      el.style.gap = '4px';
+
+      const sid = getSectionId(el);
+      const sTitle = getSectionTitle(el);
+
+      const btn = document.createElement('button');
+      btn.className = 'comment-trigger';
+      btn.textContent = '💬';
+      btn.dataset.sectionId = sid;
+      btn.dataset.sectionTitle = sTitle;
+      btn.title = 'Leave a comment';
+      btn.onclick = (e) => { e.stopPropagation(); openPopup(btn); };
+
+      el.appendChild(btn);
+    });
+  });
+}
+
+document.addEventListener('DOMContentLoaded', async () => {
+  injectCommentTriggers();
+  await loadComments();
+});
 </script>
 </body>
 </html>
