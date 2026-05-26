@@ -541,6 +541,51 @@ body {
 .comments-header-btn:hover { background: rgba(255,255,255,.18); }
 .comments-header-count { background: var(--orange); color: white; font-size: 10px; font-weight: 700; padding: 1px 6px; border-radius: 20px; min-width: 18px; text-align: center; }
 
+/* Selection comment tooltip */
+.selection-tooltip {
+  position: fixed; z-index: 500;
+  background: var(--navy); color: white;
+  padding: 5px 12px; border-radius: var(--radius);
+  font-family: var(--font-head); font-size: 11px; font-weight: 700;
+  letter-spacing: .04em; text-transform: uppercase;
+  cursor: pointer; white-space: nowrap;
+  box-shadow: var(--shadow-md);
+  transition: opacity .1s;
+  display: flex; align-items: center; gap: 6px;
+  pointer-events: all;
+}
+.selection-tooltip:hover { background: var(--navy-mid); }
+.selection-tooltip::after {
+  content: ''; position: absolute; top: 100%; left: 50%;
+  transform: translateX(-50%);
+  border: 5px solid transparent;
+  border-top-color: var(--navy);
+}
+
+/* Selection popup — fixed positioning */
+.selection-comment-popup {
+  position: fixed; z-index: 500;
+  background: var(--surface); border: 1px solid var(--border-str);
+  border-radius: var(--radius-lg); box-shadow: var(--shadow-md);
+  width: 320px; padding: 1rem;
+}
+.selected-text-preview {
+  background: #FFF8E1; border-left: 3px solid var(--gold);
+  border-radius: 0 var(--radius) var(--radius) 0;
+  padding: .45rem .7rem; font-size: 12px; color: var(--text-2);
+  line-height: 1.5; font-style: italic; margin-bottom: .65rem;
+  max-height: 72px; overflow: hidden;
+  display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical;
+}
+.drawer-selected-text {
+  background: #FFF8E1; border-left: 3px solid var(--gold);
+  border-radius: 0 var(--radius) var(--radius) 0;
+  padding: .35rem .6rem; font-size: 11.5px; color: var(--text-2);
+  line-height: 1.5; font-style: italic; margin-bottom: .35rem;
+  overflow: hidden; display: -webkit-box;
+  -webkit-line-clamp: 2; -webkit-box-orient: vertical;
+}
+
 /* ─── PERSONA PILL LISTS ─── */
 .pill-list { display: flex; flex-direction: column; gap: .4rem; }
 .pill-item {
@@ -2823,6 +2868,7 @@ function renderDrawer() {
       <div class="drawer-comment-section">${g.title}</div>
       ${g.comments.map(c => `
         <div class="drawer-comment-item">
+          ${c.selectedText ? `<div class="drawer-selected-text">${c.selectedText.length > 100 ? c.selectedText.slice(0,100)+'…' : c.selectedText}</div>` : ''}
           <div class="drawer-comment-meta">
             <span class="drawer-comment-author">${c.author}</span>
             <span class="drawer-comment-date">${c.date}</span>
@@ -2871,6 +2917,158 @@ function injectCommentTriggers() {
     });
   });
 }
+
+/* ─── SELECTION COMMENTING ─── */
+let selectionTooltip = null;
+let selectionPopup = null;
+let pendingSelection = null;
+
+function removeSelectionUI() {
+  if (selectionTooltip) { selectionTooltip.remove(); selectionTooltip = null; }
+  if (selectionPopup) { selectionPopup.remove(); selectionPopup = null; }
+  pendingSelection = null;
+}
+
+function showSelectionTooltip(text, rect) {
+  removeSelectionUI();
+  if (!text.trim() || text.trim().length < 3) return;
+
+  // Only show inside .main content
+  const main = document.querySelector('.main');
+  if (!main) return;
+
+  const tooltip = document.createElement('div');
+  tooltip.className = 'selection-tooltip';
+  tooltip.innerHTML = '💬 Comment on selection';
+  tooltip.style.left = `${rect.left + rect.width / 2 - 90}px`;
+  tooltip.style.top = `${rect.top - 42 + window.scrollY}px`;
+  document.body.appendChild(tooltip);
+  selectionTooltip = tooltip;
+  pendingSelection = { text, rect };
+
+  tooltip.addEventListener('mousedown', (e) => {
+    e.preventDefault(); // keep selection alive
+    showSelectionPopup(text, rect);
+  });
+}
+
+function showSelectionPopup(selectedText, rect) {
+  removeSelectionUI();
+
+  const popup = document.createElement('div');
+  popup.className = 'selection-comment-popup';
+
+  // Position below the selection
+  const left = Math.min(rect.left, window.innerWidth - 340);
+  const top = rect.bottom + window.scrollY + 10;
+  popup.style.left = `${Math.max(8, left)}px`;
+  popup.style.top = `${top}px`;
+
+  const savedName = localStorage.getItem('vxg-commenter-name') || '';
+  const truncated = selectedText.length > 120 ? selectedText.slice(0, 120) + '…' : selectedText;
+
+  popup.innerHTML = `
+    <div class="comment-popup-title">💬 Comment on selection</div>
+    <div class="selected-text-preview">${truncated}</div>
+    <input class="comment-name-input" id="sel-popup-name" placeholder="Your name" value="${savedName}" />
+    <textarea class="comment-input" id="sel-popup-text" placeholder="What's your comment on this?"></textarea>
+    <div class="comment-popup-actions">
+      <button class="btn-comment-cancel" id="sel-cancel-btn">Cancel</button>
+      <button class="btn-comment-submit" id="sel-submit-btn">Post</button>
+    </div>`;
+
+  document.body.appendChild(popup);
+  selectionPopup = popup;
+  popup.querySelector('#sel-popup-text').focus();
+
+  popup.querySelector('#sel-cancel-btn').addEventListener('click', () => {
+    removeSelectionUI();
+    window.getSelection().removeAllRanges();
+  });
+
+  popup.querySelector('#sel-submit-btn').addEventListener('click', () => {
+    submitSelectionComment(selectedText);
+  });
+
+  // Close on outside click
+  setTimeout(() => {
+    document.addEventListener('click', selectionOutsideClick);
+  }, 50);
+}
+
+function selectionOutsideClick(e) {
+  if (selectionPopup && !selectionPopup.contains(e.target)) {
+    removeSelectionUI();
+    document.removeEventListener('click', selectionOutsideClick);
+  }
+}
+
+async function submitSelectionComment(selectedText) {
+  const name = document.getElementById('sel-popup-name').value.trim() || 'Anonymous';
+  const text = document.getElementById('sel-popup-text').value.trim();
+  if (!text) { document.getElementById('sel-popup-text').focus(); return; }
+
+  localStorage.setItem('vxg-commenter-name', name);
+
+  // Try to find the nearest section title for context
+  const sel = window.getSelection();
+  let sectionTitle = 'Selection comment';
+  let sectionId = 'selection-' + Date.now();
+  if (sel && sel.rangeCount > 0) {
+    const container = sel.getRangeAt(0).commonAncestorContainer;
+    const el = container.nodeType === 3 ? container.parentElement : container;
+    const nearest = el.closest('.card, .pain-expanded, .persona-expanded, .tab-panel');
+    if (nearest) {
+      const titleEl = nearest.querySelector('.card-title, .pain-header-title, .persona-name, .page-title');
+      if (titleEl) {
+        sectionTitle = titleEl.textContent.replace(/💬.*$/, '').trim().slice(0, 60);
+        sectionId = 'sel-' + sectionTitle.replace(/[^a-z0-9]/gi, '-').toLowerCase().slice(0, 40);
+      }
+    }
+  }
+
+  const comment = {
+    id: Date.now().toString(),
+    sectionId,
+    sectionTitle,
+    selectedText,
+    author: name,
+    text,
+    date: new Date().toLocaleDateString('en-US', { month: 'short', day: 'numeric' }),
+    resolved: false
+  };
+
+  allComments.push(comment);
+  removeSelectionUI();
+  window.getSelection().removeAllRanges();
+  document.removeEventListener('click', selectionOutsideClick);
+  await saveComments();
+}
+
+// Listen for text selections inside .main
+document.addEventListener('mouseup', (e) => {
+  // Don't trigger inside popups/drawers
+  if (e.target.closest('.selection-comment-popup, .comments-drawer, .comment-popup, .selection-tooltip')) return;
+  if (!e.target.closest('.main')) return;
+
+  setTimeout(() => {
+    const sel = window.getSelection();
+    if (!sel || sel.isCollapsed || !sel.toString().trim()) return;
+    const text = sel.toString().trim();
+    if (text.length < 3) return;
+    const range = sel.getRangeAt(0);
+    const rect = range.getBoundingClientRect();
+    showSelectionTooltip(text, rect);
+  }, 10);
+});
+
+// Clear tooltip when selection is removed
+document.addEventListener('selectionchange', () => {
+  const sel = window.getSelection();
+  if (!sel || sel.isCollapsed) {
+    if (selectionTooltip && !selectionPopup) removeSelectionUI();
+  }
+});
 
 document.addEventListener('DOMContentLoaded', async () => {
   injectCommentTriggers();
