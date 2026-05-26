@@ -1641,7 +1641,17 @@ body {
       </div>
 
       <div class="card" style="padding:1.25rem">
-        <!-- Controls -->
+
+        <!-- API Key input -->
+        <div id="api-key-section" style="margin-bottom:1rem;padding:.75rem 1rem;background:var(--ltblue-bg);border:1px solid var(--ltblue);border-radius:var(--radius)">
+          <div style="font-family:var(--font-head);font-size:9px;font-weight:700;letter-spacing:.07em;text-transform:uppercase;color:var(--medblu);margin-bottom:.4rem">Anthropic API Key — required to generate messages</div>
+          <div style="display:flex;gap:8px;align-items:center">
+            <input id="api-key-input" type="password" placeholder="sk-ant-..." style="flex:1;padding:7px 10px;font-family:var(--font-body);font-size:13px;border:1px solid var(--border-str);border-radius:var(--radius);background:var(--surface);color:var(--text);outline:none" />
+            <button onclick="saveApiKey()" style="background:var(--medblu);color:white;border:none;padding:7px 14px;font-family:var(--font-head);font-size:10px;font-weight:700;letter-spacing:.05em;text-transform:uppercase;border-radius:var(--radius);cursor:pointer;white-space:nowrap">Save Key</button>
+          </div>
+          <div style="font-size:11px;color:var(--text-3);margin-top:.35rem">Your key is stored in memory for this session only — never saved or transmitted anywhere except to the Anthropic API. Get your key at <a href="https://console.anthropic.com" target="_blank" style="color:var(--medblu)">console.anthropic.com</a>.</div>
+          <div id="api-key-status" style="display:none;font-size:11px;font-weight:600;margin-top:.35rem;color:var(--teal)">✓ API key saved for this session</div>
+        </div>
         <div class="grid-3" style="margin-bottom:1rem">
           <div>
             <div style="font-family:var(--font-head);font-size:10px;font-weight:700;letter-spacing:.07em;text-transform:uppercase;color:var(--text-3);margin-bottom:.4rem">Persona</div>
@@ -1969,7 +1979,31 @@ function togglePersona(header) {
   toggle.classList.toggle('open', !isOpen);
 }
 
+let vxApiKey = '';
+
+function saveApiKey() {
+  const input = document.getElementById('api-key-input');
+  const key = input.value.trim();
+  if (!key || !key.startsWith('sk-ant-')) {
+    input.style.borderColor = 'var(--orange)';
+    input.placeholder = 'Must start with sk-ant-...';
+    return;
+  }
+  vxApiKey = key;
+  input.value = '';
+  input.style.borderColor = 'var(--teal)';
+  input.placeholder = '••••••••••••••••••••';
+  document.getElementById('api-key-status').style.display = 'block';
+}
+
 async function generateMessage() {
+  if (!vxApiKey) {
+    const input = document.getElementById('api-key-input');
+    input.style.borderColor = 'var(--orange)';
+    input.focus();
+    document.getElementById('api-key-section').scrollIntoView({ behavior: 'smooth', block: 'center' });
+    return;
+  }
   const persona = document.getElementById('msg-persona').value;
   const type = document.getElementById('msg-type').value;
   const context = document.getElementById('msg-context').value;
@@ -2067,7 +2101,12 @@ The message should feel like it comes from someone at the Vx Group who genuinely
   try {
     const response = await fetch('https://api.anthropic.com/v1/messages', {
       method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
+      headers: {
+        'Content-Type': 'application/json',
+        'x-api-key': vxApiKey,
+        'anthropic-version': '2023-06-01',
+        'anthropic-dangerous-direct-browser-access': 'true'
+      },
       body: JSON.stringify({
         model: 'claude-sonnet-4-20250514',
         max_tokens: 1000,
