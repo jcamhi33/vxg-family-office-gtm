@@ -2735,8 +2735,13 @@ const STORAGE_KEY = 'vxg-fo-gtm-comments';
 
 async function loadComments() {
   try {
-    const result = await window.storage.get(STORAGE_KEY, true);
-    allComments = result ? JSON.parse(result.value) : [];
+    if (typeof window.storage !== 'undefined') {
+      const result = await window.storage.get(STORAGE_KEY, true);
+      allComments = result ? JSON.parse(result.value) : [];
+    } else {
+      const local = localStorage.getItem(STORAGE_KEY);
+      allComments = local ? JSON.parse(local) : [];
+    }
   } catch(e) {
     allComments = [];
   }
@@ -2746,8 +2751,15 @@ async function loadComments() {
 
 async function saveComments() {
   try {
-    await window.storage.set(STORAGE_KEY, JSON.stringify(allComments), true);
-  } catch(e) { console.error('Failed to save comments', e); }
+    if (typeof window.storage !== 'undefined') {
+      await window.storage.set(STORAGE_KEY, JSON.stringify(allComments), true);
+    } else {
+      localStorage.setItem(STORAGE_KEY, JSON.stringify(allComments));
+    }
+  } catch(e) {
+    // Fallback to localStorage silently
+    try { localStorage.setItem(STORAGE_KEY, JSON.stringify(allComments)); } catch(e2) {}
+  }
   renderAllBadges();
   renderDrawer();
   updateHeaderCount();
@@ -3011,9 +3023,14 @@ function showSelectionTooltip(text, rect) {
   removeSelectionUI();
   if (!text.trim() || text.trim().length < 3) return;
 
-  // Only show inside .main content
   const main = document.querySelector('.main');
   if (!main) return;
+
+  // Capture range NOW while selection is still active
+  const sel = window.getSelection();
+  if (sel && sel.rangeCount > 0) {
+    pendingRange = sel.getRangeAt(0).cloneRange();
+  }
 
   const tooltip = document.createElement('div');
   tooltip.className = 'selection-tooltip';
@@ -3088,15 +3105,12 @@ async function submitSelectionComment(selectedText) {
 
   localStorage.setItem('vxg-commenter-name', name);
 
-  // Capture range BEFORE clearing selection
-  const sel = window.getSelection();
-  let capturedRange = null;
+  // Use pendingRange captured at tooltip time — selection is already cleared by now
   let sectionTitle = 'Selection comment';
   let sectionId = 'selection-' + Date.now();
 
-  if (sel && sel.rangeCount > 0) {
-    capturedRange = sel.getRangeAt(0).cloneRange();
-    const container = sel.getRangeAt(0).commonAncestorContainer;
+  if (pendingRange) {
+    const container = pendingRange.commonAncestorContainer;
     const el = container.nodeType === 3 ? container.parentElement : container;
     const nearest = el.closest('.card, .pain-expanded, .persona-expanded, .tab-panel');
     if (nearest) {
@@ -3123,12 +3137,12 @@ async function submitSelectionComment(selectedText) {
   allComments.push(comment);
   removeSelectionUI();
 
-  // Apply highlight immediately using the captured range
-  if (capturedRange) {
-    wrapRangeWithHighlight(capturedRange, commentId);
+  // Apply highlight using the range saved at tooltip time
+  if (pendingRange) {
+    wrapRangeWithHighlight(pendingRange, commentId);
+    pendingRange = null;
   }
 
-  sel && sel.removeAllRanges();
   document.removeEventListener('click', selectionOutsideClick);
   await saveComments();
 }
