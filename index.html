@@ -2231,14 +2231,6 @@ function togglePersona(header) {
   toggle.classList.toggle('open', !isOpen);
 }
 
-  vxApiKey = key;
-  input.value = '';
-  input.style.borderColor = 'var(--teal)';
-  input.placeholder = '••••••••••••••••••••';
-  document.getElementById('api-key-status').style.display = 'block';
-}
-
-
 function filterGloss() {
   const q = document.getElementById('gloss-search').value.toLowerCase();
   document.querySelectorAll('.gloss-item').forEach(item => {
